@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="common.css">
+
 </head>
 
 <body>
+
     <div class="sidebar open">
-        <div class="logo-details">
-            <!-- USE BUTTON ID AS 'id="btn"' TO MAKE IT WORK FOR SIDEBAR -->
+        <div class="logo-details border-bottom-01-white">
             <img class="" src="assets/logo_light.svg">
         </div>
-        <ul class="nav-list">
+        <ul class="nav-list" id="navList">
             <li>
-                <a href="#">
+                <a class="active" href="#">
                     <img class="" src="assets/svg-icons/svg_dashboard.svg">
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -73,10 +75,55 @@
         </ul>
     </div>
     <section class="home-section">
-        <div class="text">Dashboard</div>
+        <header class="header h80 border-bottom-01-white justify-content-center align-items-center">
+            <div class="_85-width justify-content-end sm_justify-content-between">
+                <div class="mobile-view-elem align-in-center display-none">
+                    <input class="hidden" type="checkbox" id="mobileMenuCheckbox" onchange="toggleDisplay(this, 'mobileMenu')">
+                    <img id="btnMobileMenu" src="assets/svg-icons/svg_bars_questions.svg" width="24" onclick="clickTarget('mobileMenuCheckbox');">
+                    <div id="mobileMenu" class="mobile-menu position-absolute top-79 left-0">
+                        <ul class="nav-list" id="mobileNavList">
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-view-elem logo-details display-none">
+                    <img class="" src="assets/logo_light.svg">
+                </div>
+                <div class="position-relative">
+                    <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
+                    <img class="ac-icon cursor-pointer" id="profileMenuButton" src="assets/svg-icons/svg_empty-ac.svg" onclick="clickTarget('profileMenuCheckbox');">
+
+                    <div id="profileMenu" class="profile-menu position-absolute top-60 right-0">
+                        <ul class="nav-list">
+                            <li>
+                                <a href="#">
+                                    <img class="" src="assets/svg-icons/svg_profile.svg">
+                                    <span class="links_name">Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="" src="assets/svg-icons/svg_logout.svg">
+                                    <span class="links_name">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content text-light">Dashboard</div>
+
+        <footer class="header h80 border-top-01-white justify-content-center align-items-center text-light">
+
+            <p>@ 2121 Tution Made Easy - All Rights Reserved</p>
+
+        </footer>
     </section>
 
     <script src="script.js"></script>
+
 
 </body>
 
