@@ -26,6 +26,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+.text-uppercase {
+    text-transform: uppercase;
+}
+
 .header-bg {
     background: var(--header-bg)
 }
@@ -76,27 +80,22 @@
     background: var(--subj-1)
 }
 
-;
 .subj-2-bg {
     background: var(--subj-2)
 }
 
-;
 .subj-3-bg {
     background: var(--subj-3)
 }
 
-;
 .subj-4-bg {
     background: var(--subj-4)
 }
 
-;
 .subj-5-bg {
     background: var(--subj-5)
 }
 
-;
 .subj-6-bg {
     background: var(--subj-6)
 }
@@ -138,6 +137,10 @@
 
 .border-01-white {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.border-01-black {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .border-bottom-01-white {
@@ -932,6 +935,22 @@
     height: 150px;
 }
 
+.h160 {
+    height: 160px;
+}
+
+.h170 {
+    height: 170px;
+}
+
+.h180 {
+    height: 180px;
+}
+
+.h190 {
+    height: 190px;
+}
+
 .h200 {
     height: 200px;
 }
@@ -1408,6 +1427,10 @@
     margin-bottom: 30px;
 }
 
+.mb-40 {
+    margin-bottom: 40px;
+}
+
 .mr-10 {
     margin-right: 10px;
 }
@@ -1688,6 +1711,14 @@
     top: 0px;
 }
 
+.top-70 {
+    top: 70px;
+}
+
+.top-50 {
+    top: 50px;
+}
+
 .top-55 {
     top: 55px;
 }
@@ -1853,11 +1884,21 @@ ul {
     background-color: #181818;
 }
 
+.border-radius-2 {
+    border-radius: 2px;
+}
+
+.border-radius-3 {
+    border-radius: 3px;
+}
+
+.border-radius-4 {
+    border-radius: 4px;
+}
+
 .border-radius-5 {
     border-radius: 5px;
 }
-
-.br-only-bottom {}
 
 .border-radius-150 {
     border-radius: 150px;
@@ -1939,16 +1980,17 @@ a:hover {
     position: relative;
 }
 
-.btn:hover {
-    filter: brightness(95%);
-}
-
-.btn:active {
+.hover-effect {
     filter: brightness(100%);
 }
 
-.btn:focus {
-    filter: brightness(80%);
+.hover-effect:hover {
+    filter: brightness(130%);
+}
+
+.bg-cover-center {
+    background-size: cover;
+    background-position: center;
 }
 
 .list-style-none {
@@ -2113,6 +2155,10 @@ a:hover {
     position: absolute;
 }
 
+.vh100 {
+    min-height: 100vh;
+}
+
 .top-60 {
     top: 60px;
 }
@@ -2179,6 +2225,9 @@ a:hover {
 }
 
 @media screen and (max-width: 800px) {
+    .sm_border-radious-10 {
+        border-radius: 10px;
+    }
     body {
         overflow-x: hidden;
     }
@@ -2316,6 +2365,9 @@ a:hover {
     }
     .sm_mr-0 {
         margin-right: 0px;
+    }
+    .sm_ml-0 {
+        margin-left: 0px;
     }
     .sm_h10 {
         height: 10px !important;
@@ -2802,6 +2854,9 @@ a:hover {
     }
     .sm_w1150 {
         width: 1150px;
+    }
+    .sm_font-size-5 {
+        font-size: 5px;
     }
     .sm_font-size-8 {
         font-size: 8px;
