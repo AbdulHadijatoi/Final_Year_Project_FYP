@@ -19,3 +19,13 @@ function clickTarget(targetId) {
 }
 
 mobileNavList.innerHTML = navList.innerHTML;
+
+var q = document.getElementsByClassName("question-para");
+var i;
+
+for (i = 0; i < q.length; i++) {
+    q[i].onclick = function() {
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    };
+}

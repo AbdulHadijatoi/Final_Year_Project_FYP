@@ -238,7 +238,7 @@ main .input-box select,
     background: #F9F9F9;
     padding: 0px 10px;
     border-style: none;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
@@ -258,7 +258,6 @@ main .input-box input[type="button"] {
     font-weight: 500;
     height: 45px;
     margin: 10px 0;
-    opacity: 0.8;
     cursor: pointer;
     transition: all 0.4s ease;
 }
@@ -269,7 +268,65 @@ main .input-box .form-field {
 }
 
 main .content .input-box input[type="button"]:hover {
+    filter: brightness(200%);
+}
+
+main .content .question-para {
+    width: 100%;
+    height: 60px;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main .faq .question-para:before {
+    content: '►';
+    margin-right: 10px;
+}
+
+main .faq .question-para.active:before {
+    content: "▼";
+}
+
+main .faq .answer-para {
+    width: 85%;
+    color: var(--footer-dark);
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+}
+
+main .faq .answer-para.show {
     opacity: 1;
+    max-height: 500px;
+    padding: 10px 0px;
+}
+
+main .location-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);
+    margin: 30px;
+}
+
+main .location-item img {
+    width: 24px;
+    margin-right: 15px;
 }
 
 footer {

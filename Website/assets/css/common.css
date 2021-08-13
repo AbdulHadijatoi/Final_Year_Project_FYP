@@ -24,6 +24,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    transition: all 0.5s ease;
+}
+
+.brightness-105 {
+    filter: brightness(105%);
+}
+
+.brightness-110 {
+    filter: brightness(110%);
 }
 
 .text-uppercase {
@@ -1379,6 +1388,14 @@
     margin: 10px;
 }
 
+.m-20 {
+    margin: 20px;
+}
+
+.m-30 {
+    margin: 30px;
+}
+
 .ml-5 {
     margin-left: 5px;
 }
@@ -2362,6 +2379,9 @@ a:hover {
     }
     .sm_margin-auto {
         margin: auto;
+    }
+    .sm_m-10 {
+        margin: 10px !important;
     }
     .sm_mr-0 {
         margin-right: 0px;
