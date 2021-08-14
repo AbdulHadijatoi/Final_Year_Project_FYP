@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing | Tution Made Easy</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <link rel="stylesheet" href="assets/css/listing.css">
+</head>
+
+<body>
+    <header class="h70 justify-content-center align-items-center footer-dark-bg">
+        <div class="_85-width justify-content-between">
+            <div class="align-in-center for-mobile">
+                <input class="hidden" type="checkbox" id="mobileMenuCheckbox" onchange="toggleDisplay(this, 'mobileMenu')">
+                <img id="btnMobileMenu" src="assets/svg-icons/svg_bars_questions.svg" width="24" onclick="clickTarget('mobileMenuCheckbox');">
+                <div id="mobileMenu" class="mobile-menu position-absolute top-70 left-0 full-height">
+                    <ul class="nav-list" id="mobileNavList">
+                    </ul>
+                </div>
+            </div>
+            <a href="home.html" class="align-in-center"><img class="logo" src="assets/logo_light.svg" height="20"></a>
+            <div class="position-relative align-in-center">
+                <ul id="navList" class="align-in-center for-desktop">
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="listing.html">Find Tutor</a>
+                    </li>
+                    <li>
+                        <a href="account/signup.html">Become Tutor</a>
+                    </li>
+                </ul>
+                <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
+                <img class="ac-icon cursor-pointer" id="profileMenuButton" src="assets/svg-icons/svg_empty-ac.svg" onclick="clickTarget('profileMenuCheckbox');">
+
+                <div id="profileMenu" class="profile-menu position-absolute top-50 right-0 border-01-white">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="profile.html">
+                                <img class="" src="assets/svg-icons/svg_profile.svg">
+                                <span class="links_name">Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img class="" src="assets/svg-icons/svg_logout.svg">
+                                <span class="links_name">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="full-width">
+        <div class="content vh100 _70-width justify-content-center pt-60 sm_90-width">
+            <section class="full-width light-text">
+
+                <h2 class="text-uppercase font-weight-600 font-size-20 full-width sm_text-align-center primary-2-text">Find A Teacher</h2>
+                <form class="field-container hover-effect mb-40">
+                    <input class="sm_text-align-center" type="text" name="keyword" placeholder="Search subject, location, or tutor name">
+                </form>
+
+                <div class="full-width justify-content-between sm_flex-column sm_flex_wrap mb-30">
+                    <form class="align-in-center sm_flex_wrap">
+                        <div class="select-container hover-effect mr-10 sm_mt-10">
+                            <select name="subjects">
+                                <option selected>All Subjects</option>
+                                <option>Javascript</option>
+                                <option>English</option>
+                                <option>Physics</option>
+                                <option>Psychology</option>
+                            </select>
+                        </div>
+                        <div class="select-container hover-effect mr-10 sm_mt-10">
+                            <select name="subjects">
+                                <option selected>All Subjects</option>
+                                <option>Javascript</option>
+                                <option>English</option>
+                                <option>Physics</option>
+                                <option>Psychology</option>
+                            </select>
+                        </div>
+                        <span class="font-size-14 font-weight-500 sm_mt-10" style="opacity: 0.7;">Showing 10 out of 10000 tutors</span>
+                    </form>
+
+                    <div class="align-in-center sm_mt-10">
+                        <div class="btn-change-view hover-effect">
+                            <img src="assets/svg-icons/svg_list_view.svg" width="15">
+                        </div>
+                        <div class="btn-change-view hover-effect">
+                            <img src="assets/svg-icons/svg_thumb_view.svg" width="15">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item sm_flex-column">
+                    <div class="list-sec-1">
+                        <h4>Dr. Sanaullah</h4>
+                        <p class="w320 font-weight-300 font-size-15">Lorem Ipsum is simply dummy text of the printing and typesetting industry printing and typesetting industry.<a class="hover-effect" href="#">READ MORE</a></p>
+                    </div>
+                    <div class="list-sec-2">
+                        <p class="font-size-13 align-in-center mb-10"> <img class="mr-10" src="assets/svg-icons/svg_subject.svg" alt="course" width="18"><span>Java Script</span></p>
+                        <p class="font-size-13 align-in-center mb-10"> <img class="mr-10" src="assets/svg-icons/svg_location_2.svg" alt="course" width="18"><span>Java Script</span></p>
+                        <p class="font-size-13 align-in-center"> <img class="mr-10" src="assets/svg-icons/svg_students.svg" alt="course" width="18"><span>Java Script</span></p>
+                    </div>
+                    <div class="list-sec-3 align-in-center flex-column font-size-13">
+                        <p>Overall Ratting (3)</p>
+                        <div class="align-items-center mb-20 mt-20">
+                            <img src="assets/svg-icons/svg_star.svg" width="18">
+                            <img src="assets/svg-icons/svg_star.svg" width="18">
+                            <img src="assets/svg-icons/svg_star.svg" width="18">
+                            <img src="assets/svg-icons/svg_star.svg" width="18">
+                            <img src="assets/svg-icons/svg_star.svg" width="18">
+                            <span class="ml-10">4.7</span>
+                        </div>
+                        <a href="tutor/profile.html" class="w200 h40 footer-dark-bg border-01-white align-in-center text-decoration-none light-text">View Profile</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="content">
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link_name">
+                        <a href="home.html"><img src="assets/logo_footer.svg" height="24" class="footer-logo"></a>
+                    </li>
+                    <p class="footer-text font-weight-300 font-size-13">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <br>
+                    <li>
+                        <a class="align-items-center" href="tel:+923362735187"><img class="m-10" src="assets/svg-icons/svg_phone.svg" width="20"><span class="font-weight-800 footer-text">0336 2735187</span></a>
+                    </li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Popular Subjects</li>
+                    <li><a href="#">Maths Tutor</a></li>
+                    <li><a href="#">English us Tutor</a></li>
+                    <li><a href="#">Physics Tutor</a></li>
+                    <li><a href="#">Chemistry Tutor</a></li>
+                    <li><a href="#">Biology Tutor</a></li>
+                    <li><a href="#">It Tutor</a></li>
+                    <li><a href="#">History Tutor</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Popular Locations</li>
+                    <li><a href="#">Larkana Tutor</a></li>
+                    <li><a href="#">Sukkur Tutor</a></li>
+                    <li><a href="#">Karachi Tutor</a></li>
+                    <li><a href="#">Islamabad Tutor</a></li>
+                    <li><a href="#">Lahore Tutor</a></li>
+                    <li><a href="#">Hyderabad Tutor</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Popular Courses</li>
+                    <li><a href="#">Maths</a></li>
+                    <li><a href="#">Programming</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Courses</li>
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Photoshop</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="bottom-details">
+            <div class="bottom_text">
+                <span class="copyright_text">@ 2021 Tuition Made Easy - All Rights Reserved</span>
+                <span class="policy_terms">
+          <a href="#">Privacy Policy</a>
+                <a href="#"> Copyright</a>
+                <a href="#"> Terms of Service</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/home.js"></script>
+</body>
+
+</html>
