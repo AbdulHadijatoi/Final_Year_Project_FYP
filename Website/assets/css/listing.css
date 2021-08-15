@@ -94,10 +94,6 @@ header #btnMobileMenu {
     cursor: pointer;
 }
 
-.for-mobile {
-    display: none;
-}
-
 header .mobile-menu li {
     position: relative;
     margin: 8px 0;
@@ -433,12 +429,6 @@ footer .bottom-details .bottom_text a {
 }
 
 @media screen and (max-width: 768px) {
-    .for-desktop {
-        display: none;
-    }
-    .for-mobile {
-        display: flex;
-    }
     header .logo {
         height: 18px;
     }

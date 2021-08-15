@@ -6,9 +6,15 @@
     --primary-2: #70A1E3;
     --secondary: #496CAC;
     --listing-bg: #262B3E;
+    --listing-bg-light: #212240;
+    --profile-bg: #11111D;
+    --star-gold: #FECC2E;
+    --profile-icon: #1B1E33;
+    --not-black: #090913;
     --footer-text: #B7C3E2;
     --footer-light: #30364C;
     --footer-dark: #202633;
+    --whatsapp: #52B574;
     --subj-1: #32A7DB;
     --subj-2: #9988D9;
     --subj-3: #F27649;
@@ -18,6 +24,20 @@
     --subj-7: #E93F76;
     --subj-8: #BB3144;
     --unchecked: #D7E0E5;
+}
+
+.disable-selection {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 * {
@@ -49,6 +69,26 @@ body {
 
 .text-uppercase {
     text-transform: uppercase;
+}
+
+.whatsapp-bg {
+    background: var(--whatsapp);
+}
+
+.not-black-bg {
+    background: var(--not-black);
+}
+
+.not-black-text {
+    background: var(--not-black);
+}
+
+.profile-icon-bg {
+    background: var(--profile-icon);
+}
+
+.whatsapp-text {
+    color: var(--whatsapp);
 }
 
 .header-bg {
@@ -168,6 +208,26 @@ body {
 
 .border-01-white {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.border-01 {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.border-r-01 {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.border-l-01 {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.border-b-01 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.border-t-01 {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .border-01-black {
@@ -346,6 +406,10 @@ body {
     width: 40px;
 }
 
+.w45 {
+    width: 45px;
+}
+
 .w50 {
     width: 50px;
 }
@@ -392,6 +456,22 @@ body {
 
 ._mt_5 {
     margin-top: -5px;
+}
+
+._mt_6 {
+    margin-top: -6px;
+}
+
+._mt_7 {
+    margin-top: -7px;
+}
+
+._mt_8 {
+    margin-top: -8px;
+}
+
+._mt_9 {
+    margin-top: -9px;
 }
 
 ._mt_10 {
@@ -722,8 +802,28 @@ body {
     width: 10%;
 }
 
+.line-height-10 {
+    line-height: 10px;
+}
+
+.line-height-15 {
+    line-height: 15px;
+}
+
+.line-height-20 {
+    line-height: 20px;
+}
+
+.line-height-25 {
+    line-height: 25px;
+}
+
 .line-height-32 {
     line-height: 32px;
+}
+
+.line-height-30 {
+    line-height: 30px;
 }
 
 .line-height-28 {
@@ -1414,6 +1514,22 @@ body {
     margin: 5px;
 }
 
+.m-6 {
+    margin: 6px;
+}
+
+.m-7 {
+    margin: 7px;
+}
+
+.m-8 {
+    margin: 8px;
+}
+
+.m-9 {
+    margin: 9px;
+}
+
 .m-10 {
     margin: 10px;
 }
@@ -1448,6 +1564,38 @@ body {
 
 .ml-30 {
     margin-left: 30px;
+}
+
+.ml-35 {
+    margin-left: 35px;
+}
+
+.ml-40 {
+    margin-left: 40px;
+}
+
+.ml-45 {
+    margin-left: 45px;
+}
+
+.ml-50 {
+    margin-left: 50px;
+}
+
+.ml-60 {
+    margin-left: 60px;
+}
+
+.ml-65 {
+    margin-left: 65px;
+}
+
+.ml-70 {
+    margin-left: 70px;
+}
+
+.ml-75 {
+    margin-left: 75px;
 }
 
 .mb-5 {
@@ -1528,6 +1676,22 @@ body {
 
 .mt-5 {
     margin-top: 5px;
+}
+
+.mt-6 {
+    margin-top: 6px;
+}
+
+.mt-7 {
+    margin-top: 7px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-9 {
+    margin-top: 9px;
 }
 
 .mt-10 {
@@ -1752,6 +1916,26 @@ body {
 
 .right-0 {
     right: 0px;
+}
+
+.right-5 {
+    right: 5px;
+}
+
+.right-10 {
+    right: 10px;
+}
+
+.right-15 {
+    right: 15px;
+}
+
+.right-20 {
+    right: 20px;
+}
+
+.right-25 {
+    right: 25px;
 }
 
 .top-0 {
@@ -2668,6 +2852,9 @@ a:hover {
     .sm_pl-35 {
         padding-left: 35px;
     }
+    .sm_pr-0 {
+        padding-right: 0px;
+    }
     .sm_pr-5 {
         padding-right: 5px;
     }
@@ -3009,5 +3196,18 @@ a:hover {
     }
     .sm_text_left {
         text-align: left;
+    }
+}
+
+.for-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .for-desktop {
+        display: none;
+    }
+    .for-mobile {
+        display: flex;
     }
 }
