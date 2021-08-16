@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <base href="../">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/panel.css">
@@ -25,7 +26,7 @@
             </li>
             <li>
                 <a href="#">
-                    <img class="" src="assets/svg-icons/svg_tutors.svg">
+                    <img class="" src="assets/svg-icons/svg_subject_a.svg">
                     <span class="links_name">Courses</span>
                 </a>
                 <span class="tooltip">Courses</span>
@@ -46,7 +47,7 @@
             </li>
             <li>
                 <a href="#">
-                    <img class="" src="assets/svg-icons/svg_course.svg">
+                    <img class="" src="assets/svg-icons/svg_quiz.svg">
                     <span class="links_name">Quizes</span>
                 </a>
                 <span class="tooltip">Quizes</span>
@@ -74,7 +75,8 @@
             </li>
         </ul>
     </div>
-    <section class="home-section">
+
+    <section class="home-section full-width">
         <header class="header h80 border-bottom-01-white justify-content-center align-items-center">
             <div class="_85-width justify-content-end sm_justify-content-between">
                 <div class="mobile-view-elem align-in-center display-none">
@@ -90,16 +92,10 @@
                 </div>
                 <div class="position-relative">
                     <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
-                    <img class="ac-icon cursor-pointer" id="profileMenuButton" src="assets/svg-icons/svg_empty-ac.svg" onclick="clickTarget('profileMenuCheckbox');">
+                    <div id="profileMenuButton" class="ac-icon profile-icon" onclick="clickTarget('profileMenuCheckbox');">MU</div>
 
                     <div id="profileMenu" class="profile-menu position-absolute top-60 right-0">
                         <ul class="nav-list">
-                            <li>
-                                <a href="#">
-                                    <img class="" src="assets/svg-icons/svg_profile.svg">
-                                    <span class="links_name">Profile</span>
-                                </a>
-                            </li>
                             <li>
                                 <a href="#">
                                     <img class="" src="assets/svg-icons/svg_logout.svg">
@@ -113,7 +109,36 @@
             </div>
         </header>
 
-        <div class="main-content text-light">Dashboard</div>
+        <div class="main-content">
+
+            <div class="justify-content-between align-items-center">
+                <h3 class="h-dashboard">Dashboard</h3>
+                <div class="align-in-center">
+                    <a class="btn-dashboard mr-10" href="add-course.html">Add Course</a>
+                    <a class="btn-dashboard" href="create-quiz.html">Create Quiz</a>
+                </div>
+            </div>
+
+            <div class="full-width align-items-center flex-wrap text-white mt-20">
+
+                <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg mr-10 sm_48-width">
+                    <div>
+                        <p>You have students</p>
+                        <h2 class="font-weight-500 font-size-26">421</h3>
+                    </div>
+                    <img src="assets/svg-icons/svg_graduation_students.svg" alt="student-hat" width="50">
+                </div>
+
+                <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg sm_48-width">
+                    <div>
+                        <p>You have Courses</p>
+                        <h2 class="font-weight-500 font-size-26">12</h3>
+                    </div>
+                    <img src="assets/svg-icons/svg_courses_b.svg" alt="student-hat" width="50">
+                </div>
+
+            </div>
+        </div>
 
         <footer class="header h80 border-top-01-white justify-content-center align-items-center text-light">
 

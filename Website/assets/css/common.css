@@ -7,6 +7,7 @@
     --secondary: #496CAC;
     --listing-bg: #262B3E;
     --listing-bg-light: #212240;
+    --dashboard-card: #191A2C;
     --profile-bg: #11111D;
     --star-gold: #FECC2E;
     --profile-icon: #1B1E33;
@@ -69,6 +70,10 @@ body {
 
 .text-uppercase {
     text-transform: uppercase;
+}
+
+.dashboard-card-bg {
+    background: var(--dashboard-card);
 }
 
 .whatsapp-bg {
@@ -1060,6 +1065,10 @@ body {
 
 .h120 {
     height: 120px;
+}
+
+.min-h120 {
+    min-height: 120px;
 }
 
 .h130 {
@@ -2545,6 +2554,9 @@ a:hover {
     }
     .sm_40-width {
         width: 40%;
+    }
+    .sm_48-width {
+        width: 48%;
     }
     .sm_50-width {
         width: 50%;
