@@ -18,21 +18,21 @@
         </div>
         <ul class="nav-list" id="navList">
             <li>
-                <a class="active" href="#">
+                <a href="#">
                     <img class="" src="assets/svg-icons/svg_dashboard.svg">
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="tutor/courses.html">
+                <a href="#">
                     <img class="" src="assets/svg-icons/svg_subject_a.svg">
                     <span class="links_name">Courses</span>
                 </a>
                 <span class="tooltip">Courses</span>
             </li>
             <li>
-                <a href="#">
+                <a class="active" href="#">
                     <img class="" src="assets/svg-icons/svg_create_plus.svg">
                     <span class="links_name">Create Course</span>
                 </a>
@@ -112,72 +112,93 @@
         <div class="main-content light-text">
 
             <div class="justify-content-between align-items-center">
-                <h3 class="h-dashboard">My Dashboard</h3>
+                <h3 class="h-dashboard">Update Profile</h3>
                 <div class="align-in-center">
-                    <a class="btn-dashboard mr-10" href="add-course.html">Add Course</a>
-                    <a class="btn-dashboard" href="create-quiz.html">Create Quiz</a>
+                    <a class="btn-dashboard mr-10" href="add-course.html">View Profile</a>
                 </div>
             </div>
 
-            <div class="full-width align-items-center flex-wrap text-white mt-20">
-
-                <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg mr-10 sm_48-width">
-                    <div>
-                        <p>You have students</p>
-                        <p class="font-weight-500 font-size-26">421</p>
-                    </div>
-                    <img src="assets/svg-icons/svg_graduation_students.svg" alt="student-hat" width="50">
-                </div>
-
-                <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg sm_48-width">
-                    <div>
-                        <p>You have Courses</p>
-                        <p class="font-weight-500 font-size-26">12</p>
-                    </div>
-                    <img src="assets/svg-icons/svg_courses_b.svg" alt="student-hat" width="50">
-                </div>
-
-            </div>
-
-            <form class="full-width mt-10 p-30 dashboard-card-bg align-items-start flex-column">
-                <div class="full-width justify-content-between">
-                    <h3>My Schedule</h3>
-                    <div class="align-items-start flex-column">
-                        <label>Select Course</label>
-                        <div class="select-container hover-effect mr-10 sm_mt-10">
-                            <select name="subjects">
-                                <option disabled>Select Course</option>
-                                <option selected>JS - Programming Language</option>
-                                <option>English</option>
-                                <option>Physics</option>
-                                <option>Psychology</option>
-                            </select>
+            <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20 dashboard-card-bg p-15 mt-30 align-in-center sm_p-30">
+                <div class="_70-width sm_full-width pt-50 pb-50 sm_pt-20 sm_pb-20">
+                    
+                    <div class="justify-content-between sm_flex-column">
+                        <div class="formField mr-10 sm_mr-0">
+                            <label>First name</label>
+                            <input type="text" name="firstname" placeholder="First name">
+                        </div>
+    
+                        <div class="formField">
+                            <label>Last name</label>
+                            <input type="text" name="lastname" placeholder="Last name">
                         </div>
                     </div>
-                </div>
-                <label class="font-size-14">Session Duration</label>
-                <div class="duration _50-width mt-10 sm_full-width position-relative">
-                    <hr>
-                    <div class="square active"><span>10min</span></div>
-                    <div class="square"><span>20min</span></div>
-                    <div class="square"><span>30min</span></div>
-                    <div class="square"><span>40min</span></div>
-                    <div class="square active"><span>50min</span></div>
-                    <div class="square"><span>60min</span></div>
-                </div>
-                <label class="font-size-14 mt-20">Days of the week</label>
-                <div id="availability" class="availability _50-width mt-10 sm_full-width sm_font-size-11">
-                    <div class="square active">MON</div>
-                    <div class="square active">TUE</div>
-                    <div class="square">WED</div>
-                    <div class="square">THU</div>
-                    <div class="square">FRI</div>
-                    <div class="square active">SAT</div>
-                    <div class="square">SUN</div>
-                </div>
 
-                <div class="full-width justify-content-end mt-20"><a class="btn-dashboard mr-10" href="#">Save</a></div>
-            </form>
+                    <div class="justify-content-between sm_flex-column">
+                        <div class="form-field sm_60-width mr-10 sm_mr-0">
+                            <label>Country</label>
+                            <div class="select-container brightness-120 hover-effect mr-10 sm_mt-10 align-in-center h45" style="border: none;">
+                                <select name="country">
+                                    <option selected disabled>Choose Country</option>
+                                    <option>Pakistan</option>
+                                    <option>USA</option>
+                                    <option>UK</option>
+                                    <option>Behrain</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="form-field sm_60-width mr-10 sm_mr-0">
+                            <label>Province</label>
+                            <div class="full-width select-container brightness-120 hover-effect mr-10 sm_mt-10 align-in-center h45" style="border: none;">
+                                <select name="province">
+                                    <option selected disabled>Choose Province</option>
+                                    <option>Sindh</option>
+                                    <option>Panjab</option>
+                                    <option>Baltistan</option>
+                                    <option>KPK</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="formField">
+                            <label>City</label>
+                            <input type="text" name="city" placeholder="Enter city">
+                        </div>
+                    </div>
+
+                    <div class="justify-content-between sm_flex-column">
+                        <div class="formField mr-10 sm_mr-0">
+                            <label>Gender</label>
+                            <input type="text" name="gender" placeholder="Gender">
+                        </div>
+
+                        <div class="formField mr-10 sm_mr-0">
+                            <label>Contact</label>
+                            <input type="text" name="contact" placeholder="contact">
+                        </div>
+    
+                        <div class="formField">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    
+                    <div class="justify-content-between sm_flex-column align-items-center">
+                        <div class="formField mr-10 sm_mr-0">
+                            <label>Upload Photo</label>
+                            <input type="file" name="photo">
+                        </div>
+
+                        <div class="formField mr-10 sm_mr-0">
+                            <label>Language</label>
+                            <input type="text" name="language" placeholder="Language">
+                        </div>
+    
+                        <a class="btn-dashboard full-width green" href="add-course.html">Save</a>
+                    </div>
+
+                </div>
+            </section>
         </div>
 
         <footer class="header h80 border-top-01-white justify-content-center align-items-center text-light">
@@ -188,7 +209,6 @@
     </section>
 
     <script src="assets/js/panel.js"></script>
-
 
 </body>
 
