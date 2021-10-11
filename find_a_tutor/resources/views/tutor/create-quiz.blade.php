@@ -3,7 +3,6 @@
 
 @section('content')
         <div class="main-content light-text">
-
             <div class="justify-content-between align-items-center">
                 <h3 class="h-dashboard">Create Quiz</h3>
                 <div class="align-in-center">
@@ -31,16 +30,16 @@
                             Integer tincidunt. Cras dapibus.
                         </p>
                     </div>
-                    <a href="#" class="btn-dashboard">View Quizes</a>
+                    <a href="{{ url('tutor/quizes') }}" class="btn-dashboard">View Quizes</a>
                 </div>
                 <div class="border-y-1-white full-width p-5 mt-30 justify-content-between align-items-center">
                     <div class="symbol-box">
-                        <span class="symbol-questions"><img src="assets/svg-icons/svg_bars_questions.svg"></span>
+                        <span class="symbol-questions"><img src="{{ asset('assets/svg-icons/svg_bars_questions.svg') }}"></span>
                         <span class="symbol-label">72 Questions</span>
                     </div>
 
                     <div class="symbol-box">
-                        <span class="symbol-questions"><img src="assets/svg-icons/svg_graduation_students.svg"></span>
+                        <span class="symbol-questions"><img src="{{ asset('assets/svg-icons/svg_graduation_students.svg') }}"></span>
                         <span class="symbol-label">23 Students</span>
                     </div>
                     <div class="symbol-box"></div>
@@ -66,7 +65,7 @@
                         </div>
                     </div>
                     <div class="full-width align-in-center">
-                        <a href="#" class="btn-dashboard green mt-20 sm_mt-10">Save & Add new</a>
+                        <a class="btn-dashboard green mt-20 sm_mt-10">Save & Add new</a>
                     </div>
                 </form>
             </section>

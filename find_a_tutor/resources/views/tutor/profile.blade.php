@@ -17,8 +17,8 @@
                             </div>
                         </div>
                         <div class="align-in-center">
-                            <div class="w50 square whatsapp-bg align-in-center cursor-pointer hover-effect mr-10"><img src="assets/svg-icons/svg_whatsapp.svg" width="24"></div>
-                            <div class="w50 square profile-icon-bg align-in-center cursor-pointer hover-effect"><img src="assets/svg-icons/svg_heart.svg" width="24"></div>
+                            <div class="w50 square whatsapp-bg align-in-center cursor-pointer hover-effect mr-10"><img src="{{ asset('assets/svg-icons/svg_whatsapp.svg') }}" width="24"></div>
+                            <div class="w50 square profile-icon-bg align-in-center cursor-pointer hover-effect"><img src="{{ asset('assets/svg-icons/svg_heart.svg') }}" width="24"></div>
                         </div>
                     </div>
 

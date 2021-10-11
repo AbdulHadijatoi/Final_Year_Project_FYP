@@ -7,7 +7,7 @@
             <div class="justify-content-between align-items-center">
                 <h3 class="h-dashboard">View Courses</h3>
                 <div class="align-in-center">
-                    <a class="btn-dashboard mr-10" href="add-course.html">Add Course</a>
+                    <a class="btn-dashboard mr-10" href="{{ url('tutor/add-course') }}">Add Course</a>
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
                         <a class="link-red">Delete</a>
-                        <a class="link">View</a>
+                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
                         <a class="link-red">Delete</a>
-                        <a class="link">View</a>
+                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
                         <a class="link-red">Delete</a>
-                        <a class="link">View</a>
+                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
                     </div>
                 </div>
 
@@ -72,13 +72,13 @@
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
                         <a class="link-red">Delete</a>
-                        <a class="link">View</a>
+                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
                     </div>
                 </div>
 
-                <div class="course-card align-in-center hover-effect" style="padding: 0px; font-size: 100px; color: var(--profile-bg);">
+                <a href="{{ url('tutor/add-course') }}" class="course-card align-in-center hover-effect text-decoration-none" style="padding: 0px; font-size: 100px; color: var(--profile-bg);">
                     +
-                </div>
+                </a>
 
             </section>
         </div>

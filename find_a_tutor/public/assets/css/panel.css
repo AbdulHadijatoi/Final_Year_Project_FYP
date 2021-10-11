@@ -580,6 +580,7 @@ header .profile-icon {
 
 .main-content .course-card .link-div>.link {
     background: var(--listing-bg-light);
+    text-decoration: none;
 }
 
 .main-content .course-card .link-div>.link:hover,
@@ -593,8 +594,7 @@ header .profile-icon {
     bottom: 0px;
 }
 
-
-.main-content .formField{
+.main-content .formField {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -602,23 +602,24 @@ header .profile-icon {
     margin-bottom: 20px;
 }
 
-.main-content .formField.br-light-white{
+.main-content .formField.br-light-white {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.main-content .formField.flex-row{
+.main-content .formField.flex-row {
     flex-direction: row;
 }
 
-.main-content .formField label{
+.main-content .formField label {
     margin-bottom: 5px;
 }
 
-.main-content .formField.mb-0{
+.main-content .formField.mb-0 {
     margin-bottom: 0px;
 }
 
-.main-content .formField input,.main-content .formField textarea{
+.main-content .formField input,
+.main-content .formField textarea {
     height: 35px;
     padding: 10px;
     background-color: var(--dark);
@@ -627,39 +628,40 @@ header .profile-icon {
     font-size: 12px;
 }
 
-.main-content .formField textarea{
+.main-content .formField textarea {
     min-height: 100px;
 }
 
-.main-content .table-row{
+.main-content .table-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
 }
 
-.main-content .table-row>div{
+.main-content .table-row>div {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.main-content .heading2{
+.main-content .heading2 {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
 }
-.main-content .table-row .st-info p{
+
+.main-content .table-row .st-info p {
     font-size: 10px;
     opacity: 0.5;
 }
 
-.main-content .para{
+.main-content .para {
     font-size: 10px;
     opacity: 0.5;
 }
 
-.main-content .table-row .initials{
+.main-content .table-row .initials {
     margin-right: 10px;
     background: var(--dashboard-card);
     width: 70px;
@@ -670,7 +672,7 @@ header .profile-icon {
     border-radius: 100px;
 }
 
-.main-content .table-row .btn-whatsapp{
+.main-content .table-row .btn-whatsapp {
     width: 50px;
     height: 50px;
     background: var(--whatsapp);
@@ -681,17 +683,18 @@ header .profile-icon {
     margin-right: 10px;
 }
 
-.main-content .symbol-box{
+.main-content .symbol-box {
     display: flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
 }
 
-.main-content .symbol-questions img{
+.main-content .symbol-questions img {
     width: 18px;
 }
-.main-content .symbol-questions{
+
+.main-content .symbol-questions {
     /* w40 h40 align-in-center bg-black cursor-pointer */
     width: 40px;
     height: 40px;
@@ -703,11 +706,11 @@ header .profile-icon {
     margin-right: 10px;
 }
 
-.main-content .symbol-label{
+.main-content .symbol-label {
     font-size: 12px;
 }
-.main-content .table-row .btn-delete{
 
+.main-content .table-row .btn-delete {
     width: 150px;
     height: 50px;
     background: var(--subj-8);
@@ -717,7 +720,7 @@ header .profile-icon {
     cursor: pointer;
 }
 
-.main-content .qa-field{
+.main-content .qa-field {
     width: 100%;
     min-height: 100px;
     border: none;
@@ -729,21 +732,21 @@ header .profile-icon {
     color: var(--light-text);
 }
 
-
-.main-content .qa-field.border-left-3{
+.main-content .qa-field.border-left-3 {
     border: none;
     border-left: 3px solid var(--footer-light);
 }
 
-.main-content .qa-field:focus{
+.main-content .qa-field:focus {
     border: 1px solid var(--whatsapp);
 }
 
-.main-content #qal{
+.main-content #qal {
     margin-bottom: 10px;
 }
 
-.main-content #qal,.main-content #qam{
+.main-content #qal,
+.main-content #qam {
     font-size: 8px;
     display: flex;
     align-items: center;
@@ -751,48 +754,46 @@ header .profile-icon {
     text-align: center;
     background: var(--dashboard-card);
     cursor: pointer;
-    
     font-weight: 700;
-
 }
 
-.main-content .qar{
+.main-content .qar {
     position: absolute;
     visibility: hidden;
 }
 
-.main-content .qa-label span{
+.main-content .qa-label span {
     width: 100%;
     height: 100%;
     padding: 10px;
 }
 
-#mc_container{
+#mc_container {
     display: none;
 }
 
-.main-content .qar:checked + span{
+.main-content .qar:checked+span {
     background: black;
 }
 
-.main-content .op-label{
+.main-content .op-label {
     padding: 5px 10px;
-    margin:0px 5px;
+    margin: 0px 5px;
     font-weight: bolder;
     background-color: var(--footer-light);
 }
 
-.main-content .op-label.correct{
+.main-content .op-label.correct {
     background-color: var(--whatsapp);
 }
 
-.main-content .op-field{
+.main-content .op-field {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.main-content .op-field input[type='text']{
+.main-content .op-field input[type='text'] {
     width: 100%;
     background: var(--dashboard-card);
     text-align: center;
@@ -806,16 +807,14 @@ header .profile-icon {
     .sidebar li .tooltip {
         display: none;
     }
-
     .main-content .course-card {
         width: 100%;
     }
-
-    .table-row{
+    .table-row {
         display: flex;
         flex-direction: column;
     }
-    .btn-dashboard.small{
+    .btn-dashboard.small {
         width: 100%;
         height: 30px;
         margin-top: 15px;
@@ -823,12 +822,11 @@ header .profile-icon {
     }
 }
 
-
-.popup-container{
+.popup-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    background:rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     top: 0px;
     left: 0px;
     z-index: 99;
@@ -838,7 +836,7 @@ header .profile-icon {
     align-items: center;
 }
 
-.popup-container .dialog .btn-close{
+.popup-container .dialog .btn-close {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -851,7 +849,8 @@ header .profile-icon {
     cursor: pointer;
     transform: rotate(45deg);
 }
-.popup-container .dialog{
+
+.popup-container .dialog {
     width: 700px;
     height: 400px;
     border-radius: 20px;
@@ -864,18 +863,18 @@ header .profile-icon {
     background-color: var(--profile-icon);
 }
 
-.popup-container .dialog.question{
+.popup-container .dialog.question {
     width: 800px;
 }
-.popup-container .dialog.alert{
+
+.popup-container .dialog.alert {
     width: 500px;
     height: 240px;
 }
-.popup-container .dialog #close_checkbox:checked .popup-container{
+
+.popup-container .dialog #close_checkbox:checked .popup-container {
     display: none;
 }
-
-
 
 @media (max-width: 720px) {
     .sidebar {
@@ -891,23 +890,19 @@ header .profile-icon {
     .mobile-view-elem {
         display: flex !important;
     }
-
-    .popup-container .dialog{
+    .popup-container .dialog {
         width: 100% !important;
         height: fit-content;
     }
-
-    .st-info label{
+    .st-info label {
         font-size: 12px;
     }
-
-    .initials{
+    .initials {
         width: 45px !important;
         height: 45px !important;
     }
-
-/* sm_width-fit-content sm_height-auto sm_p-10 */
-    .main-content .table-row .btn-delete{
+    /* sm_width-fit-content sm_height-auto sm_p-10 */
+    .main-content .table-row .btn-delete {
         width: fit-content;
         height: fit-content;
         padding: 10px;

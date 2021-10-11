@@ -6,8 +6,8 @@
     <div class="justify-content-between align-items-center">
         <h3 class="h-dashboard">My Dashboard</h3>
         <div class="align-in-center">
-            <a class="btn-dashboard mr-10" href="add-course.html">Add Course</a>
-            <a class="btn-dashboard" href="create-quiz.html">Create Quiz</a>
+            <a class="btn-dashboard mr-10" href="{{ asset('tutor/add-course') }}">Add Course</a>
+            <a class="btn-dashboard" href="{{ asset('tutor/create-quiz') }}">Create Quiz</a>
         </div>
     </div>
 
@@ -51,11 +51,11 @@
         <div class="duration _50-width mt-10 sm_full-width position-relative">
             <hr>
             <div class="square active"><span>10min</span></div>
-            <div class="square"><span>20min</span></div>
             <div class="square"><span>30min</span></div>
-            <div class="square"><span>40min</span></div>
-            <div class="square active"><span>50min</span></div>
-            <div class="square"><span>60min</span></div>
+            <div class="square"><span>1hour</span></div>
+            <div class="square"><span>1.5hour</span></div>
+            <div class="square active"><span>2hour</span></div>
+            <div class="square"><span>3hour</span></div>
         </div>
         <label class="font-size-14 mt-20">Days of the week</label>
         <div id="availability" class="availability _50-width mt-10 sm_full-width sm_font-size-11">
@@ -69,7 +69,7 @@
         </div>
 
         <div class="full-width justify-content-end mt-20">
-            <a class="btn-dashboard mr-10" href="#">Save</a>
+            <a class="btn-dashboard mr-10">Save</a>
         </div>
     </form>
 </div>
