@@ -25,13 +25,13 @@
                     <div class="justify-content-between mb-30">
                         <div class="align-items-center flex-wrap">
                             <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">421</div>
-                            <p class="light-text font-weight-300 font-size-13 opacity-7 mr-40">Total Students</p>
+                            <p class="light-text font-weight-300 font-size-13 mr-40">Total Students</p>
 
                             <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
-                            <p class="light-text font-weight-300 font-size-13 opacity-7">Courses Created</p>
+                            <p class="light-text font-weight-300 font-size-13">Courses Created</p>
 
                             <div class="user-ratting flex-column font-size-13 ml-75 sm_ml-0 sm_mt-20">
-                                <p class="light-text font-weight-300 font-size-13 opacity-7">Overall Ratting (3)</p>
+                                <p class="light-text font-weight-300 font-size-13">Overall Ratting (3)</p>
                                 <div class="align-items-center mt-5 mb-10">
                                     <img class="gold-star">
                                     <img class="gold-star">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
 
-                    <p class="light-text font-weight-300 font-size-14 line-height-25 opacity-7">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p class="light-text font-weight-300 font-size-14 line-height-25">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     <br>
 
                     <p class="skill"><span><strong>Education: </strong> Phd</span>
@@ -70,7 +70,7 @@
                         <div>RN</div>
                         <div>HR</div>
                     </div>
-                    <br><br><br>
+                    <br><br>
                     <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center m-5 mb-10">Availability</h2>
                     <div id="availability" class="availability">
                         <div class="square active">MON</div>
@@ -80,6 +80,12 @@
                         <div class="square">FRI</div>
                         <div class="square active">SAT</div>
                         <div class="square">SUN</div>
+                    </div>
+
+                    <br>
+                    <div class="share-profile">
+                        <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center m-5 mb-10">Share Profile</h2>
+                        <input class="input-text" type="text" value="tutionmadeeasy.com/tutor1" disabled>
                     </div>
                 </div>
             </section>
@@ -97,7 +103,7 @@
                     <span>43 Students</span>
                     <hr>
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                    <a class="link">Still running</a>
+                    <a class="link">Feedback/Reviews</a>
                 </div>
                 <div class="course-card">
                     <div class="floating-box square">
@@ -109,7 +115,7 @@
                     <span>43 Students</span>
                     <hr>
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                    <a class="link">Still running</a>
+                    <a class="link">Feedback/Reviews</a>
                 </div>
                 <div class="course-card">
                     <div class="floating-box square">
@@ -121,7 +127,7 @@
                     <span>43 Students</span>
                     <hr>
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                    <a class="link">Still running</a>
+                    <a class="link">Feedback/Reviews</a>
                 </div>
             </section>
         </div>

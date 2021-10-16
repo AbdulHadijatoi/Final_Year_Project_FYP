@@ -13,10 +13,6 @@
 
             <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20">
                 <div class="course-card min-h280">
-                    <div class="floating-box square">
-                        <img alt="star_icon">
-                        <p>3.7</p>
-                    </div>
                     <span class="category">Programming</span>
                     <p class="title">JS - Javascript</p>
                     <span>43 Students</span>
@@ -29,10 +25,6 @@
                 </div>
 
                 <div class="course-card min-h280">
-                    <div class="floating-box square">
-                        <img alt="star_icon">
-                        <p>3.7</p>
-                    </div>
                     <span class="category">Programming</span>
                     <p class="title">JS - Javascript</p>
                     <span>43 Students</span>
@@ -45,10 +37,6 @@
                 </div>
 
                 <div class="course-card min-h280">
-                    <div class="floating-box square">
-                        <img alt="star_icon">
-                        <p>3.7</p>
-                    </div>
                     <span class="category">Programming</span>
                     <p class="title">JS - Javascript</p>
                     <span>43 Students</span>
@@ -61,10 +49,6 @@
                 </div>
 
                 <div class="course-card min-h280">
-                    <div class="floating-box square">
-                        <img alt="star_icon">
-                        <p>3.7</p>
-                    </div>
                     <span class="category">Programming</span>
                     <p class="title">JS - Javascript</p>
                     <span>43 Students</span>

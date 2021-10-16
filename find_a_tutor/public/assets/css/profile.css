@@ -380,6 +380,19 @@ main .course-card>.para {
     font-weight: 300;
 }
 
+main .input-text {
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--secondary);
+    color: var(--light-text);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: monospace;
+    padding: 10px 15px;
+}
+
 .btn-dashboard {
     border: none;
     outline: none;
