@@ -35,7 +35,7 @@
 
                 <div class="align-in-center sm_mt-10">
                     <div class="btn-change-view hover-effect">
-                        <img src="{{asset('}assets/svg-icons/svg_list_view.svg')}" width="15">
+                        <img src="{{asset('assets/svg-icons/svg_list_view.svg')}}" width="15">
                     </div>
                     <div class="btn-change-view hover-effect">
                         <img src="{{asset('assets/svg-icons/svg_thumb_view.svg')}}" width="15">

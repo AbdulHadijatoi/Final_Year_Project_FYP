@@ -6,7 +6,11 @@
         <title>{{ $title ?? 'Tution Made Easy' }}</title>
         <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
-        <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+        @if(request()->is('listing*'))
+            <link rel="stylesheet" href="{{ asset('assets/css/listing.css') }}">
+        @else
+            <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+        @endif
     <head>
 <body>
 
