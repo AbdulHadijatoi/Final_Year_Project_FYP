@@ -17,11 +17,14 @@
                 <li class="{{ (request()->is('listing*')) ? 'active' : '' }}">
                     <a href="{{url('listing')}}">Find Tutor</a>
                 </li>
-                <li class="highlight">
+                <li>
                     <a href="{{ url('signup') }}">Become Tutor</a>
                 </li>
                 <li>
                     <a href="{{ url('login') }}">Sign in</a>
+                </li>
+                <li class="highlight">
+                    <a href="{{ url('signup') }}">Register</a>
                 </li>
             </ul>
             <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">

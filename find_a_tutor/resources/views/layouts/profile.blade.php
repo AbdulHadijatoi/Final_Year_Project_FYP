@@ -10,10 +10,13 @@
     <head>
 <body>
 
-    @include('includes.header_1')
-
+    @if(!request()->is('student/take-quiz*'))
+        @include('includes.header_1')
+    @endif
     @yield('content')
 
+
+    @if(!request()->is('student/take-quiz*'))
     <footer>
         <div class="bottom-details border-t-01">
             <div class="bottom_text">
@@ -26,7 +29,8 @@
             </div>
         </div>
     </footer>
-
+    @endif
+    
     <script src="{{ asset('assets/js/profile.js') }}"></script>
 </body>
 

@@ -97,8 +97,8 @@ Route::get('/student/make-profile', function () {
     return view('student/make-profile', ['title' => 'Student Make Profile']);
 });
 
-Route::get('/student/view-all-quiz', function () {
-    return view('student/view-all-quiz', ['title' => 'Student View All Quiz']);
+Route::get('/student/quizes', function () {
+    return view('student/quizes', ['title' => 'Student View All Quiz']);
 });
 
 Route::get('/admin/add-tutor', function () {

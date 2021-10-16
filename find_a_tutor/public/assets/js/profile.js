@@ -5,17 +5,35 @@ for (const elem of square) {
     elem.style.width = elem.clientWidth + "px";
 }
 
-function hideElem(elemID){
+function hideElem(elemID) {
     document.getElementById(elemID).style.display = 'none';
 }
-function showElem(elemID){
+
+function showElem(elemID) {
     document.getElementById(elemID).style.display = 'flex';
 }
 
-function showHide(show,hide){
+function showHide(show, hide) {
     var s = document.getElementById(show);
     var h = document.getElementById(hide);
 
     s.style.display = 'flex';
     h.style.display = 'none';
+}
+
+function clickTarget(targetId) {
+    document.getElementById(targetId).click();
+}
+
+function toggleDisplay(thisElem, targetElemId) {
+    if (thisElem.checked) {
+        setDisplay(targetElemId, "block");
+    } else {
+        setDisplay(targetElemId, "none");
+    }
+}
+
+function setDisplay(elemId, display) {
+    var x = document.getElementById(elemId);
+    x.style.display = display;
 }

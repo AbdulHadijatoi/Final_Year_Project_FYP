@@ -76,9 +76,6 @@
             </div>
         </div>
 
-        <div class="course-card align-in-center hover-effect" style="padding: 0px; font-size: 100px; color: var(--profile-bg);">
-            +
-        </div>
     </section>
 </div>
 @endsection

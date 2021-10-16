@@ -66,14 +66,14 @@ header .profile-icon {
     text-decoration: none;
     transition: all 0.4s ease;
     background: #11101D;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     padding: 10px 13px;
 }
 
 .profile-menu li a:hover,
 .profile-menu li a:focus,
 .profile-menu li a.active {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
     border-left: 5px solid white;
 }
 
@@ -131,14 +131,14 @@ header .profile-icon {
     text-decoration: none;
     transition: all 0.4s ease;
     background: #11101D;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     padding: 10px 13px;
 }
 
 .mobile-menu li a:hover,
 .mobile-menu li a:focus,
 .mobile-menu li a.active {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
     border-left: 5px solid white;
 }
 
@@ -262,14 +262,13 @@ header .profile-icon {
     text-decoration: none;
     transition: all 0.4s ease;
     background: #11101D;
-    opacity: 0.9;
     padding: 10px 13px;
 }
 
 .sidebar li a:hover,
 .sidebar li a:focus,
 .sidebar li a.active {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
     border-left: 5px solid white;
 }
 
