@@ -1,9 +1,11 @@
+@extends('layouts.dashboard')
 
+@section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center">
         <h3 class="h-dashboard">View Courses</h3>
         <div class="align-in-center">
-            <a class="btn-dashboard mr-10" href="add-course.html">Add Course</a>
+            <a class="btn-dashboard mr-10" href="{{('student/enroll-course')}}">Enroll Course</a>
         </div>
     </div>
 
@@ -20,7 +22,7 @@
             <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
             <div class="link-div">
                 <a class="link-red">Delete</a>
-                <a class="link">View Quizes</a>
+                <a href="{{url('student/quizes')}}" class="link">View Quizes</a>
             </div>
         </div>
 
@@ -36,7 +38,7 @@
             <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
             <div class="link-div">
                 <a class="link-red">Delete</a>
-                <a class="link">View Quizes</a>
+                <a href="{{url('student/quizes')}}" class="link">View Quizes</a>
             </div>
         </div>
 
@@ -52,7 +54,7 @@
             <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
             <div class="link-div">
                 <a class="link-red">Delete</a>
-                <a class="link">View Quizes</a>
+                <a href="{{url('student/quizes')}}" class="link">View Quizes</a>
             </div>
         </div>
 
@@ -68,13 +70,14 @@
             <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
             <div class="link-div">
                 <a class="link-red">Delete</a>
-                <a class="link">View Quizes</a>
+                <a href="{{url('student/quizes')}}" class="link">View Quizes</a>
             </div>
         </div>
 
-        <div class="course-card height-auto align-in-center hover-effect" style="padding: 0px; font-size: 100px; color: var(--profile-bg);">
+        <a href="{{url('student/enroll-course')}}" class="course-card height-auto align-in-center hover-effect text-decoration-none cursor-pointer" style="padding: 0px; font-size: 100px; color: var(--profile-bg);">
             +
-        </div>
+        </a>
 
     </section>
 </div>
+@endsection

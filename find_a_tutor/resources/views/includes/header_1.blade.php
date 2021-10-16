@@ -1,4 +1,3 @@
-
 <header class="h70 justify-content-center align-items-center footer-dark-bg">
     <div class="_85-width justify-content-between">
         <div class="align-in-center for-mobile">
@@ -18,8 +17,11 @@
                 <li>
                     <a href="{{url('listing')}}">Find Tutor</a>
                 </li>
-                <li>
+                <li class="highlight">
                     <a href="{{ url('signup') }}">Become Tutor</a>
+                </li>
+                <li>
+                    <a href="{{ url('login') }}">Sign in</a>
                 </li>
             </ul>
             <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">

@@ -23,7 +23,7 @@ header .profile-menu {
 
 header .profile-menu .nav-list {
     height: 100%;
-    padding: 6px 14px;
+    padding: 6px;
 }
 
 header .profile-menu li {
@@ -158,6 +158,23 @@ header #navList li {
 header #navList li a {
     color: var(--light-text);
     transition: all 0.4s ease;
+}
+
+
+/* highlight */
+
+header #navList li.highlight {
+    background-color: var(--secondary);
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 130px;
+}
+
+header #navList li.highlight:hover {
+    background-color: var(--primary);
 }
 
 header #navList li a:hover,

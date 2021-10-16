@@ -1,10 +1,12 @@
+@extends('layouts.dashboard')
 
+@section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center">
         <h3 class="h-dashboard">My Dashboard</h3>
         <div class="align-in-center">
-            <a class="btn-dashboard mr-10" href="view-all-quiz.html">View Quizes</a>
-            <a class="btn-dashboard" href="enroll-course.html">Enroll Course</a>
+            <a class="btn-dashboard mr-10" href="{{url('student/quizes')}}">View Quizes</a>
+            <a class="btn-dashboard" href="{{url('student/enroll-course')}}">Enroll Course</a>
         </div>
     </div>
 
@@ -15,7 +17,7 @@
                 <p>You have Tutors</p>
                 <p class="font-weight-500 font-size-26">12</p>
             </div>
-            <img src="assets/svg-icons/svg_courses_b.svg" alt="student-hat" width="50">
+            <img src="{{asset('assets/svg-icons/svg_courses_b.svg')}}" alt="student-hat" width="50">
         </div>
 
         <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg sm_48-width">
@@ -23,7 +25,7 @@
                 <p>You have Courses</p>
                 <p class="font-weight-500 font-size-26">412</p>
             </div>
-            <img src="assets/svg-icons/svg_view_records.svg" alt="student-hat" width="50">
+            <img src="{{asset('assets/svg-icons/svg_view_records.svg')}}" alt="student-hat" width="50">
         </div>
 
     </div>
@@ -42,7 +44,7 @@
                 <hr>
                 <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                 <div class="link-div">
-                    <a class="link">View Quizes</a>
+                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
                 </div>
             </div>
 
@@ -57,7 +59,7 @@
                 <hr>
                 <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                 <div class="link-div">
-                    <a class="link">View Quizes</a>
+                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
                 </div>
             </div>
 
@@ -72,7 +74,7 @@
                 <hr>
                 <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                 <div class="link-div">
-                    <a class="link">View Quizes</a>
+                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
                 </div>
             </div>
 
@@ -87,10 +89,11 @@
                 <hr>
                 <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                 <div class="link-div">
-                    <a class="link">View Quizes</a>
+                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
                 </div>
             </div>
 
         </section>
     </div>
 </div>
+@endsection

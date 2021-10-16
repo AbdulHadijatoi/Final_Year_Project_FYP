@@ -1,5 +1,4 @@
-
-@extends('layouts.dashboard')
+@extends('layouts.home')
 
 @section('content')
 <main class="full-width flex-column light-text">
@@ -41,5 +40,5 @@
     </div>
 </main>
 @endsection
-    <!-- <script src="assets/js/home.js"></script>
-    <script src="assets/js/profile.js"></script> -->
+<!-- <script src="assets/js/home.js"></script>
+<script src="assets/js/profile.js"></script> -->

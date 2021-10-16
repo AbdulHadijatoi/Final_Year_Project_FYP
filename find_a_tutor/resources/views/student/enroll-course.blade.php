@@ -1,10 +1,12 @@
+@extends('layouts.dashboard')
 
+@section('content')
 <div class="main-content light-text">
 
     <div class="justify-content-between align-items-center">
         <h3 class="h-dashboard">Enroll Courses</h3>
         <div class="align-in-center">
-            <a class="btn-dashboard mr-10" href="add-course.html">View Courses</a>
+            <a class="btn-dashboard mr-10" href="{{url('student/courses')}}">View Courses</a>
         </div>
     </div>
 
@@ -23,5 +25,4 @@
         </div>
     </section>
 </div>
-
-        
+@endsection

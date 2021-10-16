@@ -1,10 +1,12 @@
+@extends('layouts.dashboard')
 
+@section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center sm_flex-column">
         <h3 class="h-dashboard sm_full-width">Student Profiles</h3>
         <div class="align-in-center sm_full-width sm_mt-10">
             <div class="formField flex-row br-light-white mb-0 align-in-center mr-10">
-                <img class="ml-15" src="assets/svg-icons/svg_search.svg" width="18">
+                <img class="ml-15" src="{{asset('assets/svg-icons/svg_search.svg')}}" width="18">
                 <input class="full-width" type="text" name="username" placeholder="Username">
             </div>
         </div>
@@ -23,8 +25,8 @@
                             </div>
                         </div>
                         <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                            <div class="btn-dashboard small red hover-effect">Delete</div>
+                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
+                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
                         </div>
                     </td>
                     <td class="table-row">
@@ -36,8 +38,8 @@
                             </div>
                         </div>
                         <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                            <div class="btn-dashboard small red hover-effect">Delete</div>
+                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
+                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
                         </div>
                     </td>
                     <td class="table-row">
@@ -49,8 +51,8 @@
                             </div>
                         </div>
                         <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                            <div class="btn-dashboard small red hover-effect">Delete</div>
+                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
+                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
                         </div>
                     </td>
                     <td class="table-row">
@@ -62,8 +64,8 @@
                             </div>
                         </div>
                         <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                            <div class="btn-dashboard small red hover-effect">Delete</div>
+                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
+                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
                         </div>
                     </td>
                 </tr>
@@ -71,3 +73,4 @@
         </table>
     </section>
 </div>
+@endsection

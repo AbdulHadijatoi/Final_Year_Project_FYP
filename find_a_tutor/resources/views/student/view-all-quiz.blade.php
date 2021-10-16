@@ -1,4 +1,6 @@
+@extends('layouts.dashboard')
 
+@section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center">
         <h3 class="h-dashboard">View Quizes</h3>
@@ -79,5 +81,4 @@
         </div>
     </section>
 </div>
-
-      
+@endsection

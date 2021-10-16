@@ -1,10 +1,11 @@
+@extends('layouts.dashboard')
 
-
+@section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center">
         <h3 class="h-dashboard">Update Profile</h3>
         <div class="align-in-center">
-            <a class="btn-dashboard mr-10" href="add-course.html">View Profile</a>
+            <a class="btn-dashboard mr-10" href="{{url('student/profile')}}">Preview Profile</a>
         </div>
     </div>
 
@@ -84,9 +85,10 @@
                     <input type="text" name="language" placeholder="Language">
                 </div>
 
-                <a class="btn-dashboard full-width green" href="add-course.html">Save</a>
+                <a class="btn-dashboard full-width green">Save</a>
             </div>
 
         </div>
     </section>
 </div>
+@endsection

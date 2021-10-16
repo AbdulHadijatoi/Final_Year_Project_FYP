@@ -1,5 +1,6 @@
+@extends('layouts.profile')
 
-
+@section('content')
 <main class="full-width vh100">
     <div class="content _80-width align-items-start flex-column pt-40 sm_90-width flex-wrap light-text pb-90">
         <h2 class="font-weight-500 font-size-20 full-width sm_text-align-center">Student Profile</h2>
@@ -23,7 +24,6 @@
 
                         <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
                         <p class="light-text font-weight-300 font-size-13 opacity-7">Tutors Studied</p>
-
                     </div>
                 </div>
 
@@ -98,6 +98,6 @@
         </section>
     </div>
 </main>
-
 <!-- <script src="assets/js/home.js"></script> -->
 <!-- <script src="assets/js/profile.js"></script> -->
+@endsection

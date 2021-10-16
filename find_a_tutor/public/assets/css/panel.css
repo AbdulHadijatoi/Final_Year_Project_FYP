@@ -598,7 +598,7 @@ header .profile-icon {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: var(--dark);
+    /* background-color: var(--dark); */
     margin-bottom: 20px;
 }
 
