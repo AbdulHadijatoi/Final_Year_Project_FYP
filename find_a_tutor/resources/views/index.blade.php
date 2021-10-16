@@ -37,7 +37,7 @@
 
                         <div class="form-field">
                             <input type="button" class="input-field border-radius-3" id="location" value="Find Tutor Now">
-                            <img class="btn-right-icon" src="assets/svg-icons/svg_search.svg" width="20">
+                            <img class="btn-right-icon" src="{{asset('assets/svg-icons/svg_search.svg')}}" width="20">
                         </div>
 
                     </form>
@@ -52,7 +52,7 @@
 
             <div class="_85-width sm_full-width flex-column align-items-center text-center mb-40">
 
-                <img src="assets/svg-icons/svg_tutors.svg" width="35">
+                <img src="{{asset('assets/svg-icons/svg_tutors.svg')}}" width="35">
                 <h2 class="text-uppercase mt-10 mb-20 opacity-8">Choose from 1000s of Tutors</h2>
                 <p class="font-size-14 opacity-7 _75-width sm_full-width">At Tution Made Easy we understand that finding a tutor is not always easy task. Whether searching for primary. A-Level or an adult learner, we strive to make the process as simple as possible - listing all personal and private tutors
                     closest to you</p>
@@ -79,7 +79,7 @@
 
             <div class="_70-width sm_full-width flex-column align-items-center text-center mb-40">
 
-                <img src="assets/svg-icons/svg_course_dark.svg" width="35">
+                <img src="{{asset('assets/svg-icons/svg_course_dark.svg')}}" width="35">
                 <h2 class="text-uppercase mt-10 mb-20 opacity-8">Browse by subject</h2>
                 <p class="font-size-14 opacity-7 _75-width sm_full-width">At Tution Made Easy we understand that finding a tutor is not always easy task. Whether searching for primary.</p>
 
@@ -88,49 +88,49 @@
             <div class="full-width align-in-center justify-content-center flex-wrap">
                 <a href="#" class="subj-1-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_academic.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_academic.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black sm_h50"><span class="opacity-8">Academic</span></div>
                 </a>
                 <a href="#" class="subj-2-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_languages.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_languages.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black"><span class="opacity-8">Languages</span></div>
                 </a>
                 <a href="#" class="subj-3-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_music.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_music.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black"><span class="opacity-8">Music</span></div>
                 </a>
                 <a href="#" class="subj-4-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_art.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_art.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black"><span class="opacity-8">Art</span></div>
                 </a>
                 <a href="#" class="subj-5-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_health.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_health.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black"><span class="opacity-8">Health</span></div>
                 </a>
                 <a href="#" class="subj-6-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_it.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_it.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black"><span class="opacity-8">IT</span></div>
                 </a>
                 <a href="#" class="subj-7-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_professional.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_professional.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black"><span class="opacity-8">Professional</span></div>
                 </a>
                 <a href="#" class="subj-8-bg w250 h220 border-radius-15 overflow-hidden text-decoration-none m-10 sm_w150 sm_h150 sm_border-radious-10">
                     <div class="full-width h160 align-in-center sm_h100">
-                        <img src="assets/svg-icons/svg_lifestyle.svg" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
+                        <img src="{{asset('assets/svg-icons/svg_lifestyle.svg')}}" width="50" style="filter: brightness(0%); opacity: 0.3;" class="sm_h50">
                     </div>
                     <div class="full-width h60 border-01-black bg-white align-in-center font-weight-800 text-black"><span class="opacity-8">Lifestyle</span></div>
                 </a>
@@ -147,20 +147,20 @@
             <div class="_50-width full-height sm_h450 sm_full-width align-in-center flex-column">
                 <h2 class="text-uppercase mt-10 mb-10 opacity-8 full-width text-center">Explore by location</h2>
                 <div class="light-text _80-width mt-20 sm_full-width flex-wrap justify-content-center">
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Karachi</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Lahore</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Islamabad</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Hyderabad</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Sindh</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Sukkur</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Khairpur</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Balochistan</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Skardu</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Rawalpindi</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Larkana</a>
-                    <a class="location-item sm_m-10" href="#"><img src="assets/svg-icons/svg_checked.svg">Gilgit Baltistan</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Karachi</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Lahore</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Islamabad</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Hyderabad</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Sindh</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Sukkur</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Khairpur</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Balochistan</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Skardu</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Rawalpindi</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Larkana</a>
+                    <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Gilgit Baltistan</a>
                 </div>
-                <a href="#" class="w200 h50 font-weight-600 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center mt-20"><img class="mr-10" src="assets/svg-icons/svg_location_2.svg" width="18"><span>See More Location </span></a>
+                <a href="#" class="w200 h50 font-weight-600 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center mt-20"><img class="mr-10" src="{{asset('assets/svg-icons/svg_location_2.svg')}}" width="18"><span>See More Location </span></a>
             </div>
             <div class="_50-width full-height sm_h150 bg-cover-center sm_full-width" style="background-image: url('assets/images/location_2.jpg');"></div>
         </section>
@@ -172,10 +172,10 @@
                 <p class="font-size-14 opacity-7 _75-width sm_full-width">At Tution Made Easy we understand that finding a tutor is not always easy task. Whether searching for primary.</p>
             </div>
             <div class="_80-width justify-content-between flex-wrap mt-70 sm_90-width sm_justify-content-center">
-                <img src="assets/svg-icons/step_1.svg" class="w220 sm_w140 m-10">
-                <img src="assets/svg-icons/step_2.svg" class="w220 sm_w140 m-10">
-                <img src="assets/svg-icons/step_3.svg" class="w220 sm_w140 m-10">
-                <img src="assets/svg-icons/step_4.svg" class="w220 sm_w140 m-10">
+                <img src="{{asset('assets/svg-icons/step_1.svg')}}" class="w220 sm_w140 m-10">
+                <img src="{{asset('assets/svg-icons/step_2.svg')}}" class="w220 sm_w140 m-10">
+                <img src="{{asset('assets/svg-icons/step_3.svg')}}" class="w220 sm_w140 m-10">
+                <img src="{{asset('assets/svg-icons/step_4.svg')}}" class="w220 sm_w140 m-10">
             </div>
             <br><br><br><br><br><br><br><br>
         </section>
@@ -203,7 +203,7 @@
         <section class="secondary-bg light-text full-width justify-content-center align-in-center">
             <div class="align-in-center">
                 <h2 class="font-weight-800 font-size-25 sm_text-align-center sm_display-none mr-30" style="line-height: 1.4;">Find the Right Tutor For You</h2>
-                <a href="#" class="w200 h50 font-weight-700 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center"><span>Find Tutor Now </span><img class="ml-10" src="assets/svg-icons/svg_search.svg" width="18"></a>
+                <a href="#" class="w200 h50 font-weight-700 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center"><span>Find Tutor Now </span><img class="ml-10" src="{{asset('assets/svg-icons/svg_search.svg')}}" width="18"></a>
             </div>
         </section>
 

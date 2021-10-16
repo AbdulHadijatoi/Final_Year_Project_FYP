@@ -26,7 +26,7 @@
                 <p>Total Tutors</p>
                 <p class="font-weight-500 font-size-26">12</p>
             </div>
-            <img src="assets/svg-icons/svg_courses_b.svg" alt="student-hat" width="50">
+            <img src="{{asset('assets/svg-icons/svg_courses_b.svg')}}" alt="student-hat" width="50">
         </div>
 
     </div>

@@ -73,7 +73,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/home.js"></script>
+    <script src="{{asset('assets/js/home.js')}}"></script>
 </body>
 
 </html>

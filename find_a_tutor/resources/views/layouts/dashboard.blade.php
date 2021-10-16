@@ -15,59 +15,60 @@
         </div>
         <ul class="nav-list" id="navList">
         
-        @if(str_contains($title,'Tutor'))
+        @if(request()->is('tutor/*'))
+
             <li>
-                <a class="active" href="{{ url('tutor/dashboard')}}">
+                <a class="{{ (request()->is('tutor/dashboard*')) ? 'active' : '' }}" href="{{ url('tutor/dashboard')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_dashboard.svg')}}">
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ url('tutor/courses')}}">
+                <a class="{{ (request()->is('tutor/courses*')) ? 'active' : '' }}" href="{{ url('tutor/courses')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_subject_a.svg')}}">
                     <span class="links_name">Courses</span>
                 </a>
                 <span class="tooltip">Courses</span>
             </li>
             <li>
-                <a href="{{ url('tutor/add-course')}}">
+                <a class="{{ (request()->is('tutor/add-course*')) ? 'active' : '' }}" href="{{ url('tutor/add-course')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_create_plus.svg')}}">
                     <span class="links_name">Add Course</span>
                 </a>
                 <span class="tooltip">Add Course</span>
             </li>
             <li>
-                <a href="{{ url('tutor/students')}}">
+                <a class="{{ (request()->is('tutor/students*')) ? 'active' : '' }}" href="{{ url('tutor/students')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_graduation_students.svg')}}">
                     <span class="links_name">Students</span>
                 </a>
                 <span class="tooltip">Students</span>
             </li>
             <li>
-                <a href="{{ url('tutor/quizes')}}">
+                <a class="{{ (request()->is('tutor/quizes*')) ? 'active' : '' }}" href="{{ url('tutor/quizes')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_quiz.svg')}}">
                     <span class="links_name">Quizes</span>
                 </a>
                 <span class="tooltip">Quizes</span>
             </li>
             <li>
-                <a href="{{ url('tutor/create-quiz')}}">
+                <a class="{{ (request()->is('tutor/create-quiz*')) ? 'active' : '' }}" href="{{ url('tutor/create-quiz')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_create_plus.svg')}}">
                     <span class="links_name">Create Quiz</span>
                 </a>
                 <span class="tooltip">Create Quiz</span>
             </li>
             <li>
-                <a href="{{ url('tutor/profile')}}">
+                <a class="{{ (request()->is('tutor/profile*')) ? 'active' : '' }}" href="{{ url('tutor/profile')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_profile.svg')}}">
                     <span class="links_name">Profile</span>
                 </a>
                 <span class="tooltip">Profile</span>
             </li>
-        @elseif(str_contains($title,'Student'))
+        @elseif(request()->is('student/*'))
             <li>
-                <a class="active" href="{{ url('student/dashboard')}}">
+                <a class="{{ (request()->is('student/dashboard*')) ? 'active' : '' }}" href="{{ url('student/dashboard')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -75,7 +76,7 @@
             </li>
 
             <li>
-                <a href="{{ url('student/courses')}}">
+                <a class="{{ (request()->is('student/courses*')) ? 'active' : '' }}" href="{{ url('student/courses')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
                     <span class="links_name">View Courses</span>
                 </a>
@@ -83,7 +84,7 @@
             </li>
 
             <li>
-                <a href="{{ url('student/enroll-course')}}">
+                <a class="{{ (request()->is('student/enroll-course*')) ? 'active' : '' }}" href="{{ url('student/enroll-course')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
                     <span class="links_name">Enroll Course</span>
                 </a>
@@ -91,7 +92,7 @@
             </li>
             
             <li>
-                <a href="{{ url('student/quizes')}}">
+                <a class="{{ (request()->is('student/quizes*')) ? 'active' : '' }}" href="{{ url('student/quizes')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
                     <span class="links_name">View Quizes</span>
                 </a>
@@ -99,7 +100,7 @@
             </li>
             
             <li>
-                <a href="{{ url('student/profile')}}">
+                <a class="{{ (request()->is('student/profile*')) ? 'active' : '' }}" href="{{ url('student/profile')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_profile.svg')}}">
                     <span class="links_name">Profile</span>
                 </a>
@@ -107,28 +108,28 @@
             </li>
         @else
             <li>
-                <a href="{{ url('admin/dashboard')}}">
+                <a class="{{ (request()->is('admin/dashboard*')) ? 'active' : '' }}" href="{{ url('admin/dashboard')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ url('admin/add-tutor')}}">
+                <a class="{{ (request()->is('admin/add-tutor*')) ? 'active' : '' }}" href="{{ url('admin/add-tutor')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
                     <span class="links_name">Add Tutor</span>
                 </a>
                 <span class="tooltip">Add Tutor</span>
             </li>
             <li>
-                <a href="{{ url('admin/tutors')}}">
+                <a class="{{ (request()->is('admin/tutors*')) ? 'active' : '' }}" href="{{ url('admin/tutors')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
                     <span class="links_name">View Tutors</span>
                 </a>
                 <span class="tooltip">View Tutors</span>
             </li>
             <li>
-                <a class="active" href="{{ url('admin/students')}}">
+                <a class="{{ (request()->is('admin/students*')) ? 'active' : '' }}" href="{{ url('admin/students')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
                     <span class="links_name">View Students</span>
                 </a>

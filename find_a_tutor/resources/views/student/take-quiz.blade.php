@@ -40,5 +40,3 @@
     </div>
 </main>
 @endsection
-<!-- <script src="assets/js/home.js"></script>
-<script src="assets/js/profile.js"></script> -->

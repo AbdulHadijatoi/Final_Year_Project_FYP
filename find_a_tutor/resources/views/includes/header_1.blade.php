@@ -11,10 +11,10 @@
         <a href="{{ url('/') }}" class="align-in-center"><img class="logo" src="{{ asset('assets/logo_light.svg') }}" height="20"></a>
         <div class="position-relative align-in-center">
             <ul id="navList" class="align-in-center for-desktop">
-                <li>
+                <li class="{{ (request()->is('/')) ? 'active' : '' }}">
                     <a href="{{ url('/') }}">Home</a>
                 </li>
-                <li>
+                <li class="{{ (request()->is('listing*')) ? 'active' : '' }}">
                     <a href="{{url('listing')}}">Find Tutor</a>
                 </li>
                 <li class="highlight">

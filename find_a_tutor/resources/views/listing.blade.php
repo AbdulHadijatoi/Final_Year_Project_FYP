@@ -35,10 +35,10 @@
 
                 <div class="align-in-center sm_mt-10">
                     <div class="btn-change-view hover-effect">
-                        <img src="assets/svg-icons/svg_list_view.svg" width="15">
+                        <img src="{{asset('}assets/svg-icons/svg_list_view.svg')}" width="15">
                     </div>
                     <div class="btn-change-view hover-effect">
-                        <img src="assets/svg-icons/svg_thumb_view.svg" width="15">
+                        <img src="{{asset('assets/svg-icons/svg_thumb_view.svg')}}" width="15">
                     </div>
                 </div>
             </div>
@@ -50,9 +50,9 @@
                     <p class="w350 font-weight-300 font-size-15">Lorem Ipsum is simply dummy text of the printing and typesetting industry printing and typesetting industry.<a class="hover-effect" href="#">READ MORE</a></p>
                 </div>
                 <div class="list-sec-2">
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_subject_2.svg" alt="course" width="18"><span>Java Script</span></p>
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_location_2.svg" alt="course" width="18"><span>Larkana, Sindh Pakistan</span></p>
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_students.svg" alt="course" width="18"><span>12,452 Students</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_subject_2.svg')}}" alt="course" width="18"><span>Java Script</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_location_2.svg')}}" alt="course" width="18"><span>Larkana, Sindh Pakistan</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_students.svg')}}" alt="course" width="18"><span>12,452 Students</span></p>
                 </div>
                 <div class="list-sec-3 flex-column font-size-13">
                     <p>Overall Ratting (3)</p>
@@ -75,9 +75,9 @@
                     <p class="w350 font-weight-300 font-size-15">Lorem Ipsum is simply dummy text of the printing and typesetting industry printing and typesetting industry.<a class="hover-effect" href="#">READ MORE</a></p>
                 </div>
                 <div class="list-sec-2">
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_subject_2.svg" alt="course" width="18"><span>Java Script</span></p>
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_location_2.svg" alt="course" width="18"><span>Larkana, Sindh Pakistan</span></p>
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_students.svg" alt="course" width="18"><span>12,452 Students</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_subject_2.svg')}}" alt="course" width="18"><span>Java Script</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_location_2.svg')}}" alt="course" width="18"><span>Larkana, Sindh Pakistan</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_students.svg')}}" alt="course" width="18"><span>12,452 Students</span></p>
                 </div>
                 <div class="list-sec-3 flex-column font-size-13">
                     <p>Overall Ratting (3)</p>
@@ -100,9 +100,9 @@
                     <p class="w350 font-weight-300 font-size-15">Lorem Ipsum is simply dummy text of the printing and typesetting industry printing and typesetting industry.<a class="hover-effect" href="#">READ MORE</a></p>
                 </div>
                 <div class="list-sec-2">
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_subject_2.svg" alt="course" width="18"><span>Java Script</span></p>
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_location_2.svg" alt="course" width="18"><span>Larkana, Sindh Pakistan</span></p>
-                    <p class="hover-effect"> <img class="mr-10" src="assets/svg-icons/svg_students.svg" alt="course" width="18"><span>12,452 Students</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_subject_2.svg')}}" alt="course" width="18"><span>Java Script</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_location_2.svg')}}" alt="course" width="18"><span>Larkana, Sindh Pakistan</span></p>
+                    <p class="hover-effect"> <img class="mr-10" src="{{asset('assets/svg-icons/svg_students.svg')}}" alt="course" width="18"><span>12,452 Students</span></p>
                 </div>
                 <div class="list-sec-3 flex-column font-size-13">
                     <p>Overall Ratting (3)</p>
