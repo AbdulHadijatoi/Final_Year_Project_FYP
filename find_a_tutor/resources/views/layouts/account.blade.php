@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
         <link rel="stylesheet" href="{{ asset('assets/css/account.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <head>
 <body>
 
@@ -16,6 +17,8 @@
 
     @yield('content')
 
+    @include('includes.modals')
+    <script src="{{asset('assets/js/app.js')}}"></script>
 </body>
 
 </html>

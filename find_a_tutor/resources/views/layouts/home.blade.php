@@ -11,6 +11,7 @@
         @else
             <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
         @endif
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <head>
 <body>
 
@@ -77,7 +78,9 @@
         </div>
     </footer>
 
-    <script src="{{asset('assets/js/home.js')}}"></script>
+    @include('includes.modals')
+
+    <script src="{{asset('assets/js/app.js')}}"></script>
 </body>
 
 </html>

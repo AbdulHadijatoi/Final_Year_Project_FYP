@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
         <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <head>
 <body>
 
@@ -15,23 +16,23 @@
     @endif
     @yield('content')
 
-
     @if(!request()->is('student/take-quiz*'))
     <footer>
         <div class="bottom-details border-t-01">
-            <div class="bottom_text">
+            <div class="bottom_text sm_flex-column sm_align-items-center">
                 <span class="copyright_text">@ 2021 Tuition Made Easy - All Rights Reserved</span>
                 <span class="policy_terms">
-                <a href="#">Privacy Policy</a>
-                <a href="#"> Copyright</a>
-                <a href="#"> Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#"> Copyright</a>
+                    <a href="#"> Terms of Service</a>
                 </span>
             </div>
         </div>
     </footer>
     @endif
     
-    <script src="{{ asset('assets/js/profile.js') }}"></script>
+    @include('includes.modals')
+    <script src="{{asset('assets/js/app.js')}}"></script>
 </body>
 
 </html>

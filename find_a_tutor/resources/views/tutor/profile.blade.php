@@ -3,16 +3,16 @@
 
 @section('content')
     <main class="full-width vh100">
-        <div class="content _80-width align-items-start flex-column pt-40 sm_90-width flex-wrap light-text pb-90">
-            <h2 class="font-weight-500 font-size-20 full-width sm_text-align-center">Tutor Profile</h2>
+        <div class="content _80-width align-items-start flex-column pt-40 sm_90-width flex-wrap light-text pb-90 sm_pt-0">
+            <h2 class="font-weight-500 font-size-20 full-width sm_text-align-center sm_display-none">Tutor Profile</h2>
             <br><br>
             <section class="full-width justify-content-center flex-wrap ">
                 <div class="_65-width sm_full-width pr-60 sm_pr-0">
-                    <div class="justify-content-between mb-30">
-                        <div class="align-in-center">
-                            <div class="w80 square profile-icon-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-800 font-size-18 disable-selection">MU</div>
-                            <div>
-                                <h3 class="light-text font-weight-400">Muhammad Usman</h3>
+                    <div class="justify-content-between mb-30 sm_flex-column">
+                        <div class="align-in-center sm_flex-column sm_mb-15">
+                            <div class="w80 square profile-icon-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-800 font-size-18 disable-selection sm_mb-15">MU</div>
+                            <div class="sm_align-in-center">
+                                <h3 class="light-text font-weight-400 sm_text-align-center">Muhammad Usman</h3>
                                 <p class="light-text font-weight-300 font-size-13 opacity-4">Javascript | Programming Language</p>
                             </div>
                         </div>
@@ -23,12 +23,16 @@
                     </div>
 
                     <div class="justify-content-between mb-30">
-                        <div class="align-items-center flex-wrap">
-                            <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">421</div>
-                            <p class="light-text font-weight-300 font-size-13 mr-40">Total Students</p>
+                        <div class="align-items-center flex-wrap sm_flex-column sm_full-width">
+                            <div class="d-flex align-items-center">
+                                <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">421</div>
+                                <p class="light-text font-weight-300 font-size-13 mr-40 sm_mr-0">Total Students</p>
+                            </div>
 
-                            <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
-                            <p class="light-text font-weight-300 font-size-13">Courses Created</p>
+                            <div class="d-flex align-items-center sm_mt-20">
+                                <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
+                                <p class="light-text font-weight-300 font-size-13">Courses Created</p>
+                            </div>
 
                             <div class="user-ratting flex-column font-size-13 ml-75 sm_ml-0 sm_mt-20">
                                 <p class="light-text font-weight-300 font-size-13">Overall Ratting (3)</p>
@@ -45,7 +49,7 @@
                         </div>
                     </div>
 
-                    <p class="light-text font-weight-300 font-size-14 line-height-25">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p class="light-text font-weight-300 font-size-14 line-height-25 sm_text-align-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     <br>
 
                     <p class="skill"><span><strong>Education: </strong> Phd</span>
@@ -90,10 +94,10 @@
                 </div>
             </section>
             <br><br><br>
-            <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center">Courses Created</h2>
+            <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center">Courses Created (3)</h2>
             <br>
             <section class="_65-width justify-content-start sm_full-width flex-wrap sm_justify-content-center">
-                <div class="course-card">
+                <div class="course-card cursor-pointer" onclick="showElem('reviewModal');">
                     <div class="floating-box square">
                         <img alt="star_icon">
                         <p>3.7</p>
@@ -105,7 +109,7 @@
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <a class="link">Feedback/Reviews</a>
                 </div>
-                <div class="course-card">
+                <div class="course-card cursor-pointer" onclick="showElem('reviewModal');">
                     <div class="floating-box square">
                         <img alt="star_icon">
                         <p>3.7</p>
@@ -117,7 +121,7 @@
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <a class="link">Feedback/Reviews</a>
                 </div>
-                <div class="course-card">
+                <div class="course-card cursor-pointer" onclick="showElem('reviewModal');">
                     <div class="floating-box square">
                         <img alt="star_icon">
                         <p>3.7</p>

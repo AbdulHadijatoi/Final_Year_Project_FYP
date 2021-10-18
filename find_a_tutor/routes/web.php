@@ -50,39 +50,42 @@ Route::get('/tutor/dashboard', function () {
 });
 
 Route::get('/tutor/courses', function () {
-    return view('tutor/courses', ['title' => 'Tutor Courses']);
+    return view('tutor/courses', ['title' => 'Courses']);
 });
 
 Route::get('/tutor/add-course', function () {
-    return view('tutor/add-course', ['title' => 'Tutor Add Courses']);
+    return view('tutor/add-course', ['title' => 'Add Courses']);
 });
 
 Route::get('/tutor/create-quiz', function () {
-    return view('tutor/create-quiz', ['title' => 'Tutor Create Quiz']);
+    return view('tutor/create-quiz', ['title' => 'Create Quiz']);
 });
 
 Route::get('/tutor/make-profile', function () {
-    return view('tutor/make-profile', ['title' => 'Tutor Make Profile']);
+    return view('tutor/make-profile', ['title' => 'Make Profile']);
 });
 
 Route::get('/tutor/students', function () {
-    return view('tutor/students', ['title' => 'Tutor Students']);
+    return view('tutor/students', ['title' => 'Students']);
 });
 
 Route::get('/tutor/quizes', function () {
-    return view('tutor/quizes', ['title' => 'Tutor Quizes']);
+    return view('tutor/quizes', ['title' => 'Quizes']);
 });
 
 Route::get('/tutor/quiz', function () {
-    return view('tutor/quiz', ['title' => 'Tutor Quiz']);
+    return view('tutor/quiz', ['title' => 'Quiz']);
+});
+Route::get('/tutor/course', function () {
+    return view('tutor/course', ['title' => 'Course']);
 });
 
 Route::get('/student/take-quiz', function () {
-    return view('student/take-quiz', ['title' => 'Student Take Quiz']);
+    return view('student/take-quiz', ['title' => 'Take Quiz']);
 });
 
 Route::get('/student/courses', function () {
-    return view('student/courses', ['title' => 'Student Courses']);
+    return view('student/courses', ['title' => 'Courses']);
 });
 
 Route::get('/student/dashboard', function () {
@@ -90,19 +93,19 @@ Route::get('/student/dashboard', function () {
 });
 
 Route::get('/student/enroll-course', function () {
-    return view('student/enroll-course', ['title' => 'Student Enroll Course']);
+    return view('student/enroll-course', ['title' => 'Enroll Course']);
 });
 
 Route::get('/student/make-profile', function () {
-    return view('student/make-profile', ['title' => 'Student Make Profile']);
+    return view('student/make-profile', ['title' => 'Make Profile']);
 });
 
 Route::get('/student/quizes', function () {
-    return view('student/quizes', ['title' => 'Student View All Quiz']);
+    return view('student/quizes', ['title' => 'View All Quiz']);
 });
 
 Route::get('/admin/add-tutor', function () {
-    return view('admin/add-tutor', ['title' => 'Admin Add Tutor']);
+    return view('admin/add-tutor', ['title' => 'Add Tutor']);
 });
 
 Route::get('/admin/dashboard', function () {
@@ -110,9 +113,9 @@ Route::get('/admin/dashboard', function () {
 });
 
 Route::get('/admin/students', function () {
-    return view('admin/students', ['title' => 'Admin Students']);
+    return view('admin/students', ['title' => 'Students']);
 });
 
 Route::get('/admin/tutors', function () {
-    return view('admin/tutors', ['title' => 'Admin Tutors']);
+    return view('admin/tutors', ['title' => 'Tutors']);
 });

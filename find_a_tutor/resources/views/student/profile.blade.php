@@ -18,12 +18,17 @@
                 </div>
 
                 <div class="justify-content-between mb-30">
-                    <div class="align-items-center flex-wrap">
-                        <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
-                        <p class="light-text font-weight-300 font-size-13 mr-40">Courses Completed</p>
+                    <div class="align-items-center flex-wrap sm_flex-column sm_align-items-start">
 
-                        <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
-                        <p class="light-text font-weight-300 font-size-13">Tutors Studied</p>
+                        <div class="d-flex align-items-center sm_mb-15">
+                            <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
+                            <p class="light-text font-weight-300 font-size-13 mr-40">Courses Completed</p>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <div class="w60 square not-black-bg align-in-center cursor-pointer hover-effect mr-10 font-weight-400 font-size-24 disable-selection">12</div>
+                            <p class="light-text font-weight-300 font-size-13">Tutors Studied</p>
+                        </div>
                     </div>
                 </div>
 
@@ -38,7 +43,7 @@
                 </p>
 
             </div>
-            <div class="_35-width sm_full-width p-20 pt-0">
+            <div class="_35-width sm_full-width p-20 pt-0 sm_pl-0 sm_pr-0">
                 <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center m-5 mb-10">Tutors</h2>
                 <div class="students">
                     <div>AB</div>
@@ -64,7 +69,7 @@
         <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center">Completed Courses</h2>
         <br>
         <section class="_65-width justify-content-start sm_full-width flex-wrap sm_justify-content-center">
-            <div class="course-card">
+            <div class="course-card cursor-pointer" onclick="showElem('reviewModal');">
                 <div class="floating-box square">
                     <img alt="star_icon">
                     <p>3.7</p>
@@ -76,7 +81,7 @@
                 <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                 <a class="link">Feedback/Reviews</a>
             </div>
-            <div class="course-card">
+            <div class="course-card cursor-pointer" onclick="showElem('reviewModal');">
                 <div class="floating-box square">
                     <img alt="star_icon">
                     <p>3.7</p>
@@ -88,7 +93,7 @@
                 <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                 <a class="link">Feedback/Reviews</a>
             </div>
-            <div class="course-card">
+            <div class="course-card cursor-pointer" onclick="showElem('reviewModal');">
                 <div class="floating-box square">
                     <img alt="star_icon">
                     <p>3.7</p>
