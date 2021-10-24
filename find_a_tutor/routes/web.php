@@ -119,3 +119,8 @@ Route::get('/admin/students', function () {
 Route::get('/admin/tutors', function () {
     return view('admin/tutors', ['title' => 'Tutors']);
 });
+
+
+Route::get('/{profileName}',function($profileName){
+    return $profileName;
+});

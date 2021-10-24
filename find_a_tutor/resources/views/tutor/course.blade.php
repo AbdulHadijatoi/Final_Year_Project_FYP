@@ -6,6 +6,7 @@
     <div class="justify-content-between align-items-center">
         <div>
             <h2 class="heading2">JS - Javascript Programming</h2>
+            <p class="font-size-12 opacity-7">Duration 30 minutes</p>
         </div>
         <div class="align-in-center">
             <a class="btn-dashboard mr-10">Edit</a>
@@ -96,6 +97,19 @@
 
         <div class="_35-width sm_full-width sm_mt-50">
 
+                <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center m-5 mb-10">Working Days (3)</h2>
+                <div id="availability" class="availability">
+                    <div class="square active">MON</div>
+                    <div class="square active">TUE</div>
+                    <div class="square">WED</div>
+                    <div class="square">THU</div>
+                    <div class="square">FRI</div>
+                    <div class="square active">SAT</div>
+                    <div class="square">SUN</div>
+                </div>
+                    
+                <br><br>
+
                 <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center m-5 mb-10">Students</h2>
                 <div class="students">
                     <div>AB</div>
@@ -108,17 +122,6 @@
                     <div>SK</div>
                     <div>RN</div>
                     <div>HR</div>
-                </div>
-                <br><br>
-                <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center m-5 mb-10">Availability</h2>
-                <div id="availability" class="availability">
-                    <div class="square active">MON</div>
-                    <div class="square active">TUE</div>
-                    <div class="square">WED</div>
-                    <div class="square">THU</div>
-                    <div class="square">FRI</div>
-                    <div class="square active">SAT</div>
-                    <div class="square">SUN</div>
                 </div>
 
                 <br>

@@ -64,8 +64,8 @@
                 </div>
 
                 <div class="formField mr-10 sm_mr-0">
-                    <label>Contact</label>
-                    <input type="text" name="contact" placeholder="contact">
+                    <label>Contact (WhatsApp)</label>
+                    <input type="tel" name="contact" placeholder="contact">
                 </div>
 
                 <div class="formField">

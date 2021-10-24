@@ -61,11 +61,11 @@
                 <span class="tooltip">Create Quiz</span>
             </li>
             <li>
-                <a class="{{ (request()->is('tutor/profile*')) ? 'active' : '' }}" href="{{ url('tutor/profile')}}">
+                <a class="{{ (request()->is('tutor/make-profile*')) ? 'active' : '' }}" href="{{ url('tutor/make-profile')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_profile.svg')}}">
-                    <span class="links_name">Profile</span>
+                    <span class="links_name">Profile Settings</span>
                 </a>
-                <span class="tooltip">Profile</span>
+                <span class="tooltip">Profile Settings</span>
             </li>
         @elseif(request()->is('student/*'))
             <li>
@@ -101,11 +101,11 @@
             </li>
             
             <li>
-                <a class="{{ (request()->is('student/profile*')) ? 'active' : '' }}" href="{{ url('student/profile')}}">
+                <a class="{{ (request()->is('student/make-profile*')) ? 'active' : '' }}" href="{{ url('student/make-profile')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_profile.svg')}}">
-                    <span class="links_name">Profile</span>
+                    <span class="links_name">Profile Settings</span>
                 </a>
-                <span class="tooltip">Profile</span>
+                <span class="tooltip">Profile Settings</span>
             </li>
         @else
             <li>
