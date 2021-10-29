@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,25 +29,25 @@ Route::get('/student/profile', function () {
     return view('student/profile', ['title' => 'Profile']);
 });
 
-Route::get('/signup', function () {
-    return view('account/signup', ['title' => 'Signup']);
-});
+// Route::get('/signup', function () {
+//     return view('account/signup', ['title' => 'Signup']);
+// });
 
-Route::get('/login', function () {
-    return view('account/login', ['title' => 'Login']);
-});
+// Route::get('/login', function () {
+//     return view('account/login', ['title' => 'Login']);
+// });
 
-Route::get('/forgot-password', function () {
-    return view('account/forgot-password', ['title' => 'Forgot Password']);
-});
+// Route::get('/forgot-password', function () {
+//     return view('account/forgot-password', ['title' => 'Forgot Password']);
+// });
 
-Route::get('/reset-password', function () {
-    return view('account/reset-password', ['title' => 'Reset Password']);
-});
+// Route::get('/reset-password', function () {
+//     return view('account/reset-password', ['title' => 'Reset Password']);
+// });
 
-Route::get('/tutor/dashboard', function () {
-    return view('tutor/dashboard', ['title' => 'Tutor Dashboard']);
-});
+// Route::get('/tutor/dashboard', function () {
+//     return view('tutor/dashboard', ['title' => 'Tutor Dashboard']);
+// });
 
 Route::get('/tutor/courses', function () {
     return view('tutor/courses', ['title' => 'Courses']);
@@ -121,6 +121,21 @@ Route::get('/admin/tutors', function () {
 });
 
 
-Route::get('/{profileName}',function($profileName){
-    return $profileName;
+Route:: get('/account/forgotPassword',[MainController::class,'forgotPassword'])->name('account.forgot-password');
+Route:: get('/account/resetPassword',[MainController::class,'resetPassword'])->name('account.reset-password');
+Route:: post('/account/save',[MainController::class,'save'])->name('account.save');
+Route::post('/account/check',[MainController::class,'check'])->name('account.check');
+Route::get('/account/logout',[MainController::class,'logout'])->name('account.logout');
+
+
+
+// Route::get('/{profileName}',function($profileName){
+//     return $profileName;
+// });
+
+Route::group(['middleware'=>['AuthCheck']], function(){
+    Route:: get('login',[MainController::class,'login'])->name('account.login');
+    Route:: get('signup',[MainController::class,'signup'])->name('account.signup');
+
+    Route::get('/tutor/dashboard',[MainController::class,'tutorDashboard']);
 });
