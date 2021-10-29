@@ -1,28 +1,8 @@
 @extends('layouts.account')
 
 @section('content')
-<<<<<<< Updated upstream
     <main class="full-width login-content-bg" style="min-height: calc(100vh - 140px);">
         <form id="signup_form" action="" method="POST" class="content account-box align-in-center flex-column light-text sm_border-none">
-=======
-    <main class="full-width login-content-bg flex-column" style="min-height: calc(100vh - 140px);">
-            @if(Session::get('success'))
-                <div class="full-width text-center bg-green text-white p-10">
-                    {{ Session::get('success') }}
-                </div>
-            @endif
-                
-            @if(Session::get('fail'))
-                <div class="full-width text-center bg-red text-white p-10">
-                    {{ Session::get('fail') }}
-                </div>
-            @endif
-            
-        <form id="signup_form" action="{{ route('account.save') }}" method="POST" class="content account-box align-in-center flex-column light-text sm_border-none">
-        
-            @csrf
-            <h3 class="font-weight-600 mb-10">Create a free account</h3>
->>>>>>> Stashed changes
 
             <h3 class="font-weight-600 mb-10">Create a free account</h3>
             <div class="account-field hover-effect">

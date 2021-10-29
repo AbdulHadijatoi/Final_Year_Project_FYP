@@ -4,11 +4,7 @@
 @section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center">
-<<<<<<< Updated upstream
         <h3 class="h-dashboard">My Dashboard</h3>
-=======
-        <h3 class="h-dashboard">Welcome {{ explode('@', $LoggedUserInfo['email'])[0] }}!</h3>
->>>>>>> Stashed changes
         <div class="align-in-center">
             <a class="btn-dashboard mr-10" href="{{ asset('tutor/add-course') }}">Add Course</a>
             <a class="btn-dashboard" href="{{ asset('tutor/create-quiz') }}">Create Quiz</a>
