@@ -1,13 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< Updated upstream
 
-=======
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TutorController;
->>>>>>> Stashed changes
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,11 +69,10 @@ Route::get('/admin/tutors', function () {
     return view('admin/tutors', ['title' => 'Tutors']);
 });
 
-<<<<<<< Updated upstream
 
 Route::get('/{profileName}',function($profileName){
     return $profileName;
-=======
+});
 Route:: get('/account/forgotPassword',[MainController::class,'forgotPassword'])->name('account.forgot-password');
 Route:: get('/account/resetPassword',[MainController::class,'resetPassword'])->name('account.reset-password');
 Route:: post('/account/save',[MainController::class,'save'])->name('account.save');
@@ -110,5 +107,4 @@ Route::group(['middleware'=>['AuthCheck']], function(){
     Route::get('/student/enroll-course', [StudentController::class,'studentEnrollCourse']);
     Route::get('/student/make-profile', [StudentController::class,'studentMakeProfile']);
     Route::get('/student/quizes', [StudentController::class,'studentQuizes']);
->>>>>>> Stashed changes
 });
