@@ -11,9 +11,9 @@
     <head>
 <body>
     <div class="sidebar open">
-        <div class="logo-details border-bottom-01-white">
+        <a href="{{ url('tutor/dashboard') }}" class="logo-details border-bottom-01-white">
             <img class="" src="{{asset('assets/logo_light.svg')}}">
-        </div>
+        </a>
         <ul class="nav-list" id="navList">
         
         @if(request()->is('tutor/*'))
@@ -138,7 +138,7 @@
             </li>
         @endif
             <li>
-                <a href="{{ url('account/logout')}}">
+                <a href="{{ route('account.logout') }}">
                     <img class="" src="{{asset('assets/svg-icons/svg_logout.svg')}}">
                     <span class="links_name">Logout</span>
                 </a>
