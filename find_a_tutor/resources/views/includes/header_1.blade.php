@@ -17,7 +17,6 @@
                 <li class="{{ (request()->is('listing*')) ? 'active' : '' }}">
                     <a href="{{url('listing')}}">Find Tutor</a>
                 </li>
-                
                 @if(!session()->has('LoggedUser'))
                 <li>
                     <a href="{{ url('signup') }}">Become Tutor</a>
@@ -31,20 +30,18 @@
                 @endif
             </ul>
             <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
-            <img class="ac-icon cursor-pointer" id="profileMenuButton" src="{{ asset('assets/svg-icons/svg_empty-ac.svg') }}" onclick="clickTarget('profileMenuCheckbox');">
-
             @if(session()->has('LoggedUser'))
+            <img class="ac-icon cursor-pointer" id="profileMenuButton" src="{{ asset('assets/svg-icons/svg_empty-ac.svg') }}" onclick="clickTarget('profileMenuCheckbox');">
             <div id="profileMenu" class="profile-menu position-absolute top-50 right-0 border-01-white">
                 <ul class="nav-list">
                     <li>
-                        <!-- here I have to tell where to go after login success -->
                         <a href="{{ url('tutor/dashboard') }}">
                             <img class="" src="{{ asset('assets/svg-icons/svg_profile.svg') }}">
                             <span class="links_name">Dashbord</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('account.logout') }}">
+                    <a href="{{ route('account.logout') }}">
                             <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg') }}">
                             <span class="links_name">Logout</span>
                         </a>
@@ -52,6 +49,7 @@
                 </ul>
             </div>
             @endif
+
         </div>
     </div>
 </header>

@@ -1,11 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TutorController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,25 +31,6 @@ Route::get('/student/profile', function () {
     return view('student/profile', ['title' => 'Profile']);
 });
 
-Route::get('/signup', function () {
-    return view('account/signup', ['title' => 'Signup']);
-});
-
-Route::get('/login', function () {
-    return view('account/login', ['title' => 'Login']);
-});
-
-Route::get('/forgot-password', function () {
-    return view('account/forgot-password', ['title' => 'Forgot Password']);
-});
-
-Route::get('/reset-password', function () {
-    return view('account/reset-password', ['title' => 'Reset Password']);
-});
-
-Route::get('/tutor/dashboard', function () {
-    return view('tutor/dashboard', ['title' => 'Tutor Dashboard']);
-});
 
 Route::get('/admin/add-tutor', function () {
     return view('admin/add-tutor', ['title' => 'Add Tutor']);
@@ -70,9 +49,6 @@ Route::get('/admin/tutors', function () {
 });
 
 
-Route::get('/{profileName}',function($profileName){
-    return $profileName;
-});
 Route:: get('/account/forgotPassword',[MainController::class,'forgotPassword'])->name('account.forgot-password');
 Route:: get('/account/resetPassword',[MainController::class,'resetPassword'])->name('account.reset-password');
 Route:: post('/account/save',[MainController::class,'save'])->name('account.save');

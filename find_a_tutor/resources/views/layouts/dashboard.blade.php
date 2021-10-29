@@ -168,7 +168,7 @@
                     <div id="profileMenu" class="profile-menu position-absolute top-60 right-0">
                         <ul class="nav-list">
                             <li>
-                                <a href="{{url('account/logout')}}">
+                                <a href="{{ route('account.logout') }}">
                                     <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg')}}">
                                     <span class="links_name">Logout</span>
                                 </a>

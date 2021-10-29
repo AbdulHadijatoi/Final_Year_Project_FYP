@@ -85,6 +85,15 @@ body {
     filter: brightness(115%);
 }
 
+.text-danger {
+    color: red;
+}
+
+.text-small {
+    font-size: 10px;
+    font-weight: 300;
+}
+
 .brightness-120 {
     filter: brightness(120%);
 }

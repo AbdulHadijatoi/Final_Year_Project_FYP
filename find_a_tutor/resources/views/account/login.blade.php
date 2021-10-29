@@ -1,23 +1,37 @@
 @extends('layouts.account')
 
 @section('content')
-    <main class="full-width login-content-bg" style="min-height: calc(100vh - 140px);">
-        <form id="login_form" action="" method="POST" class="content account-box align-in-center flex-column light-text sm_border-none">
+    <main class="full-width login-content-bg flex-column" style="min-height: calc(100vh - 140px);">
+            @if(Session::get('success'))
+                <div class="full-width text-center bg-green text-white p-10">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+                
+            @if(Session::get('fail'))
+                <div class="full-width text-center bg-red text-white p-10">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
 
+        <form id="login_form" action="{{ route('account.check') }}" method="POST" class="content account-box align-in-center flex-column light-text sm_border-none">
+            @csrf
             <h3 class="font-weight-600 mb-10">Log in to Tution Made Easy</h3>
 
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_user.svg') }}" width="20">
-                <input type="email" name="email" placeholder="Username or Email">
+                <input type="email" name="email" placeholder="Username or Email" value="{{ old('email') }}">
             </div>
+            <span class="text-danger text-small"> @error('email'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <img src="{{asset('assets/svg-icons/svg_pass.svg')}}" width="20">
                 <input type="password" name="password" placeholder="Password">
             </div>
+            <span class="text-danger text-small">@error('password'){{ $message }} @enderror</span>
 
-            <input type="button" value="Log in" class="btn-account hover-effect">
-            <a href="{{ url('forgot-password') }}" class="text-decoration-underline font-weight-600 font-size-16 hover-effect mt-20">Forgot Password</a>
+            <input type="submit" value="Log in" class="btn-account hover-effect">
+            <a href="{{ route('account.forgot-password') }}" class="text-decoration-underline font-weight-600 font-size-16 hover-effect mt-20">Forgot Password</a>
 
 
             <hr class="full-width opacity-2 mt-50 mb-50">
@@ -28,7 +42,7 @@
                 <hr class="opacity-9 m-10 w70 h1">
             </div>
 
-            <a href="{{ url('signup') }}" class="btn-account hover-effect">Sign Up</a>
+            <a href="{{ route('account.signup') }}" class="btn-account hover-effect">Sign Up</a>
 
 
         </form>

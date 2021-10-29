@@ -21,7 +21,7 @@
                 <hr class="opacity-9 m-10 w70 h1">
             </div>
 
-            <a href="{{ url('signup') }}" class="btn-account hover-effect">Sign Up</a>
+            <a href="{{ route('account.signup') }}" class="btn-account hover-effect">Sign Up</a>
 
 
         </form>
