@@ -17,6 +17,7 @@
                 <img src=" {{ asset('assets/svg-icons/svg_pass.svg') }}" width="20">
                 <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
             </div>
+            <span class="text-danger text-small"> @error('password'){{ $message }} @enderror</span>
 
             <input type="submit" value="Confirm" class="btn-account hover-effect">
         </form>

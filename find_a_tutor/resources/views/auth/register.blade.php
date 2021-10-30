@@ -4,7 +4,7 @@
     <main class="full-width login-content-bg" style="min-height: calc(100vh - 140px);">
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <!-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> -->
 
         <form id="signup_form" method="POST" action="{{ route('register') }}" class="content account-box align-in-center flex-column light-text sm_border-none">
         @csrf
@@ -12,18 +12,21 @@
             <h3 class="font-weight-600 mb-10">Create a free account</h3>
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_user.svg') }}" width="20">
-                <input type="email" name="email" placeholder="Username or Email" :value="old('email')" required >
+                <input type="email" name="email" placeholder="Username or Email" value="{{ old('email') }}" required >
             </div>
+            <span class="text-danger text-small"> @error('email'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <img src=" {{ asset('assets/svg-icons/svg_pass.svg') }}" width="20">
                 <input type="password" name="password" placeholder="Password" required autocomplete="new-password" >
             </div>
+            <span class="text-danger text-small">@error('password'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <img src=" {{ asset('assets/svg-icons/svg_pass.svg') }}" width="20">
                 <input type="password" placeholder="Confirm Password" name="password_confirmation" required >
             </div>
+            <span class="text-danger text-small">@error('password_confirmation'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <select name="role">
@@ -32,6 +35,7 @@
                     <option>Teacher</option>
                 </select>
             </div>
+            <span class="text-danger text-small">@error('role'){{ $message }} @enderror</span>
 
             <input type="submit" value="Register" class="btn-account hover-effect">
 

@@ -16,18 +16,21 @@
 
             <div class="account-field hover-effect">
                 <img src=" {{ asset('assets/svg-icons/svg_user.svg') }}" width="20">
-                <input type="email" name="email" placeholder="Email" :value="old('email', $request->email)" required autofocus>
+                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
             </div>
+            <span class="text-danger text-small"> @error('email'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_pass.svg') }}" width="20">
                 <input type="password" name="password" placeholder="Password" required>
             </div>
+            <span class="text-danger text-small"> @error('password'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_pass.svg') }}" width="20">
                 <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
             </div>
+            <span class="text-danger text-small"> @error('password_confirmation'){{ $message }} @enderror</span>
 
             <input type="submit" value="Reset Password" class="btn-account hover-effect">
 

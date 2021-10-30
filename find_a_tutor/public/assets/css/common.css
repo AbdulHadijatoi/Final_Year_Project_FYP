@@ -121,6 +121,34 @@ body {
     color: var(--dark);
 }
 
+.text-small {
+    font-size: 13px;
+}
+
+.text-danger {
+    color: red;
+}
+
+.text-success {
+    color: green;
+}
+
+.session-status {
+    width: 100%;
+    text-align: center;
+    background: green;
+    color: white;
+    padding: 10px;
+}
+
+.validation-errors {
+    width: 100%;
+    text-align: center;
+    background: red;
+    color: white;
+    padding: 10px;
+}
+
 .whatsapp-bg {
     background: var(--whatsapp);
 }

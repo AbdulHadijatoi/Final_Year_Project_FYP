@@ -1,14 +1,14 @@
 @extends('layouts.account')
 
 @section('content')
-    <main class="full-width login-content-bg" style="min-height: calc(100vh - 140px);">
+    <main class="full-width login-content-bg flex-column" style="min-height: calc(100vh - 140px);">
         
         <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+        <!-- <x-auth-session-status class="mb-4" :status="session('status')" /> -->
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
+        <!-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> -->
+        
         <form id="login_form" method="POST" action="{{ route('login') }}" class="content account-box align-in-center flex-column light-text sm_border-none">
             @csrf
 
@@ -16,13 +16,15 @@
 
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_user.svg') }}" width="20">
-                <input type="email" name="email" :value="old('email')" required autofocus placeholder="Username or Email">
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="Username or Email">
             </div>
+            <span class="text-danger text-small"> @error('email'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <img src="{{asset('assets/svg-icons/svg_pass.svg')}}" width="20">
-                <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                <input type="password" name="password" placeholder="Password">
             </div>
+            <span class="text-danger text-small">@error('password'){{ $message }} @enderror</span>
 
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="" name="remember">

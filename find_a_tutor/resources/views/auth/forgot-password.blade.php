@@ -18,8 +18,9 @@
 
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_user.svg') }}" width="20">
-                <input type="email" name="email" placeholder="Email address" :value="old('email')" required autofocus>
+                <input type="email" name="email" placeholder="Email address" value="{{ old('email') }}" required autofocus>
             </div>
+            <span class="text-danger text-small"> @error('email'){{ $message }} @enderror</span>
 
             <input type="submit" value="Email Password Reset Link" class="btn-account hover-effect">
 
