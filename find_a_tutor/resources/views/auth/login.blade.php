@@ -16,13 +16,13 @@
 
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_user.svg') }}" width="20">
-                <input type="email" name="email" value="{{ old('email') }}" placeholder="Username or Email">
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="Username or Email" autocomplete="off">
             </div>
             <span class="text-danger text-small"> @error('email'){{ $message }} @enderror</span>
 
             <div class="account-field hover-effect">
                 <img src="{{asset('assets/svg-icons/svg_pass.svg')}}" width="20">
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password" autocomplete="off">
             </div>
             <span class="text-danger text-small">@error('password'){{ $message }} @enderror</span>
 
