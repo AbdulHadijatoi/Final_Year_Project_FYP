@@ -11,14 +11,16 @@
     <head>
 <body>
     <div class="sidebar open">
-        <div class="logo-details border-bottom-01-white">
+        <!-- this should navigate to the dashboard of logged user role -->
+        <a href="{{ url('tutor/dashboard') }}" class="logo-details border-bottom-01-white">
             <img class="" src="{{asset('assets/logo_light.svg')}}">
-        </div>
+        </a>
         <ul class="nav-list" id="navList">
         
         @if(request()->is('tutor/*'))
 
             <li>
+            <!-- :active="request()->routeIs('dashboard')" -->
                 <a class="{{ (request()->is('tutor/dashboard*')) ? 'active' : '' }}" href="{{ url('tutor/dashboard')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_dashboard.svg')}}">
                     <span class="links_name">Dashboard</span>
@@ -138,11 +140,14 @@
             </li>
         @endif
             <li>
-                <a href="{{ url('account/logout')}}">
-                    <img class="" src="{{asset('assets/svg-icons/svg_logout.svg')}}">
-                    <span class="links_name">Logout</span>
-                </a>
-                <span class="tooltip">Logout</span>
+                <form method="POST" action="{{ route('logout')}}">
+                    @csrf
+                    <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <img class="" src="{{asset('assets/svg-icons/svg_logout.svg')}}">
+                        <span class="links_name">Logout</span>
+                    </a>
+                    <span class="tooltip">Logout</span>
+                </form>
             </li>
         </ul>
     </div>
@@ -168,10 +173,18 @@
                     <div id="profileMenu" class="profile-menu position-absolute top-60 right-0">
                         <ul class="nav-list">
                             <li>
-                                <a href="{{url('account/logout')}}">
-                                    <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg')}}">
-                                    <span class="links_name">Logout</span>
+                                <a>
+                                    <span class="links_name">{{ Auth::user()->email }}</span>
                                 </a>
+                            </li>
+                            <li>
+                                <form method="POST" action="{{ route('logout')}}">
+                                    @csrf
+                                    <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                        <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg')}}">
+                                        <span class="links_name">Logout</span>
+                                    </a>
+                                </form>
                             </li>
                         </ul>
                     </div>

@@ -18,13 +18,13 @@
                     <a href="{{url('listing')}}">Find Tutor</a>
                 </li>
                 <li>
-                    <a href="{{ url('signup') }}">Become Tutor</a>
+                    <a href="{{ route('register') }}">Become Tutor</a>
                 </li>
                 <li>
-                    <a href="{{ url('login') }}">Sign in</a>
+                    <a href="{{ route('login') }}">Sign in</a>
                 </li>
                 <li class="highlight">
-                    <a href="{{ url('signup') }}">Register</a>
+                    <a href="{{ route('register') }}">Register</a>
                 </li>
             </ul>
             <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
@@ -39,10 +39,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg') }}">
-                            <span class="links_name">Logout</span>
-                        </a>
+                        <form method="POST" action="{{ route('logout')}}">
+                            @csrf
+                            <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg') }}">
+                                <span class="links_name">Logout</span>
+                            </a>
+                        </form>
                     </li>
                 </ul>
             </div>
