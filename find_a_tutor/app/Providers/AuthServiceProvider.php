@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Models\User;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,14 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Gate::define('manage_users', function (User $user) {
+        //     return $user->role == 'Admin';
+        // });
+        // Gate::define('study_courses', function (User $user) {
+        //     return $user->role == 'Student';
+        // });
+        // Gate::define('manage_courses', function (User $user) {
+        //     return $user->role == 'Teacher';
+        // });
     }
 }

@@ -7,7 +7,7 @@
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
         <form id="reset_password_form" method="POST" action="{{ route('password.update') }}" class="content account-box align-in-center flex-column light-text sm_border-none">
-        @csrf
+            @csrf
 
             <!-- Password Reset Token -->
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
@@ -39,7 +39,7 @@
                 <hr class="opacity-9 m-10 w70 h1">
             </div>
 
-            <a href=" {{ route('register') }}" class="btn-account hover-effect">Sign Up</a>
+            <a href="{{ route('register') }}" class="btn-account hover-effect">Sign Up</a>
 
 
         </form>

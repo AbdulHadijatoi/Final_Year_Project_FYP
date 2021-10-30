@@ -17,8 +17,7 @@
         </a>
         <ul class="nav-list" id="navList">
         
-        @if(request()->is('tutor/*'))
-
+        @if(auth()->user()->role == "Teacher")
             <li>
             <!-- :active="request()->routeIs('dashboard')" -->
                 <a class="{{ (request()->is('tutor/dashboard*')) ? 'active' : '' }}" href="{{ url('tutor/dashboard')}}">
@@ -69,7 +68,7 @@
                 </a>
                 <span class="tooltip">Profile Settings</span>
             </li>
-        @elseif(request()->is('student/*'))
+            @elseif(auth()->user()->role == "Student")
             <li>
                 <a class="{{ (request()->is('student/dashboard*')) ? 'active' : '' }}" href="{{ url('student/dashboard')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">
@@ -109,7 +108,7 @@
                 </a>
                 <span class="tooltip">Profile Settings</span>
             </li>
-        @else
+        @elseif(auth()->user()->role == 'Admin')
             <li>
                 <a class="{{ (request()->is('admin/dashboard*')) ? 'active' : '' }}" href="{{ url('admin/dashboard')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">

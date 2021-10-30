@@ -17,28 +17,36 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('tutor/dashboard', function () {
-    return view('tutor/dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('tutor/dashboard', function () {
+//     return view('tutor/dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 Route::get('student/dashboard', function () {
     return view('student/dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->name('dashboard');
 
-Route::get('admin/dashboard', function () {
-    return view('admin/dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('admin/dashboard', function () {
+//     return view('admin/dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 
 require __DIR__.'/auth.php';
 
-Route::prefix('user')->name('user.')->group(function(){
-    Route::middleware(['guest'])->group(function(){
-        Route::view('/login','dashboard.user.login')->name('login');
-        Route::view('/register','dashboard.user.register')->name('register'); 
+Route::group(['middleware' => 'auth'], function(){
+    Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Student\StudentController::class)->only([
+            'index', 'show'
+        ]);
     });
-
-    Route::middleware(['auth'])->group(function(){
-        Route::view('/home','dashboard.user.home')->name('home');
+    Route::group(['middleware' => 'role:tutor', 'prefix' => 'tutor', 'as' => 'tutor.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Tutor\TutorController::class)->only([
+            'index', 'show'
+        ]);
+    });
+    Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Admin\AdminController::class)->only([
+            'index', 'show'
+        ]);
+        
     });
 });

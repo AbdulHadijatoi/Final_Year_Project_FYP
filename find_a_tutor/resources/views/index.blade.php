@@ -61,13 +61,15 @@
 
 
             <div class="_85-width sm_full-width justify-content-center">
-                <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect bg-cover-center sm_h200 sm_p-10" style="background-image: url('assets/images/s2_img_1.jpg');">
+                <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect bg-cover-center sm_h200 sm_p-10 mr-30 sm_mr-10" style="background-image: url('assets/images/s2_img_1.jpg');">
                     <a href="listing.html" class="font-weight-800 light-text font-size-15 text-decoration-none">Find a Tutor ►</a>
                 </div>
-                <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center mr-30 ml-30 hover-effect bg-cover-center sm_mr-10 sm_ml-10 sm_h200 sm_p-10" style="background-image: url('assets/images/s2_img_2.jpg');">
+                @if(!Auth::check())
+                <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect bg-cover-center sm_h200 sm_p-10" style="background-image: url('assets/images/s2_img_2.jpg');">
                     <a href="account/signup.html" class="font-weight-800 light-text font-size-15 text-decoration-none">Become a Tutor ►</a>
                 </div>
-                <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect sm_h200 sm_p-10" style="background-image: url('assets/images/s2_img_3.jpg'); ">
+                @endif
+                <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect sm_h200 sm_p-10 ml-30 sm_ml-10" style="background-image: url('assets/images/s2_img_3.jpg'); ">
                     <a href="#" class="font-weight-800 light-text font-size-15 text-decoration-none">Learn More ►</a>
                 </div>
             </div>
