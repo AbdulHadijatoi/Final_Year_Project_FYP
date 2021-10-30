@@ -33,20 +33,38 @@ Route::get('student/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function(){
-        Route::resource('dashboard', \App\Http\Controllers\Student\StudentController::class)->only([
-            'index', 'show'
-        ]);
-    });
-    Route::group(['middleware' => 'role:tutor', 'prefix' => 'tutor', 'as' => 'tutor.'], function(){
-        Route::resource('dashboard', \App\Http\Controllers\Tutor\TutorController::class)->only([
-            'index', 'show'
-        ]);
-    });
+    
+    //Admin routes
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
-        Route::resource('dashboard', \App\Http\Controllers\Admin\AdminController::class)->only([
-            'index', 'show'
-        ]);
-        
+        Route::resource('dashboard', \App\Http\Controllers\Admin\DashboardController::class);
+        Route::resource('add-tutor', \App\Http\Controllers\Admin\AddTutorController::class);
+        Route::resource('students', \App\Http\Controllers\Admin\StudentsController::class);
+        Route::resource('tutors', \App\Http\Controllers\Admin\TutorsController::class);
     });
+
+    //Student routes
+    Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Student\DashboardController::class);
+        Route::resource('courses', \App\Http\Controllers\Student\CoursesController::class);
+        Route::resource('enroll-course', \App\Http\Controllers\Student\EnrollCourseController::class);
+        Route::resource('make-profile', \App\Http\Controllers\Student\MakeProfileController::class);
+        Route::resource('profile', \App\Http\Controllers\Student\ProfileController::class);
+        Route::resource('quizes', \App\Http\Controllers\Student\QuizesController::class);
+        Route::resource('take-quiz', \App\Http\Controllers\Student\TakeQuizController::class);
+    });
+
+    //Tutor routes
+    Route::group(['middleware' => 'role:tutor', 'prefix' => 'tutor', 'as' => 'tutor.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Tutor\DashboardController::class);
+        Route::resource('add-course', \App\Http\Controllers\Tutor\AddCourseController::class);
+        Route::resource('courses', \App\Http\Controllers\Tutor\CoursesController::class);
+        Route::resource('create-quiz', \App\Http\Controllers\Tutor\CreateQuizController::class);
+        Route::resource('make-profile', \App\Http\Controllers\Tutor\MakeProfileController::class);
+        Route::resource('profile', \App\Http\Controllers\Tutor\ProfileController::class);
+        Route::resource('quiz', \App\Http\Controllers\Tutor\QuizController::class);
+        Route::resource('quizes', \App\Http\Controllers\Tutor\QuizesController::class);
+        Route::resource('students', \App\Http\Controllers\Tutor\StudentsController::class);
+        Route::resource('course', \App\Http\Controllers\Tutor\CourseController::class);
+    });
+    
 });
