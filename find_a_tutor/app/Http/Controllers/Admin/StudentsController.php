@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class StudentsController extends Controller
 {
@@ -14,7 +15,8 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        return view('admin.students');
+        $students = User::where('role',"Student")->orderBy('firstname')->get();
+        return view('admin.students',['students'=>$students]);
     }
 
     /**

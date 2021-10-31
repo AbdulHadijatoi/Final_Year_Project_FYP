@@ -62,6 +62,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+.initials {
+    text-transform: uppercase;
+}
+
 body {
     -ms-overflow-style: none;
     /* IE and Edge */

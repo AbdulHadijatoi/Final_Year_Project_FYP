@@ -16,7 +16,7 @@
         <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg mr-10 sm_48-width">
             <div>
                 <p>Total Students</p>
-                <p class="font-weight-500 font-size-26">421</p>
+                <p class="font-weight-500 font-size-26">{{ $totalStudents ?? 0 }}</p>
             </div>
             <img src="{{asset('assets/svg-icons/svg_graduation_students.svg')}}" alt="student-hat" width="50">
         </div>
@@ -24,7 +24,7 @@
         <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg sm_48-width">
             <div>
                 <p>Total Tutors</p>
-                <p class="font-weight-500 font-size-26">12</p>
+                <p class="font-weight-500 font-size-26">{{ $totalTutors ?? 0 }}</p>
             </div>
             <img src="{{asset('assets/svg-icons/svg_courses_b.svg')}}" alt="student-hat" width="50">
         </div>
@@ -35,62 +35,20 @@
     <table class="full-width border-02 p-30">
         <tbody>
             <tr>
+                @foreach($teachers as $teacher)
                 <td class="table-row">
                     <div>
-                        <span class="initials">MU</span>
+                        <span class="initials">{{ Str::substr($teacher->firstname, 0,1) ?? 'T' }}{{ Str::substr($teacher->lastname, 0,1) ?? 'U' }}</span>
                         <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
+                            <label>{{ $teacher->firstname ?? '' }} {{ $teacher->lastname ?? '' }}</label>
+                            <p>Joined {{ date('d-M-Y', strtotime($teacher->created_at)) ?? '' }}</p>
                         </div>
                     </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
                 </td>
-                <td class="table-row">
-                    <div>
-                        <span class="initials">MU</span>
-                        <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
-                        </div>
-                    </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
-                </td>
-                <td class="table-row">
-                    <div>
-                        <span class="initials">MU</span>
-                        <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
-                        </div>
-                    </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
-                </td>
-                <td class="table-row">
-                    <div>
-                        <span class="initials">MU</span>
-                        <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
-                        </div>
-                    </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
-                </td>
+                @endforeach
                 <td class="table-row">
                     <a href="{{url('admin/tutors')}}" class="btn-dashboard full-width small hover-effect cursor-pointer text-decoration-none">View All</a>
                 </td>
-            </tr>
         </tbody>
     </table>
 
@@ -98,58 +56,17 @@
     <table class="full-width border-02 p-30">
         <tbody>
             <tr>
+                @foreach($students as $student)
                 <td class="table-row">
                     <div>
-                        <span class="initials">MU</span>
+                        <span class="initials">{{ Str::substr($student->firstname, 0,1) ?? 'S' }}{{ Str::substr($student->lastname, 0,1) ?? 'T' }}</span>
                         <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
+                            <label>{{ $student->firstname ?? '' }} {{ $student->lastname ?? '' }}</label>
+                            <p>Joined {{ date('d-M-Y', strtotime($student->created_at)) ?? '' }}</p>
                         </div>
                     </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
                 </td>
-                <td class="table-row">
-                    <div>
-                        <span class="initials">MU</span>
-                        <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
-                        </div>
-                    </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
-                </td>
-                <td class="table-row">
-                    <div>
-                        <span class="initials">MU</span>
-                        <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
-                        </div>
-                    </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
-                </td>
-                <td class="table-row">
-                    <div>
-                        <span class="initials">MU</span>
-                        <div class="st-info">
-                            <label>Muhammad Usman</label>
-                            <p>Joined 21. August 2021</p>
-                        </div>
-                    </div>
-                    <!-- <div class="sm_full-width align-in-center">
-                        <div class="btn-dashboard small hover-effect mr-10">Edit</div>
-                        <div class="btn-dashboard small red hover-effect">Delete</div>
-                    </div> -->
-                </td>
+                @endforeach
                 <td class="table-row">
                     <a href="{{url('admin/students')}}" class="btn-dashboard full-width small hover-effect cursor-pointer text-decoration-none">View All</a>
                 </td>
