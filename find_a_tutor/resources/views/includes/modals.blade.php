@@ -111,7 +111,35 @@
         
         <div class="full-width align-in-center">
             <a class="btn-dashboard red mt-20 sm_mt-10 mr-10 cursor-pointer">Delete</a>
-            <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('deleteModal');">Cancel</a>
+            <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('deleteModal');">Dismiss</a>
+        </div>
+    </div>      
+</div>
+
+<!-- MODAL DIALOG BOX FOR BLOCK-->
+<div id="blockModal" class="main-content popup-container display-none">
+    <div class="backdrop" onclick="hideElem('blockModal');"></div>
+    <div class="dialog alert align-in-center flex-column">
+        <label for="close_checkbox" class="btn-close" onclick="hideElem('blockModal');">+</label>
+        <h2 class="heading2 mb-20">Are you sure you want to block?</h2>
+        
+        <div class="full-width align-in-center">
+            <a class="btn-dashboard red mt-20 sm_mt-10 mr-10 cursor-pointer">Block</a>
+            <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('deleteModal');">Dismiss</a>
+        </div>
+    </div>      
+</div>
+
+<!-- MODAL DIALOG BOX FOR EDIT USER-->
+<div id="editModal" class="main-content popup-container display-none">
+    <div class="backdrop" onclick="hideElem('editModal');"></div>
+    <div class="dialog alert align-in-center flex-column">
+        <label for="close_checkbox" class="btn-close" onclick="hideElem('editModal');">+</label>
+        <h2 class="heading2 mb-20">Are you sure you want to delete?</h2>
+        
+        <div class="full-width align-in-center">
+            <a class="btn-dashboard red mt-20 sm_mt-10 mr-10 cursor-pointer">Delete</a>
+            <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('editModal');">Dismiss</a>
         </div>
     </div>      
 </div>

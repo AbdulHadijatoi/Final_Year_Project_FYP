@@ -118,7 +118,7 @@
             </li>
             <li>
                 <a class="{{ (request()->is('admin/add-tutor*')) ? 'active' : '' }}" href="{{ url('admin/add-tutor')}}">
-                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
                     <span class="links_name">Add Tutor</span>
                 </a>
                 <span class="tooltip">Add Tutor</span>
@@ -132,7 +132,7 @@
             </li>
             <li>
                 <a class="{{ (request()->is('admin/students*')) ? 'active' : '' }}" href="{{ url('admin/students')}}">
-                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
                     <span class="links_name">View Students</span>
                 </a>
                 <span class="tooltip">View Students</span>

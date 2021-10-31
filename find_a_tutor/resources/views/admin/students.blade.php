@@ -15,60 +15,23 @@
     <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20 border-02 p-15 mt-30 align-in-center sm_p-30">
         <table class="full-width">
             <tbody>
+                @foreach($students as $student)
                 <tr>
                     <td class="table-row">
                         <div>
-                            <span class="initials">MU</span>
+                            <span class="initials">{{ Str::substr($student->firstname, 0,1) ?? 'S' }}{{ Str::substr($student->lastname, 0,1) ?? 'T' }}</span>
                             <div class="st-info">
-                                <label>Muhammad Usman</label>
-                                <p>Joined 21. August 2021</p>
+                                <label>{{ $student->firstname ?? '' }} {{ $student->lastname ?? '' }}</label>
+                                <p>Joined {{ date('d-M-Y', strtotime($student->created_at)) ?? '' }}</p>
                             </div>
                         </div>
                         <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
-                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
-                        </div>
-                    </td>
-                    <td class="table-row">
-                        <div>
-                            <span class="initials">MU</span>
-                            <div class="st-info">
-                                <label>Muhammad Usman</label>
-                                <p>Joined 21. August 2021</p>
-                            </div>
-                        </div>
-                        <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
-                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
-                        </div>
-                    </td>
-                    <td class="table-row">
-                        <div>
-                            <span class="initials">MU</span>
-                            <div class="st-info">
-                                <label>Muhammad Usman</label>
-                                <p>Joined 21. August 2021</p>
-                            </div>
-                        </div>
-                        <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
-                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
-                        </div>
-                    </td>
-                    <td class="table-row">
-                        <div>
-                            <span class="initials">MU</span>
-                            <div class="st-info">
-                                <label>Muhammad Usman</label>
-                                <p>Joined 21. August 2021</p>
-                            </div>
-                        </div>
-                        <div class="sm_full-width align-in-center">
-                            <div class="btn-dashboard small hover-effect mr-10" onclick="showElem('editModal');">Edit</div>
-                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
+                            <a href="{{ url('student/profile') }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
+                            <div class="btn-dashboard small red hover-effect" onclick="showElem('blockModal');">Block</div>
                         </div>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </section>

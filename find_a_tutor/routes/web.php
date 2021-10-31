@@ -17,17 +17,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('tutor/dashboard', function () {
-//     return view('tutor/dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('student/profile', function () {
+    return view('student/profile');
+})->name('profile');
 
-Route::get('student/dashboard', function () {
-    return view('student/dashboard');
-})->name('dashboard');
+Route::get('tutor/profile', function () {
+    return view('tutor/profile');
+})->name('profile');
 
-// Route::get('admin/dashboard', function () {
-//     return view('admin/dashboard');
-// })->middleware(['auth'])->name('dashboard');
 
 
 require __DIR__.'/auth.php';
@@ -48,7 +45,6 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('courses', \App\Http\Controllers\Student\CoursesController::class);
         Route::resource('enroll-course', \App\Http\Controllers\Student\EnrollCourseController::class);
         Route::resource('make-profile', \App\Http\Controllers\Student\MakeProfileController::class);
-        Route::resource('profile', \App\Http\Controllers\Student\ProfileController::class);
         Route::resource('quizes', \App\Http\Controllers\Student\QuizesController::class);
         Route::resource('take-quiz', \App\Http\Controllers\Student\TakeQuizController::class);
     });
@@ -60,7 +56,6 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('courses', \App\Http\Controllers\Tutor\CoursesController::class);
         Route::resource('create-quiz', \App\Http\Controllers\Tutor\CreateQuizController::class);
         Route::resource('make-profile', \App\Http\Controllers\Tutor\MakeProfileController::class);
-        Route::resource('profile', \App\Http\Controllers\Tutor\ProfileController::class);
         Route::resource('quiz', \App\Http\Controllers\Tutor\QuizController::class);
         Route::resource('quizes', \App\Http\Controllers\Tutor\QuizesController::class);
         Route::resource('students', \App\Http\Controllers\Tutor\StudentsController::class);
