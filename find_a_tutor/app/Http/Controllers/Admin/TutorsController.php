@@ -86,15 +86,7 @@ class TutorsController extends Controller
         // return redirect()->route('admin.tutors.index')-with('success','User has been blocked.'); 
         return redirect()->back(); 
     }
-    public function block($id)
-    {
-        $user = User::findOrfail($id);
-        $user->blocked_at = now();
-        $user->save();
-        // return redirect()->route('admin.tutors.index')-with('success','User has been blocked.'); 
-        return redirect()->back(); 
-    }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -106,5 +98,16 @@ class TutorsController extends Controller
         $user->delete();
 
         return redirect()->back();
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        
+        $tutors = User::query()
+            ->where('role', '=', "Teacher")
+            ->where('firstname', 'LIKE', "%{$search}%")
+            ->get();
+        return view('admin.tutors', ['teachers' => $tutors]);
     }
 }

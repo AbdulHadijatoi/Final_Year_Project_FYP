@@ -1,5 +1,6 @@
-
 @extends('layouts.profile')
+
+@section('title', 'Profile')
 
 @section('content')
     <main class="full-width vh100">

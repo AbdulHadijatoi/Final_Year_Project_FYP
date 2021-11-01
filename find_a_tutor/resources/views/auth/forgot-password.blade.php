@@ -1,5 +1,7 @@
 @extends('layouts.account')
 
+@section('title', 'Forgot Password')
+
 @section('content')
     <main class="full-width login-content-bg" style="min-height: calc(100vh - 140px);">
         

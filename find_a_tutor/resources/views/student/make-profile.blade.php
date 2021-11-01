@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 
+@section('title', 'Make Profile')
+
 @section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center">

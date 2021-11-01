@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\ProfileController;
+use \App\Http\Controllers\Admin\StudentsController;
+use \App\Http\Controllers\Admin\TutorsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,21 +31,21 @@ Route::get('tutor/profile', function () {
 
 require __DIR__.'/auth.php';
 
-Route::group(['middleware' => ['auth', 'active_user']], function() {
-    Route::get('/', function () {
-        return view('index');
-    });
-    // ... Any other routes that are accessed only by non-blocked user
-});
+// Route::group(['middleware' => ['auth', 'active_user']], function() {
+//     Route::get('/', function () {
+//         return view('index');
+//     });
+//     // ... Any other routes that are accessed only by non-blocked user
+// });
 
 Route::group(['middleware' => 'auth'], function(){
     
     //Admin routes
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
         Route::resource('dashboard', \App\Http\Controllers\Admin\DashboardController::class);
-        Route::resource('add-tutor', \App\Http\Controllers\Admin\AddTutorController::class);
-        Route::resource('students', \App\Http\Controllers\Admin\StudentsController::class);
-        Route::resource('tutors', \App\Http\Controllers\Admin\TutorsController::class);
+        Route::resource('add-user', \App\Http\Controllers\Admin\AddUserController::class);
+        Route::resource('students', StudentsController::class);
+        Route::resource('tutors', TutorsController::class);
     });
 
     //Student routes
@@ -68,8 +70,11 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('students', \App\Http\Controllers\Tutor\StudentsController::class);
         Route::resource('course', \App\Http\Controllers\Tutor\CourseController::class);
     });
-    
+
+    Route::post('/admin/tutors', [TutorsController::class , 'search'])->name('AdminTutorSearch');
+    Route::post('/admin/students', [StudentsController::class , 'search'])->name('AdminStudentSearch');
+
 });
 
 
-// Route::post('/admin/tutors/block/{id}',[\App\Http\Controllers\Admin\TutorsController::class, 'block'])->name('tutorsBlock');
+Route::get('/profile/{id}',[ProfileController::class, 'show'])->name('profile');

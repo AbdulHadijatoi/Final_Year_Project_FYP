@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
-class AddTutorController extends Controller
+class AddUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,7 @@ class AddTutorController extends Controller
      */
     public function index()
     {
-        return view('admin.add-tutor');
+        return view('admin.add-user');
     }
 
     /**
@@ -35,7 +37,21 @@ class AddTutorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, [
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:8',
+            'role' => 'required',
+        ]);
+
+        $user = new User;
+
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role = $request->role;
+
+        $user->save();
+        return back()->with('success', 'Successfully added to database.');
     }
 
     /**

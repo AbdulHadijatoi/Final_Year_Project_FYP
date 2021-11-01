@@ -618,13 +618,15 @@ header .profile-icon {
 }
 
 .main-content .formField input,
-.main-content .formField textarea {
+.main-content .formField textarea,
+.main-content .formField select {
     height: 35px;
     padding: 10px;
     background-color: var(--dark);
     border: none;
     color: white;
     font-size: 12px;
+    outline: none;
 }
 
 .main-content .formField textarea {

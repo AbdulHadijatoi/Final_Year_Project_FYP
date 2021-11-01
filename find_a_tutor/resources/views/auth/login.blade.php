@@ -1,5 +1,7 @@
 @extends('layouts.account')
 
+@section('title', 'Login')
+
 @section('content')
     <main class="full-width login-content-bg flex-column" style="min-height: calc(100vh - 140px);">
         

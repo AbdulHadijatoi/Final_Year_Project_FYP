@@ -1,5 +1,6 @@
-
 @extends('layouts.dashboard')
+
+@section('title', 'Make Profile')
 
 @section('content')
 

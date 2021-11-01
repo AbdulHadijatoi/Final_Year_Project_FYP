@@ -1,6 +1,8 @@
 
 @extends('layouts.home')
 
+@section('title', 'Home')
+
 @section('content')
 
 <main class="full-width">

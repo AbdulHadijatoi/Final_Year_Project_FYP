@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 
+@section('title', 'Dashboard')
+
 @section('content')
 <div class="main-content light-text">
 

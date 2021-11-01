@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title') - Tution Made Easy</title>
+        
         <link rel="stylesheet" href="{{ asset('assets/css/panel.css')}}">
         
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
@@ -117,11 +118,11 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a class="{{ (request()->is('admin/add-tutor*')) ? 'active' : '' }}" href="{{ url('admin/add-tutor')}}">
+                <a class="{{ (request()->is('admin/add-user*')) ? 'active' : '' }}" href="{{ url('admin/add-user')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
-                    <span class="links_name">Add Tutor</span>
+                    <span class="links_name">Add User</span>
                 </a>
-                <span class="tooltip">Add Tutor</span>
+                <span class="tooltip">Add User</span>
             </li>
             <li>
                 <a class="{{ (request()->is('admin/tutors*')) ? 'active' : '' }}" href="{{ url('admin/tutors')}}">
@@ -173,7 +174,7 @@
                         <ul class="nav-list">
                             <li>
                                 <a>
-                                    <span class="links_name">{{ Auth::user()->email }}</span>
+                                    <span class="links_name">{{ Auth::user()->firstname }}</span>
                                 </a>
                             </li>
                             <li>

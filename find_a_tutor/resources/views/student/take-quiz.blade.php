@@ -1,5 +1,7 @@
 @extends('layouts.profile')
 
+@section('title', 'Take Quiz')
+
 @section('content')
 <main class="full-width flex-column light-text">
     <div class="full-width h80 align-in-center flex-column flex-wrap light-text bg-dark2 sm_h60">

@@ -1,22 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class StudentsController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $students = User::where('role',"Student")->orderBy('firstname')->get();
-        return view('admin.students',['students'=>$students]);
+        //
     }
 
     /**
@@ -45,11 +43,15 @@ class StudentsController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     * @param  \Illuminate\Http\Request  $request
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-        //
+        $user = User::findOrfail($id);
+        if($user->role == "Student"){
+            return view('student/profile');
+        }else if($user->role == "Teacher"){
+            return view('tutor/profile');
+        }
     }
 
     /**
@@ -72,17 +74,7 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        
-        if(!empty($user->blocked_at)){
-            $user->blocked_at = '';
-        }else{
-            $user->blocked_at = now();
-        }
-
-        $user->save();
-        // return redirect()->route('admin.tutors.index')-with('success','User has been blocked.'); 
-        return redirect()->back(); 
+        //
     }
 
     /**
@@ -94,17 +86,6 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function search(Request $request)
-    {
-        $search = $request->input('search');
-        
-        $students = User::query()
-            ->where('role', '=', "Student")
-            ->where('firstname', 'LIKE', "%{$search}%")
-            ->get();
-        return view('admin.students', ['students' => $students]);
     }
 
 }

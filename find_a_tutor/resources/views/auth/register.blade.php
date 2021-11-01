@@ -1,5 +1,7 @@
 @extends('layouts.account')
 
+@section('title', 'Register')
+
 @section('content')
     <main class="full-width login-content-bg" style="min-height: calc(100vh - 140px);">
 
@@ -12,7 +14,7 @@
             <h3 class="font-weight-600 mb-10">Create a free account</h3>
             <div class="account-field hover-effect">
                 <img src="{{ asset('assets/svg-icons/svg_user.svg') }}" width="20">
-                <input type="email" name="email" placeholder="Username or Email" value="{{ old('email') }}" required >
+                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required >
             </div>
             <span class="text-danger text-small"> @error('email'){{ $message }} @enderror</span>
 

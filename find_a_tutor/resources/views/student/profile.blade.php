@@ -1,5 +1,7 @@
 @extends('layouts.profile')
 
+@section('title', 'Profile')
+
 @section('content')
 <main class="full-width vh100">
     <div class="content _80-width align-items-start flex-column pt-40 sm_90-width flex-wrap light-text pb-90">

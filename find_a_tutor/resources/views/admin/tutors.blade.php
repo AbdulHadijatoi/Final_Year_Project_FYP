@@ -7,11 +7,14 @@
     <div class="justify-content-between align-items-center sm_flex-column">
         <h3 class="h-dashboard sm_full-width">Tutor Profiles</h3>
         <div class="align-in-center sm_full-width sm_mt-10">
-            <div class="formField flex-row br-light-white mb-0 align-in-center mr-10">
+            <form action="{{ route('AdminTutorSearch') }}" method="POST" class="formField flex-row br-light-white mb-0 align-in-center mr-10">
+                @csrf
                 <img class="ml-15" src="{{asset('assets/svg-icons/svg_search.svg')}}" width="18">
-                <input class="full-width" type="text" name="username" placeholder="Username">
-            </div>
-            <a class="btn-dashboard mr-10 w200" href="{{('admin/add-tutor')}}">Add Tutor</a>
+                <input class="full-width" type="text" name="search" value="{{ old('search') }}" placeholder="Username">
+                <button type="submit" class="display-none"></button>
+            </form>
+
+            <a class="btn-dashboard mr-10 w200" href="{{ url('admin/add-user')}}">Add Tutor</a>
         </div>
     </div>
 
@@ -30,7 +33,8 @@
                         </div>
                         <div class="sm_full-width align-in-center">
                             
-                            <a href="{{ url('tutor/profile') }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
+                            {{-- VIEW PROFILE BUTTON --}}
+                            <a href="{{ route('profile',$teacher->id) }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
 
                             @if(!empty($teacher->blocked_at))
                                 <form method="POST" action="{{ route('admin.tutors.update',$teacher->id) }}">

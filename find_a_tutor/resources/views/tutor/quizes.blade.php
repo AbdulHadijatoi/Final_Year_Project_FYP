@@ -1,5 +1,6 @@
-
 @extends('layouts.dashboard')
+
+@section('title', 'Quizes')
 
 @section('content')
 <div class="main-content light-text">
