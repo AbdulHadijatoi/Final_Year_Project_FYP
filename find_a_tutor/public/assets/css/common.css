@@ -145,6 +145,14 @@ body {
     padding: 10px;
 }
 
+.session-error {
+    width: 100%;
+    text-align: center;
+    background: red;
+    color: white;
+    padding: 10px;
+}
+
 .validation-errors {
     width: 100%;
     text-align: center;

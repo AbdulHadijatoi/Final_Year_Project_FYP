@@ -9,6 +9,17 @@
         <!-- Validation Errors -->
         <!-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> -->
         
+        @if (session('status'))
+            <div class="session-status">
+                {{ session('status') }}
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="session-error">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <form id="login_form" method="POST" action="{{ route('login') }}" class="content account-box align-in-center flex-column light-text sm_border-none">
             @csrf
 

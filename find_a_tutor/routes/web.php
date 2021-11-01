@@ -29,6 +29,13 @@ Route::get('tutor/profile', function () {
 
 require __DIR__.'/auth.php';
 
+Route::group(['middleware' => ['auth', 'active_user']], function() {
+    Route::get('/', function () {
+        return view('index');
+    });
+    // ... Any other routes that are accessed only by non-blocked user
+});
+
 Route::group(['middleware' => 'auth'], function(){
     
     //Admin routes
@@ -63,3 +70,6 @@ Route::group(['middleware' => 'auth'], function(){
     });
     
 });
+
+
+// Route::post('/admin/tutors/block/{id}',[\App\Http\Controllers\Admin\TutorsController::class, 'block'])->name('tutorsBlock');

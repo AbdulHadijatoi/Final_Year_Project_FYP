@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Tutor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class TutorsController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class TutorsController extends Controller
      */
     public function index()
     {
-        $teachers = User::where('role',"Teacher")->orderBy('firstname')->get();
-        return view('admin.tutors',['teachers'=>$teachers]);
+        //
     }
 
     /**
@@ -59,10 +57,7 @@ class TutorsController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        $user->blocked_at = now();
-        $user->save();
-        return redirect()->route('admin.tutors')-with('success','User has been blocked.'); 
+        //
     }
 
     /**
@@ -74,25 +69,7 @@ class TutorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        
-        if(!empty($user->blocked_at)){
-            $user->blocked_at = '';
-        }else{
-            $user->blocked_at = now();
-        }
-
-        $user->save();
-        // return redirect()->route('admin.tutors.index')-with('success','User has been blocked.'); 
-        return redirect()->back(); 
-    }
-    public function block($id)
-    {
-        $user = User::findOrfail($id);
-        $user->blocked_at = now();
-        $user->save();
-        // return redirect()->route('admin.tutors.index')-with('success','User has been blocked.'); 
-        return redirect()->back(); 
+        //
     }
 
     /**
@@ -101,10 +78,8 @@ class TutorsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-
-        return redirect()->back();
+        //
     }
 }

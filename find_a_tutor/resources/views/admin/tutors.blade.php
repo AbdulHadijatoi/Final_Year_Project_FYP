@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 
+@section('title', 'Admin Tutors')
+
 @section('content')
 <div class="main-content light-text">
     <div class="justify-content-between align-items-center sm_flex-column">
@@ -27,9 +29,34 @@
                             </div>
                         </div>
                         <div class="sm_full-width align-in-center">
+                            
                             <a href="{{ url('tutor/profile') }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
-                            <div class="btn-dashboard small red hover-effect" onclick="showElem('deleteModal');">Delete</div>
-                        </div>
+
+                            @if(!empty($teacher->blocked_at))
+                                <form method="POST" action="{{ route('admin.tutors.update',$teacher->id) }}">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="btn-dashboard green small hover-effect mr-10">Unblock</button>
+                                </form>
+                            @else
+                                <a class="btn-dashboard red small hover-effect mr-10" onclick="showElem('blockModal{{$teacher->id}}');">Block</a>
+                                <!-- MODAL DIALOG BOX FOR BLOCK-->
+                                <form method="POST" action="{{ route('admin.tutors.update',$teacher->id) }}" id="blockModal{{$teacher->id}}" class="main-content popup-container display-none">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="backdrop" onclick="hideElem('blockModal{{$teacher->id}}');"></div>
+                                    <div class="dialog alert align-in-center flex-column">
+                                        <label for="close_checkbox" class="btn-close" onclick="hideElem('blockModal{{$teacher->id}}');">+</label>
+                                        <h2 class="heading2 mb-20">Are you sure you want to block?</h2>
+                                        
+                                        <div class="full-width align-in-center">
+                                            <input type="submit" class="btn-dashboard red mt-20 sm_mt-10 mr-10 cursor-pointer" value="Block">
+                                            <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('blockModal{{$teacher->id}}');">Dismiss</a>
+                                        </div>
+                                    </div>      
+                                </form>
+                            @endif
+                    </div>
                     </td>
                 </tr>
                 @endforeach
