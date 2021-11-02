@@ -47,26 +47,23 @@
                     </select>
                 </div>
             </div>
-        </div>
+        </div> 
         <label class="font-size-14">Session Duration</label>
-        <div class="duration _50-width mt-10 sm_full-width position-relative">
-            <hr>
-            <div class="square active"><span>10min</span></div>
-            <div class="square"><span>30min</span></div>
-            <div class="square"><span>1hour</span></div>
-            <div class="square"><span>1.5hour</span></div>
-            <div class="square active"><span>2hour</span></div>
-            <div class="square"><span>3hour</span></div>
+
+        <div class="sessionduration _50-width mt-10 sm_full-width position-relative">
+            <input type="range" name="duration" min="1" max="200" value="60" class="slider" id="duration">
+            <p><span id="timeview"></span> minutes</p>
         </div>
+
         <label class="font-size-14 mt-20">Days of the week</label>
         <div id="availability" class="availability _50-width mt-10 sm_full-width sm_font-size-11">
-            <div class="square active">MON</div>
-            <div class="square active">TUE</div>
-            <div class="square">WED</div>
-            <div class="square">THU</div>
-            <div class="square">FRI</div>
-            <div class="square active">SAT</div>
-            <div class="square">SUN</div>
+            <input class="availability-checkbox" checked type="checkbox" name='monday' id="monday"><label for="monday" class="square">MON</label>
+            <input class="availability-checkbox" type="checkbox" name='tuesday' id="tuesday"><label for="tuesday" class="square">TUE</label>
+            <input class="availability-checkbox" type="checkbox" name='wednesday' id="wednesday"><label for="wednesday" class="square">WED</label>
+            <input class="availability-checkbox" type="checkbox" name='thursday' id="thursday"><label for="thursday" class="square">THU</label>
+            <input class="availability-checkbox" type="checkbox" name='friday' id="friday"><label for="friday" class="square">FRI</label>
+            <input class="availability-checkbox" type="checkbox" name='saturday' id="saturday"><label for="saturday" class="square">SAT</label>
+            <input class="availability-checkbox" type="checkbox" name='sunday' id="sunday"><label for="sunday" class="square">SUN</label>
         </div>
 
         <div class="full-width justify-content-end mt-20">

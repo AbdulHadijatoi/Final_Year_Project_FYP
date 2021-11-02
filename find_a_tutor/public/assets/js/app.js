@@ -61,3 +61,25 @@ function showHide(show, hide) {
     s.style.display = 'flex';
     h.style.display = 'none';
 }
+
+var slider = document.getElementById("duration");
+var timeview = document.getElementById("timeview");
+
+if (slider != null && timeview != null) {
+    timeview.innerHTML = slider.value;
+
+    slider.oninput = function() {
+        timeview.innerHTML = this.value;
+    }
+}
+
+function generateKey(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}

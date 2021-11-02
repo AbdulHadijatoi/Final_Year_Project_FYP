@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Tutor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Course;
+use App\Models\Tutor;
+use Illuminate\Support\Facades\Auth;
 
 class CoursesController extends Controller
 {
@@ -14,7 +17,9 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        return view('tutor.courses');
+        $tutor_id = Tutor::where('user_id',Auth::id())->first()->id;
+        $courses = Course::where('tutor_id',$tutor_id);
+        return view('tutor.courses',['courses'=>$courses]);
     }
 
     /**

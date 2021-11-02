@@ -16,8 +16,6 @@ class CreateTutorsTable extends Migration
         Schema::create('tutors', function (Blueprint $table) {
             $table->id();
             $table->index('user_id');
-            $table->string('skills')->nullable();
-            $table->string('availability')->nullable()->comment('0, 1, 2, 3, 4, 5, 6, 7');
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

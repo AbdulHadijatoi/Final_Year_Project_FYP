@@ -15,14 +15,15 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('coursename');
-            $table->tinyInteger('duration');
-            $table->string('description');
-            $table->string('category');
-            $table->string('status')->comment('0: Running, 1: Ended');
+            $table->string('category')->nullable();
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('enrollment_key')->nullable();
+            $table->tinyInteger('status')->comment('0: Running, 1: Ended')->nullable()->default('1');
             $table->index('tutor_id');
             $table->foreignId('tutor_id')->constrained('tutors')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            // category, title, description, enrollment_key, status, tutor_id
         });
     }
 

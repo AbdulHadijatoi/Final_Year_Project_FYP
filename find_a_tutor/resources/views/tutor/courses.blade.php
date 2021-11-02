@@ -20,7 +20,7 @@
                     <hr>
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
-                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
+                        <a href="{{ url('tutor/course') }}" class="link">View</a>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@
                     <hr>
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
-                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
+                        <a href="{{ url('tutor/course') }}" class="link">View</a>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                     <hr>
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
-                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
+                        <a href="{{ url('tutor/course') }}" class="link">View</a>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                     <hr>
                     <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
                     <div class="link-div">
-                        <a href="{{ url('tutor/view-course') }}" class="link">View</a>
+                        <a href="{{ url('tutor/course') }}" class="link">View</a>
                     </div>
                 </div>
 
