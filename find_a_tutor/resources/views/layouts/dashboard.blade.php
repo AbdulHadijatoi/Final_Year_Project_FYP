@@ -168,13 +168,24 @@
                 </div>
                 <div class="position-relative">
                     <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
-                    <div id="profileMenuButton" class="ac-icon profile-icon" onclick="clickTarget('profileMenuCheckbox');">MU</div>
+                    <div id="profileMenuButton" class="ac-icon profile-icon overflow-hidden" onclick="clickTarget('profileMenuCheckbox');">
+
+                        @if(session()->get('images') != '')
+                            <img class="full-width full-height" src="{{asset('images/'.session()->get('images')->photo_path)}}"/>
+                        @else
+                            @if(Auth::user()->firstname != '' || Auth::user()->lastname != '')
+                                {{ Str::substr(Auth::user()->firstname, 0,1) }}{{ Str::substr(Auth::user()->lastname, 0,1) }}
+                            @else
+                                {{ Str::substr(Auth::user()->email, 0,2) }}
+                            @endif
+                        @endif
+                    </div>
 
                     <div id="profileMenu" class="profile-menu position-absolute top-60 right-0">
                         <ul class="nav-list">
                             <li>
                                 <a>
-                                    <span class="links_name">{{ Auth::user()->firstname }}</span>
+                                    <span class="links_name">{{ Auth::user()->firstname ?? Auth::user()->email}}</span>
                                 </a>
                             </li>
                             <li>

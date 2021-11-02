@@ -32,7 +32,7 @@
         </div>
 
     </div>
-
+    @if(count($teachers) > 0)
     <h3 class="h-dashboard mt-30 mb-10">Tutor Profiles</h3>
     <table class="full-width border-02 p-30">
         <tbody>
@@ -53,7 +53,9 @@
                 </td>
         </tbody>
     </table>
+    @endif
 
+    @if(count($students) > 0)
     <h3 class="h-dashboard mt-30 mb-10">Student Profiles</h3>
     <table class="full-width border-02 p-30">
         <tbody>
@@ -75,5 +77,6 @@
             </tr>
         </tbody>
     </table>
+    @endif
 </div>
 @endsection

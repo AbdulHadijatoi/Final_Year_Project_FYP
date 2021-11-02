@@ -73,6 +73,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::post('/admin/tutors', [TutorsController::class , 'search'])->name('AdminTutorSearch');
     Route::post('/admin/students', [StudentsController::class , 'search'])->name('AdminStudentSearch');
+    Route::resource('photo', \App\Http\Controllers\PhotoController::class);
 
 });
 

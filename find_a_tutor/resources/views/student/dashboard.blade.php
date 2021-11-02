@@ -13,7 +13,6 @@
     </div>
 
     <div class="full-width align-items-center flex-wrap text-white mt-20">
-
         <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg mr-10 sm_48-width">
             <div>
                 <p>You have Tutors</p>

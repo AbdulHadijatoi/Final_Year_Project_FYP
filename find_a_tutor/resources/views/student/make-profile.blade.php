@@ -77,10 +77,18 @@
             </div>
             
             <div class="justify-content-between sm_flex-column align-items-center">
-                <div class="formField mr-10 sm_mr-0">
-                    <label>Upload Photo</label>
-                    <input type="file" name="photo">
-                </div>
+
+                <form action="{{ route('photo.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="formField mr-10 sm_mr-0">
+                        <label>Upload Photo</label>
+                        <input type="file" name="photo" required>
+                    </div>
+                    <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                    <span class="text-danger text-small"> @error('photo'){{ $message }} @enderror</span>
+                    <button type="submit" class="btn-dashboard full-width green">Upload</button>
+                </form>
 
                 <div class="formField mr-10 sm_mr-0">
                     <label>Language</label>

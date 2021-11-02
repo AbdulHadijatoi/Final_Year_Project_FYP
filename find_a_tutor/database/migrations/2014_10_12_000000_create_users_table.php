@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('role')->nullable();
+            $table->string('phone')->unique()->nullable();
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('gender')->nullable();
@@ -27,11 +29,8 @@ class CreateUsersTable extends Migration
             $table->string('education')->nullable();
             $table->string('language')->nullable();
             $table->string('location')->nullable();
-            $table->string('phone')->unique()->nullable();
-            $table->string('photo')->unique()->nullable();
             $table->text('skills')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('role')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -19,8 +19,10 @@
     </div>
 
     <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20 border-02 p-15 mt-30 align-in-center sm_p-30">
+        @if(!count($students) > 0)
+            <p class="font-size-15 font-weight-800 opacity-2">Looks like, there is no any record for tutors!</p>
+        @else
         <table class="full-width">
-            
             <tbody>
                 @foreach($students as $student)
                 <tr>
@@ -65,6 +67,7 @@
                 @endforeach
             </tbody>
         </table>
+        @endif
     </section>
 </div>
 @endsection
