@@ -41,24 +41,6 @@ class AddCourseController extends Controller
      */
     public function store(Request $request)
     {
-        // 'course_id'
-        // 'duration'
-        // 'monday'
-        // 'tuesday'
-        // 'wednesday'
-        // 'thursday'
-        // 'friday'
-        // 'saturday'
-        // 'sunday'
-
-        // 'category'
-        // 'title'
-        // 'description'
-        // 'enrollment_key'
-        // 'status'
-        // 'tutor_id'
-        // return $request->input();
-
 
         //ADD TUTOR FROM USERS FIRST THEN PROCEED!!!
         $tutor = Tutor::firstOrCreate([
@@ -130,7 +112,7 @@ class AddCourseController extends Controller
         }
 
         $schedule->save();
-        return back()->with('success', 'Successfully added to database.');
+        return back()->with('success',"Added successfully, to view it, please navigate to courses tab");
     }
 
     /**

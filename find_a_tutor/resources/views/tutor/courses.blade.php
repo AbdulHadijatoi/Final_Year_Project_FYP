@@ -4,63 +4,51 @@
 
 @section('content')
         <div class="main-content light-text">
-
+            
             <div class="justify-content-between align-items-center">
-                <h3 class="h-dashboard">View Courses</h3>
+                <h3 class="h-dashboard">Active Courses</h3>
                 <div class="align-in-center">
                     <a class="btn-dashboard mr-10" href="{{ url('tutor/add-course') }}">Add Course</a>
                 </div>
             </div>
 
             <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20">
+                @foreach($courses as $course)
+                @if($course->status == 1)
                 <div class="course-card min-h280">
-                    <span class="category">Programming</span>
-                    <p class="title">JS - Javascript</p>
+                    <span class="category">{{Str::limit($course->category,20)}}</span>
+                    <p class="title">{{Str::limit($course->title,18)}}</p>
                     <span>43 Students</span>
                     <hr>
-                    <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
+                    <p class="para"> {{Str::limit($course->description, 120)}} </p>
                     <div class="link-div">
-                        <a href="{{ url('tutor/course') }}" class="link">View</a>
+                        <a href="{{ route('tutor.courses.show',$course->id) }}"  class="link">View</a>
                     </div>
+                    
                 </div>
-
-                <div class="course-card min-h280">
-                    <span class="category">Programming</span>
-                    <p class="title">JS - Javascript</p>
-                    <span>43 Students</span>
-                    <hr>
-                    <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                    <div class="link-div">
-                        <a href="{{ url('tutor/course') }}" class="link">View</a>
-                    </div>
-                </div>
-
-                <div class="course-card min-h280">
-                    <span class="category">Programming</span>
-                    <p class="title">JS - Javascript</p>
-                    <span>43 Students</span>
-                    <hr>
-                    <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                    <div class="link-div">
-                        <a href="{{ url('tutor/course') }}" class="link">View</a>
-                    </div>
-                </div>
-
-                <div class="course-card min-h280">
-                    <span class="category">Programming</span>
-                    <p class="title">JS - Javascript</p>
-                    <span>43 Students</span>
-                    <hr>
-                    <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                    <div class="link-div">
-                        <a href="{{ url('tutor/course') }}" class="link">View</a>
-                    </div>
-                </div>
-
+                @endif
+                @endforeach
                 <a href="{{ url('tutor/add-course') }}" class="course-card align-in-center hover-effect text-decoration-none" style="padding: 0px; font-size: 100px; color: var(--profile-bg);">
                     +
                 </a>
-
+            </section>
+            <br><br>
+            <h3 class="h-dashboard">Ended Courses</h3>
+            <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center opacity-5">
+                @foreach ($courses as $course)
+                    @if($course->status == 0)
+                        <div class="course-card min-h280">
+                            <span class="category">{{Str::limit($course->category,20)}}</span>
+                            <p class="title">{{Str::limit($course->title,18)}}</p>
+                            <span>43 Students</span>
+                            <hr>
+                            <p class="para"> {{Str::limit($course->description, 120)}} </p>
+                            <div class="link-div">
+                                <a href="{{ route('tutor.courses.show',$course->id) }}"  class="link">View</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </section>
         </div>
 @endsection

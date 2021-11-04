@@ -547,7 +547,7 @@ header .profile-icon {
     font-size: 16px;
     margin: 20px 0px 10px 0px;
     color: var(--light-text);
-    font-weight: 300;
+    font-weight: 800;
 }
 
 .main-content .course-card>span {
@@ -753,14 +753,11 @@ header .profile-icon {
     border: 1px solid var(--whatsapp);
 }
 
-.main-content #qal {
-    margin-bottom: 10px;
-}
-
 .main-content #qal,
 .main-content #qam {
-    font-size: 8px;
+    font-size: 12px;
     display: flex;
+    height: 45px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -785,7 +782,7 @@ header .profile-icon {
 }
 
 .main-content .qar:checked+span {
-    background: black;
+    background: var(--whatsapp);
 }
 
 .main-content .op-label {

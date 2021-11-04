@@ -13,6 +13,16 @@
 
     {{-- category, title, description, enrollment_key, status, tutor_id --}}
     <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20 dashboard-card-bg p-15 mt-30 align-in-center sm_p-30">
+        @if(Session::has('success'))
+            <div class="session-status">
+                {{Session::get('success')}}
+            </div>
+        @endif 
+        @if(Session::has('fail'))
+            <div class="session-error">
+                {{Session::get('fail')}}
+            </div>
+        @endif 
         <form action="{{ route('tutor.add-course.store') }}" method="POST" class="_70-width sm_full-width pt-50 pb-50 sm_pt-20 sm_pb-20">
             @csrf
             <div class="flex-column">

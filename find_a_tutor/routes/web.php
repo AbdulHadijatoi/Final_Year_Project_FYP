@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProfileController;
 use \App\Http\Controllers\Admin\StudentsController;
 use \App\Http\Controllers\Admin\TutorsController;
+use \App\Http\Controllers\Tutor\CourseController;
+use \App\Http\Controllers\Tutor\QuizController;
+use \App\Http\Controllers\Tutor\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,22 +63,26 @@ Route::group(['middleware' => 'auth'], function(){
 
     //Tutor routes
     Route::group(['middleware' => 'role:tutor', 'prefix' => 'tutor', 'as' => 'tutor.'], function(){
-        Route::resource('dashboard', \App\Http\Controllers\Tutor\DashboardController::class);
+        Route::resource('dashboard', DashboardController::class);
         Route::resource('add-course', \App\Http\Controllers\Tutor\AddCourseController::class);
         Route::resource('courses', \App\Http\Controllers\Tutor\CoursesController::class);
         Route::resource('create-quiz', \App\Http\Controllers\Tutor\CreateQuizController::class);
         Route::resource('make-profile', \App\Http\Controllers\Tutor\MakeProfileController::class);
-        Route::resource('quiz', \App\Http\Controllers\Tutor\QuizController::class);
+        Route::resource('quiz', QuizController::class);
         Route::resource('quizes', \App\Http\Controllers\Tutor\QuizesController::class);
         Route::resource('students', \App\Http\Controllers\Tutor\StudentsController::class);
-        Route::resource('course', \App\Http\Controllers\Tutor\CourseController::class);
+        Route::resource('course', CourseController::class);
     });
 
     Route::post('/admin/tutors', [TutorsController::class , 'search'])->name('AdminTutorSearch');
     Route::post('/admin/students', [StudentsController::class , 'search'])->name('AdminStudentSearch');
+    Route::post('/tutor/quiz', [QuizController::class, 'addQuestion'])->name('add_question_route');
+    Route::post('/tutor/dashboard', [DashboardController::class,'getSchedule'])->name('get_schedule');    
     Route::resource('photo', \App\Http\Controllers\PhotoController::class);
 
 });
 
 
 Route::get('/profile/{id}',[ProfileController::class, 'show'])->name('profile');
+
+// Route::post('____', [____::class,'____'])->name('_____');

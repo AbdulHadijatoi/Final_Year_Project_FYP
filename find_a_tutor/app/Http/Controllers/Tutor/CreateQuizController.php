@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Tutor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Quiz;
+use App\Models\Course;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Tutor;
 
 class CreateQuizController extends Controller
 {
@@ -14,7 +18,9 @@ class CreateQuizController extends Controller
      */
     public function index()
     {
-        return view('tutor.create-quiz');
+        $tutor = Tutor::where('user_id',Auth::id())->get()->first();
+        $courses = Course::where('tutor_id',$tutor->id)->get();
+        return view('tutor.create-quiz', ['courses'=> $courses]);
     }
 
     /**
@@ -35,7 +41,22 @@ class CreateQuizController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //course_id, title, description, duration
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'duration' => 'required',
+        ]);
+
+        $quiz = new Quiz;
+        $quiz->title = $request->title;
+        $quiz->description = $request->description;
+        $quiz->duration = $request->duration;
+        $quiz->course_id = $request->course_id;
+
+        $quiz->save();
+        return view('tutor.quizes')->with('Success','The Quiz is in the list now, please open it and added questions');
+
     }
 
     /**

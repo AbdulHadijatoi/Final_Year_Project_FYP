@@ -112,8 +112,10 @@
     /* Firefox */
 }
 
-.popup-container .dialog.feedback {
+.popup-container .dialog.feedback,
+#addQuestionModal .dialog {
     width: 800px;
+    height: auto;
 }
 
 .popup-container .dialog.alert {

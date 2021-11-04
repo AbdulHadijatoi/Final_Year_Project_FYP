@@ -8,6 +8,8 @@
 
         <link rel="stylesheet" href="{{ asset('assets/css/account.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <head>
 <body>
 
@@ -19,6 +21,7 @@
 
     @include('includes.modals')
     <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/jquery-3.6.0.min')}}"></script>
 </body>
 
 </html>

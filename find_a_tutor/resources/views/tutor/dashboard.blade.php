@@ -29,25 +29,27 @@
             </div>
             <img src=" {{ asset('assets/svg-icons/svg_courses_b.svg') }}" alt="student-hat" width="50">
         </div>
-
     </div>
 
-    <form class="full-width mt-10 p-30 dashboard-card-bg align-items-start flex-column">
-        <div class="full-width justify-content-between">
+    <div method="POST" action="{{ route('tutor.courses.update',Auth::id()) }}" class="full-width mt-10 p-30 dashboard-card-bg align-items-start flex-column">
+        @csrf
+        @method('PUT')
+
+        <form id="dashboard_course_filter_form" class="full-width justify-content-between">
+
             <h3>My Schedule</h3>
-            <div class="align-items-start flex-column">
-                <label>Select Course</label>
+            <div id="courseForm" class="align-items-start flex-column">
+                <label>Choose Course</label>
                 <div class="select-container hover-effect mr-10 sm_mt-10">
-                    <select name="subjects">
-                        <option disabled>Select Course</option>
-                        <option selected>JS - Programming Language</option>
-                        <option>English</option>
-                        <option>Physics</option>
-                        <option>Psychology</option>
+                    <select id="selected_course" name="selected_course" onchange="filter_dashboard_course();">
+                        <option selected disabled>Choose Course</option>
+                        @foreach ($courses as $course)
+                            <option value="{{$course->id}}">{{$course->title}}</option>    
+                        @endforeach
                     </select>
                 </div>
             </div>
-        </div> 
+        </form> 
         <label class="font-size-14">Session Duration</label>
 
         <div class="sessionduration _50-width mt-10 sm_full-width position-relative">
@@ -57,7 +59,7 @@
 
         <label class="font-size-14 mt-20">Days of the week</label>
         <div id="availability" class="availability _50-width mt-10 sm_full-width sm_font-size-11">
-            <input class="availability-checkbox" checked type="checkbox" name='monday' id="monday"><label for="monday" class="square">MON</label>
+            <input class="availability-checkbox" type="checkbox" name='monday' id="monday"><label for="monday" class="square">MON</label>
             <input class="availability-checkbox" type="checkbox" name='tuesday' id="tuesday"><label for="tuesday" class="square">TUE</label>
             <input class="availability-checkbox" type="checkbox" name='wednesday' id="wednesday"><label for="wednesday" class="square">WED</label>
             <input class="availability-checkbox" type="checkbox" name='thursday' id="thursday"><label for="thursday" class="square">THU</label>
@@ -67,8 +69,12 @@
         </div>
 
         <div class="full-width justify-content-end mt-20">
-            <a class="btn-dashboard mr-10">Save</a>
+            <a class="btn-dashboard mr-10" onclick="save_dashboard_schedule">Save</a>
         </div>
-    </form>
+    </div>
+
+    <script>
+        
+    </script>
 </div>
 @endsection

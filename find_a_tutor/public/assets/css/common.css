@@ -137,6 +137,10 @@ body {
     color: green;
 }
 
+.focus-green:focus {
+    border: 1px solid var(--whatsapp);
+}
+
 .session-status {
     width: 100%;
     text-align: center;
@@ -148,7 +152,7 @@ body {
 .session-error {
     width: 100%;
     text-align: center;
-    background: red;
+    background: var(--subj-8);
     color: white;
     padding: 10px;
 }
@@ -156,7 +160,7 @@ body {
 .validation-errors {
     width: 100%;
     text-align: center;
-    background: red;
+    background: var(--subj-8);
     color: white;
     padding: 10px;
 }
