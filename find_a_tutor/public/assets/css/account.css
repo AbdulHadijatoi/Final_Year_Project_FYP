@@ -1,0 +1,76 @@
+html,
+body {
+    width: 100%;
+    background: #262B3E;
+}
+
+footer a,
+header a,
+main a {
+    text-decoration: none;
+    color: var(--light-text);
+    /* font-weight: 300 !important; */
+}
+
+main .account-box {
+    min-width: 480px;
+    padding: 50px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 80px auto;
+}
+
+main .account-field {
+    min-width: 350px;
+    position: relative;
+    min-height: 50px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+main .account-field img {
+    margin: 0px 20px 0px 10px;
+}
+
+main .btn-account {
+    min-width: 350px;
+    color: var(--light-text);
+    font-weight: 600;
+    height: 45px;
+    border-radius: 50px;
+    border-style: none;
+    font-size: 15px;
+    outline: none;
+    margin: 20px 0px;
+    background-color: var(--footer-dark);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .account-field input[type="text"],
+main .account-field input[type="password"],
+main .account-field input[type="email"],
+main .account-field select {
+    border-style: none;
+    width: 90%;
+    background: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+}
+
+main .account-field select {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+main .account-field input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    font-size: 13px;
+}
