@@ -27,12 +27,12 @@
 
             @if($course->status == 1)
                 <a class="btn-dashboard red" onclick="showElem('endCourseModal');">End Course</a>
-            @else
+            {{-- @else
                 <form method="POST" action="{{ route('tutor.courses.update',$course->id) }}">
                     @csrf
                     @method('PUT')
                     <input type="submit" class="btn-dashboard cursor-pointer" value="Start Again">
-                </form>
+                </form> --}}
             @endif
             <!-- MODAL DIALOG BOX FOR END CORUSE-->
             <form method="POST" action="{{ route('tutor.courses.update',$course->id) }}" id="endCourseModal" class="main-content popup-container display-none">
@@ -44,7 +44,7 @@
                     <h2 class="heading2 mb-20">Are you sure you want to end course?</h2>
                     
                     <div class="full-width align-in-center">
-                        <input type="submit" class="btn-dashboard red mt-20 sm_mt-10 mr-10 cursor-pointer" value="endCourse">
+                        <input type="submit" class="btn-dashboard red mt-20 sm_mt-10 mr-10 cursor-pointer" value="End Course">
                         <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('endCourseModal');">Dismiss</a>
                     </div>
                 </div>      
@@ -75,9 +75,9 @@
                         <p>{{$quiz->duration}}</p>
                         <span class="font-size-10">Minutes</span>
                     </div>
-                    <span class="category">{{Str::limit($quiz->category,18)}}</span>
-                    <p class="title text-center">{{$quiz->title}}</p>
-                    <p class="font-size-70 font-weight-800 full-width overflow-hidden text-center line-height-32">
+                    <span class="category">{{Str::limit($quiz->course->category,18)}}</span>
+                    <p class="title text-center">{{Str::limit($quiz->title,14)}}</p>
+                    <p class="font-size-40 font-weight-800 full-width overflow-hidden text-center line-height-32">
                         <?php
                             $count = 0;
                         ?>
@@ -89,10 +89,16 @@
                         {{$count}}
                     </span>
                     
-                    <div class="link-div">
+                    {{-- <div class="link-div">
                         <a class="link-red" onclick="showElem('deleteModal');">Delete</a>
                         <a href="{{ route('tutor.quizes.show',$quiz->id) }}" class="link">View</a>
-                    </div>
+                    </div> --}}
+                    <form  method="POST" action="{{route('tutor.quizes.destroy',$quiz->id)}}" onsubmit="return confirm('Are you sure you want to remove {{ $quiz->title ?? '' }}');" class="link-div">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="link-red">Delete</button>
+                        <a href="{{ route('tutor.quizes.show',$quiz->id) }}" class="link">View</a>
+                    </form>
                 </div>
             @endforeach
 
@@ -127,21 +133,14 @@
                     <input class="availability-checkbox" type="checkbox" name='sunday' @if($schedule->sunday == 1) {{'checked'}} @endif id="sunday" value="1"><label for="sunday" class="square">SUN</label>
                 </div>
                 <br>
-
+                @if(isset($students) && count($students) > 0)
                 <h2 class="font-weight-500 font-size-14 full-width sm_text-align-center m-5 mb-10">Students</h2>
                 <div class="students">
-                    <div>AB</div>
-                    <div>SK</div>
-                    <div>RN</div>
-                    <div>HR</div>
-                    <div>TK</div>
-                    <div>CM</div>
-                    <div>AB</div>
-                    <div>SK</div>
-                    <div>RN</div>
-                    <div>HR</div>
+                    @foreach ($students as $student)
+                        <div>{{Str::substr($student->firstname, 0,1). '' .Str::substr($student->lastname, 0,1)}}</div>
+                    @endforeach
                 </div>
-
+                @endif
                 <br>
                 
         </form>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Tutor;
+use App\Models\StudentParent;
 use App\Models\Student;
 
 class UserSeeder extends Seeder
@@ -20,8 +21,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::truncate();
-        Student::truncate();
         Tutor::truncate();
+        StudentParent::truncate();
+        Student::truncate();
 
         $users = [
             ['username' => 'abdulhadi',
@@ -38,6 +40,8 @@ class UserSeeder extends Seeder
             'language' => 'Urdu',
             'location' => 'Mardan',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'sanaullah',
@@ -54,6 +58,8 @@ class UserSeeder extends Seeder
             'language' => 'Pashto',
             'location' => 'Karak',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'hadi',
@@ -70,6 +76,8 @@ class UserSeeder extends Seeder
             'language' => 'Sindhi',
             'location' => 'Sukkur',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Naizi',
@@ -86,6 +94,8 @@ class UserSeeder extends Seeder
             'language' => 'Punjabi',
             'location' => 'Multan',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'ImranKhan',
@@ -102,6 +112,8 @@ class UserSeeder extends Seeder
             'language' => 'Pashto',
             'location' => 'Kohat',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Gulbadin',
@@ -118,6 +130,8 @@ class UserSeeder extends Seeder
             'language' => 'Pashto',
             'location' => 'Peshawar',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Hafsakareem',
@@ -134,6 +148,8 @@ class UserSeeder extends Seeder
             'language' => 'Sindhi',
             'location' => 'Shikarpur',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Nasir',
@@ -150,6 +166,8 @@ class UserSeeder extends Seeder
             'language' => 'Punjabi',
             'location' => 'Multan',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Abrarahmed',
@@ -166,6 +184,8 @@ class UserSeeder extends Seeder
             'language' => 'Pashto',
             'location' => 'DI Khan',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Malik',
@@ -182,6 +202,8 @@ class UserSeeder extends Seeder
             'language' => 'Sindhi',
             'location' => 'Sukkur',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Sunail',
@@ -198,6 +220,8 @@ class UserSeeder extends Seeder
             'language' => 'Balochi',
             'location' => 'Gawader',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Subhan',
@@ -214,6 +238,8 @@ class UserSeeder extends Seeder
             'language' => 'Sindhi',
             'location' => 'Sukkur',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Gul',
@@ -230,6 +256,8 @@ class UserSeeder extends Seeder
             'language' => 'Pashto',
             'location' => 'Sawabi',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Naila',
@@ -246,12 +274,14 @@ class UserSeeder extends Seeder
             'language' => 'Punjabi',
             'location' => 'Sahiwal',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Naeeda',
             'email' => 'naeeda@gmail.com',
             'password' => Hash::make('11111111'),
-            'role'=> 'Stduent',
+            'role'=> 'Student',
             'phone' => '03023121322',
             'firstname' => 'Naeeda',
             'lastname' => 'Mobin',
@@ -262,12 +292,14 @@ class UserSeeder extends Seeder
             'language' => 'Punjabi',
             'location' => 'Rawalpindi',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Parveen',
             'email' => 'parveen@gmail.com',
             'password' => Hash::make('11111111'),
-            'role'=> 'Stduent',
+            'role'=> 'Student',
             'phone' => '03098756421',
             'firstname' => 'Parveen',
             'lastname' => 'Shakir',
@@ -278,12 +310,14 @@ class UserSeeder extends Seeder
             'language' => 'Sindhi',
             'location' => 'Sukkur',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'naseem',
             'email' => 'naseem@gmail.com',
             'password' => Hash::make('11111111'),
-            'role'=> 'Stduent',
+            'role'=> 'Student',
             'phone' => '03122121213',
             'firstname' => 'Naseem',
             'lastname' => 'Ullah',
@@ -294,6 +328,8 @@ class UserSeeder extends Seeder
             'language' => 'punjabi',
             'location' => 'Rawalpindi',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Qasid',
@@ -310,6 +346,8 @@ class UserSeeder extends Seeder
             'language' => 'Pashto',
             'location' => 'Karak',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Wahid',
@@ -326,6 +364,8 @@ class UserSeeder extends Seeder
             'language' => 'pashto',
             'location' => 'Mardan',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ],
             [
             'username' => 'Yasir',
@@ -342,72 +382,171 @@ class UserSeeder extends Seeder
             'language' => 'Pashto',
             'location' => 'Kohat',
             'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
+            ],
+            [
+            'username' => 'parent',
+            'email' => 'parent@gmail.com',
+            'password' => Hash::make('11111111'),
+            'role'=> 'Parent',
+            'phone' => '03111110100',
+            'firstname' => 'Ameen',
+            'lastname' => 'Hadi',
+            'gender' => 'Male',
+            'tagline' => 'Android, Java',
+            'description' => 'I have 3 years of experience in teaching field. I can teach Android, Php',
+            'education' => 'Bs Software Engineering',
+            'language' => 'Pashto',
+            'location' => 'Kohat',
+            'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
+            ],
+            [
+            'username' => 'muhammadameen',
+            'email' => 'ma@gmail.com',
+            'password' => Hash::make('11111111'),
+            'role'=> 'Parent',
+            'phone' => '03000311200',
+            'firstname' => 'Muhammad Ameen',
+            'lastname' => 'Hadi',
+            'gender' => 'Male',
+            'tagline' => 'Android, Java',
+            'description' => 'I have 3 years of experience in teaching field. I can teach Android, Php',
+            'education' => 'Bs Software Engineering',
+            'language' => 'Pashto',
+            'location' => 'Kohat',
+            'skills' => 'Java, Android, Php, Laravel, English, Writing, Coding, Programing, Graphic',
+            'created_at' => now(),
+            'updated_at' => now(),
             ]
         ];
 
         $tutors = [
             [
                 'user_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 5,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 6,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 7,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 8,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 9,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 19,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 20,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ];
+        $parents = [
+            [
+                'user_id' => 21,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'user_id' => 22,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ];
         $students = [
             [
                 'user_id' => 2,
+                'student_parent_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 10,
+                'student_parent_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 11,
+                'student_parent_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 12,
+                'student_parent_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 13,
+                'student_parent_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 14,
+                'student_parent_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 15,
+                'student_parent_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 16,
+                'student_parent_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 17,
+                'student_parent_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'user_id' => 18,
+                'student_parent_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ];
         User::insert($users);
         Tutor::insert($tutors);
+        StudentParent::insert($parents);
         Student::insert($students);
 
     }

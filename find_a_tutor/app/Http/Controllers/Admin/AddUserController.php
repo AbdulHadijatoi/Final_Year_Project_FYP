@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\StudentParent;
+use App\Models\Tutor;
+use App\Models\Student;
 use Illuminate\Support\Facades\Hash;
 
 class AddUserController extends Controller
@@ -45,12 +48,28 @@ class AddUserController extends Controller
         ]);
 
         $user = new User;
+        $tutor = new Tutor;
+        $parent = new StudentParent;
+        $student = new Student;
 
+        $role = $request->role;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->role = $request->role;
 
         $user->save();
+        if($role == 'Tutor'){
+            $tutor->user_id = $user->id;
+            $tutor->save();
+        }else if ($role == 'Parent'){
+            $parent->user_id = $user->id;
+            $parent->save();
+        }else if($role == 'Student'){
+            $student->user_id = $user->id;
+            $student->save();
+        }
         return back()->with('success', 'Successfully added to database.');
     }
 

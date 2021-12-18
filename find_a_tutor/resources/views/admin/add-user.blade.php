@@ -9,7 +9,7 @@
         <h3 class="h-dashboard">Add User</h3>
         <div class="align-in-center">
             <a class="btn-dashboard mr-10" href="{{url('admin/tutors')}}">View Tutors</a>
-            <a class="btn-dashboard mr-10" href="{{url('admin/students')}}">View Students</a>
+            <a class="btn-dashboard mr-10" href="{{url('admin/parents')}}">View Parents</a>
         </div>
     </div>
 
@@ -24,6 +24,14 @@
         <form method="POST" action="{{ route('admin.add-user.store') }}" class="_70-width sm_full-width pt-50 pb-50 sm_pt-20 sm_pb-20">
             @csrf
             <div class="flex-column">
+                <div class="formField">
+                    <label>Firstname</label>
+                    <input type="text" name="firstname" placeholder="Firstname" value="{{ old('firstname') }}" autocomplete="off" required>
+                </div>
+                <div class="formField">
+                    <label>Lastname</label>
+                    <input type="text" name="lastname" placeholder="Lastname" value="{{ old('lastname') }}" autocomplete="off" required>
+                </div>
                 <div class="formField">
                     <label>email</label>
                     <input type="email" name="email" placeholder="email" value="{{ old('email') }}" autocomplete="off" required>
@@ -48,7 +56,7 @@
                 <div class="formField">
                     <select name="role" required>
                         <option selected disabled>Select account type</option>
-                        <option>Student</option>
+                        <option>Parent</option>
                         <option>Teacher</option>
                     </select>
                 </div>

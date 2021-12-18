@@ -32,7 +32,18 @@
             </ul>
             <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
             @auth
-            <img class="ac-icon cursor-pointer" id="profileMenuButton" src="{{ asset('assets/svg-icons/svg_empty-ac.svg') }}" onclick="clickTarget('profileMenuCheckbox');">
+            <div class="ac-icon cursor-pointer text-white" id="profileMenuButton" onclick="clickTarget('profileMenuCheckbox');">
+                
+                @if(session()->get('images') != '')
+                    <img src="{{asset('images/'.session()->get('images')->photo_path)}}"/>
+                @else
+                    @if(Auth::user()->firstname != '' || Auth::user()->lastname != '')
+                        {{ Str::substr(Auth::user()->firstname, 0,1) }}{{ Str::substr(Auth::user()->lastname, 0,1) }}
+                    @else
+                        {{ Str::substr(Auth::user()->email, 0,2) }}
+                    @endif
+                @endif
+            </div>
             <div id="profileMenu" class="profile-menu position-absolute top-50 right-0 border-01-white">
                 <ul class="nav-list">
                     <li>
@@ -42,6 +53,8 @@
                             <a href="{{ url('student/dashboard') }}">
                         @elseif(auth()->user()->role == 'Teacher')
                             <a href="{{ url('tutor/dashboard') }}">
+                        @elseif(auth()->user()->role == 'Parent')
+                            <a href="{{ url('parent/dashboard') }}">
                         @endif
                             <img class="" src="{{ asset('assets/svg-icons/svg_profile.svg') }}">
                             <span class="links_name">Dashbord</span>

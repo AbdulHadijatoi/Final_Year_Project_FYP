@@ -59,7 +59,7 @@ class AddCourseController extends Controller
 
         
 
-        $course = new course;
+        $course = new Course;
 
         $course->category = $request->category;
         $course->title = $request->title;

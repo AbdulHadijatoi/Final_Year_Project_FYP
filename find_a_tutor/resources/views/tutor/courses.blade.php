@@ -13,12 +13,13 @@
             </div>
 
             <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20">
+                @if($courses != null)
                 @foreach($courses as $course)
                 @if($course->status == 1)
                 <div class="course-card min-h280">
                     <span class="category">{{Str::limit($course->category,20)}}</span>
                     <p class="title">{{Str::limit($course->title,18)}}</p>
-                    <span>43 Students</span>
+                    <span>{{count($course->studentCourse)}} Students</span>
                     <hr>
                     <p class="para"> {{Str::limit($course->description, 120)}} </p>
                     <div class="link-div">
@@ -28,6 +29,7 @@
                 </div>
                 @endif
                 @endforeach
+                @endif
                 <a href="{{ url('tutor/add-course') }}" class="course-card align-in-center hover-effect text-decoration-none" style="padding: 0px; font-size: 100px; color: var(--profile-bg);">
                     +
                 </a>
@@ -40,7 +42,7 @@
                         <div class="course-card min-h280">
                             <span class="category">{{Str::limit($course->category,20)}}</span>
                             <p class="title">{{Str::limit($course->title,18)}}</p>
-                            <span>43 Students</span>
+                            <span>{{count($course->studentCourse)}} Students</span>
                             <hr>
                             <p class="para"> {{Str::limit($course->description, 120)}} </p>
                             <div class="link-div">

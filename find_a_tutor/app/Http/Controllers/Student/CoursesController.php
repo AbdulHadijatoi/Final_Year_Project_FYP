@@ -4,6 +4,14 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Course;
+use App\Models\StudentCourse;
+use App\Models\Tutor;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Schedule;
+use App\Models\Student;
+use App\Models\Quiz;
+use Illuminate\Support\Facades\DB;
 
 class CoursesController extends Controller
 {
@@ -14,7 +22,15 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        return view('student.courses');
+        $courses = DB::table('users')
+            ->join('students', 'students.user_id', '=', Auth::id())
+            ->join('student_courses', 'student_courses.student_id', '=', 'students.id')
+            ->join('courses', 'courses.id', '=', 'student_courses.course_id')
+            ->select('courses.*')
+            ->groupBy('courses.id')
+            ->get();
+
+        return view('student.courses',['courses'=>$courses]);
     }
 
     /**

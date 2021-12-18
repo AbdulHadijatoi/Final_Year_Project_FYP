@@ -132,7 +132,7 @@ class QuizController extends Controller
             $answer->option2 = $request->option2;
             $answer->option3 = $request->option3;
             $answer->option4 = $request->option4;
-            $answer->question_id = $question->id;
+            $answer->questions_id = $question->id;
 
             
             $answer->save();

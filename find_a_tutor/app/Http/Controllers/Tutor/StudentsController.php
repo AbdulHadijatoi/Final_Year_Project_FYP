@@ -4,6 +4,14 @@ namespace App\Http\Controllers\Tutor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Course;
+use Illuminate\Support\Facades\DB;
+use App\Models\Schedule;
+use App\Models\Student;
+use App\Models\StudentCourse;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Tutor;
+use App\Models\User;
 
 class StudentsController extends Controller
 {
@@ -14,7 +22,15 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        return view('tutor.students');
+        $tutor = Tutor::where('user_id',Auth::id())->first();
+        $students = DB::table('tutors')
+                ->join('courses', 'courses.tutor_id', '=', $tutor->id)
+                ->join('student_courses', 'student_courses.course_id', '=', 'courses.id')
+                ->join('students', 'student_courses.student_id', '=', 'students.id')
+                ->join('users', 'students.user_id', '=', 'users.id')
+                ->groupBy('students.id')
+                ->select('users.*','students.id as sid')->get();
+        return view('tutor.students', ['students'=>$students]);
     }
 
     /**
@@ -80,6 +96,11 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $studentCourse = StudentCourse::where('student_id',$id)->get();
+        // return $studentCourse;
+        foreach($studentCourse as $course){
+            $course->delete();
+        }
+        return back();
     }
 }

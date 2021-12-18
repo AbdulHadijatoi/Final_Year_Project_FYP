@@ -20,6 +20,7 @@ class CreateStudentCoursesTable extends Migration
             $table->index('student_id');
             $table->foreignId('student_id')->constrained('students')->onUpdate('cascade')->onDelete('cascade');
             $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('feedback_status')->default(1);
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Quiz;
 use App\Models\Questions;
+use App\Models\Answers;
 
 class QuizSeeder extends Seeder
 {
@@ -122,6 +123,47 @@ class QuizSeeder extends Seeder
         ];
 
         $questions = [
+            ['question_type' => 'B',
+            'question' => 'What is the default value of char variable?',
+            'answer' => 'C',
+            'quiz_id' => '1'
+            ],
+            ['question_type' => 'B',
+            'question' => 'Final keyword prevents child classes from overriding a method by prefixing the definition with final?',
+            'answer' => 'D',
+            'quiz_id' => '1'
+            ],
+            ['question_type' => 'B',
+            'question' => 'We can not create instance of_______',
+            'answer' => 'A',
+            'quiz_id' => '3'
+            ],
+            ['question_type' => 'B',
+            'question' => 'OOPs is invented by _______',
+            'answer' => 'B',
+            'quiz_id' => '3'
+            ],
+            ['question_type' => 'B',
+            'question' => 'The computer malware that disguises users by representing itself as legitimate software/program is known as',
+            'answer' => 'A',
+            'quiz_id' => '3'
+            ],
+            ['question_type' => 'B',
+            'question' => 'A computer keyboard has _____ functions (F) keys',
+            'answer' => 'D',
+            'quiz_id' => '1'
+            ],
+            ['question_type' => 'B',
+            'question' => 'The valid format of MS Word is ___',
+            'answer' => 'B',
+            'quiz_id' => '1'
+            ],
+            
+            ['question_type' => 'B',
+            'question' => 'To apply center alignment to a paragraph we can press______',
+            'answer' => 'D',
+            'quiz_id' => '1'
+            ],
             ['question_type' => 'A',
             'question' => 'Java is a general purpose object oriented programming language developed by',
             'answer' => 'Microsystems of USA',
@@ -133,11 +175,6 @@ class QuizSeeder extends Seeder
             'quiz_id' => '1'
             ],
             ['question_type' => 'A',
-            'question' => 'What is the default value of char variable?',
-            'answer' => '\u0000',
-            'quiz_id' => '1'
-            ],
-            ['question_type' => 'A',
             'question' => 'What is class variable?',
             'answer' => 'Class variables are variables declared with in a class, outside any method, with the static keyword.',
             'quiz_id' => '1'
@@ -145,37 +182,22 @@ class QuizSeeder extends Seeder
             ['question_type' => 'A',
             'question' => 'Can you assign the default values to a function parameters in PHP?',
             'answer' => 'Yes',
-            'quiz_id' => '2'
-            ],
-            ['question_type' => 'A',
-            'question' => 'Final keyword prevents child classes from overriding a method by prefixing the definition with final?',
-            'answer' => 'Yes',
-            'quiz_id' => '2'
+            'quiz_id' => '1'
             ],
             ['question_type' => 'A',
             'question' => 'In oops public, private & protected are called',
             'answer' => 'Access Modifiers',
-            'quiz_id' => '2'
+            'quiz_id' => '1'
             ],
             ['question_type' => 'A',
             'question' => 'A private member of a class is visible to',
             'answer' => 'A private member of a class is visible to only members of same class',
-            'quiz_id' => '2'
+            'quiz_id' => '1'
             ],
             ['question_type' => 'A',
             'question' => 'Can we overload constructor in derived class?',
             'answer' => 'No, we can not overload constructor in derived class',
-            'quiz_id' => '2'
-            ],
-            ['question_type' => 'A',
-            'question' => 'We can not create instance of_______',
-            'answer' => 'Abstract class',
-            'quiz_id' => '3'
-            ],
-            ['question_type' => 'A',
-            'question' => 'OOPs is invented by _______',
-            'answer' => 'Alan Kay',
-            'quiz_id' => '3'
+            'quiz_id' => '1'
             ],
             ['question_type' => 'A',
             'question' => 'Which language does not support single level inheritance?',
@@ -183,18 +205,8 @@ class QuizSeeder extends Seeder
             'quiz_id' => '3'
             ],
             ['question_type' => 'A',
-            'question' => 'The computer malware that disguises users by representing itself as legitimate software/program is known as',
-            'answer' => 'Trojans',
-            'quiz_id' => '3'
-            ],
-            ['question_type' => 'A',
             'question' => 'If you need to paste the contents of MS Word, which command will you give?',
             'answer' => 'Ctrl + V',
-            'quiz_id' => '1'
-            ],
-            ['question_type' => 'A',
-            'question' => 'A computer keyboard has _____ functions (F) keys',
-            'answer' => '13',
             'quiz_id' => '1'
             ],
             ['question_type' => 'A',
@@ -205,26 +217,72 @@ class QuizSeeder extends Seeder
             ['question_type' => 'A',
             'question' => 'MS word is software of ____',
             'answer' => 'Microsoft',
-            'quiz_id' => '2'
-            ],
-            ['question_type' => 'A',
-            'question' => 'The valid format of MS Word is ___',
-            'answer' => '.doc',
-            'quiz_id' => '2'
+            'quiz_id' => '1'
             ],
             ['question_type' => 'A',
             'question' => 'The process of removing unwanted part of an image is called',
             'answer' => 'Cropping',
-            'quiz_id' => '2'
+            'quiz_id' => '1'
             ],
-            ['question_type' => 'A',
-            'question' => 'To apply center alignment to a paragraph we can press______',
-            'answer' => 'Ctrl + E',
-            'quiz_id' => '3'
+        ];
+        
+        
+        
+        
+        
+        $answers = [
+            ['option1' => 'English',
+            'option2' => 'Math',
+            'option3' => 'Science',
+            'option4' => 'None of these',
+            'questions_id' => '1'
+            ],
+            ['option1' => 'Java',
+            'option2' => 'C++',
+            'option3' => 'Python',
+            'option4' => 'None of these',
+            'questions_id' => '2'
+            ],
+            ['option1' => 'School',
+            'option2' => 'College',
+            'option3' => 'Institute',
+            'option4' => 'University',
+            'questions_id' => '3'
+            ],
+            ['option1' => 'One',
+            'option2' => 'Two',
+            'option3' => 'Three',
+            'option4' => 'Four',
+            'questions_id' => '4'
+            ],
+            ['option1' => 'Five',
+            'option2' => 'Six',
+            'option3' => 'Seven',
+            'option4' => 'Eight',
+            'questions_id' => '5'
+            ],
+            ['option1' => 'Nine',
+            'option2' => 'TEN',
+            'option3' => 'Thirteen',
+            'option4' => 'Fourteen',
+            'questions_id' => '6'
+            ],
+            ['option1' => 'Gameplay',
+            'option2' => 'VR',
+            'option3' => 'Xbox series X',
+            'option4' => 'PS5',
+            'questions_id' => '7'
+            ],
+            ['option1' => 'AC Brotherhood',
+            'option2' => 'Borderland',
+            'option3' => 'ResidentEvil 4 Remake',
+            'option4' => 'Ninja Town',
+            'questions_id' => '8'
             ],
         ];
 
         Quiz::insert($quizes);
         Questions::insert($questions);
+        Answers::insert($answers);
     }
 }

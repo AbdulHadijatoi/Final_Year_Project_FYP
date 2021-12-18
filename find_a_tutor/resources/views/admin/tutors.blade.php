@@ -37,8 +37,9 @@
                         <div class="sm_full-width align-in-center">
                             
                             {{-- VIEW PROFILE BUTTON --}}
-                            <a href="{{ route('profile',$teacher->id) }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
-
+                            @if($teacher->username != '' && $teacher->profileVisibility == '1')
+                            <a href="{{ route('profile',$teacher->username) }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
+                            @endif
                             @if(!empty($teacher->blocked_at))
                                 <form method="POST" action="{{ route('admin.tutors.update',$teacher->id) }}">
                                     @csrf

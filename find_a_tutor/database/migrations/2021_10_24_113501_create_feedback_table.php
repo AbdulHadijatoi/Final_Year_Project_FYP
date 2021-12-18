@@ -18,7 +18,7 @@ class CreateFeedbackTable extends Migration
             $table->string('name')->nullable();
             $table->string('comment')->nullable()->comment('review message');
             $table->tinyInteger('ratting')->comment('0, 1, 2, 3, 4');
-            $table->date('date')->nullable();
+            $table->date('date')->nullable()->default(now());
             $table->index('user_id');
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->index('course_id');

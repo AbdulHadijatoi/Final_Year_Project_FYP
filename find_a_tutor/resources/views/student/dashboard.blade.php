@@ -16,7 +16,7 @@
         <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg mr-10 sm_48-width">
             <div>
                 <p>You have Tutors</p>
-                <p class="font-weight-500 font-size-26">12</p>
+                <p class="font-weight-500 font-size-26">@if(isset($tutors)) {{$tutors->totalTutors}} @else 0 @endif</p>
             </div>
             <img src="{{asset('assets/svg-icons/svg_courses_b.svg')}}" alt="student-hat" width="50">
         </div>
@@ -24,7 +24,7 @@
         <div class="_25-width justify-content-between p-20 min-h120 dashboard-card-bg sm_48-width">
             <div>
                 <p>You have Courses</p>
-                <p class="font-weight-500 font-size-26">412</p>
+                <p class="font-weight-500 font-size-26">@if(isset($courses)) {{count($courses)}} @endif</p>
             </div>
             <img src="{{asset('assets/svg-icons/svg_view_records.svg')}}" alt="student-hat" width="50">
         </div>
@@ -34,66 +34,20 @@
     <div class="full-width mt-50 align-items-start flex-column">
         <p>Your Courses</p>
         <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20">
-            <div class="course-card min-h280">
-                <div class="floating-box square">
-                    <img alt="star_icon">
-                    <p>3.7</p>
-                </div>
-                <span class="category">Programming</span>
-                <p class="title">JS - Javascript</p>
-                <span>43 Quizes</span>
+            @if(isset($courses))
+            @foreach($courses as $course)
+            <form method="GET" action="{{route('filter_quizes')}}" class="course-card min-h280">
+                <span class="category">{{Str::limit($course->category,20)}}</span>
+                <p class="title">{{Str::limit($course->title,18)}}</p>
                 <hr>
-                <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
+                <p class="para"> {{Str::limit($course->description, 120)}} </p>
                 <div class="link-div">
-                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
+                    <input type="hidden" name="course_id" value="{{$course->id}}">
+                    <button type="submit"  class="link">View Quizes</button>
                 </div>
-            </div>
-
-            <div class="course-card min-h280">
-                <div class="floating-box square">
-                    <img alt="star_icon">
-                    <p>3.7</p>
-                </div>
-                <span class="category">Programming</span>
-                <p class="title">JS - Javascript</p>
-                <span>43 Quizes</span>
-                <hr>
-                <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                <div class="link-div">
-                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
-                </div>
-            </div>
-
-            <div class="course-card min-h280">
-                <div class="floating-box square">
-                    <img alt="star_icon">
-                    <p>3.7</p>
-                </div>
-                <span class="category">Programming</span>
-                <p class="title">JS - Javascript</p>
-                <span>43 Quizes</span>
-                <hr>
-                <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                <div class="link-div">
-                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
-                </div>
-            </div>
-
-            <div class="course-card min-h280">
-                <div class="floating-box square">
-                    <img alt="star_icon">
-                    <p>3.7</p>
-                </div>
-                <span class="category">Programming</span>
-                <p class="title">JS - Javascript</p>
-                <span>43 Quizes</span>
-                <hr>
-                <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been</p>
-                <div class="link-div">
-                    <a href="{{url('student/view-course')}}" class="link">View Course</a>
-                </div>
-            </div>
-
+            </form>
+            @endforeach
+            @endif
         </section>
     </div>
 </div>

@@ -16,11 +16,13 @@ class CreateUsersTable extends Migration
         // username, email, password, firstname, lastname, gender, tagline, description, education, language, location, phone, photo, skills, role
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('profileVisibility')->comment('0: private, 1: public')->nullable()->default('1');
             $table->string('username')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role')->nullable();
             $table->string('phone')->unique()->nullable();
+            $table->tinyInteger('phoneVisibility')->comment('0: private, 1: public')->nullable()->default('1');
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('gender')->nullable();

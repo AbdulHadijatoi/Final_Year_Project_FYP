@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Student;
 
 class StudentsController extends Controller
 {
@@ -15,8 +16,8 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = User::where('role',"Student")->orderBy('firstname')->get();
-        return view('admin.students',['students'=>$students]);
+        // $students = User::where('role',"Student")->orderBy('firstname')->get();
+        // return view('admin.students',['students'=>$students]);
     }
 
     /**
@@ -47,9 +48,11 @@ class StudentsController extends Controller
      * @return \Illuminate\Http\Response
      * @param  \Illuminate\Http\Request  $request
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-        //
+        $students = Student::where('parent_id',$id)->get();
+
+        return view('admin.students',['students'=>$students]);
     }
 
     /**

@@ -32,8 +32,8 @@
 
             <div class="account-field hover-effect">
                 <select name="role">
-                    <option selected disabled>Are you Student or Teacher?</option>
-                    <option>Student</option>
+                    <option selected disabled>Are you Parent or Teacher?</option>
+                    <option>Parent</option>
                     <option>Teacher</option>
                 </select>
             </div>
@@ -50,7 +50,6 @@
             </div>
 
             <a href="{{ route('login') }}" class="btn-account hover-effect">Log In</a>
-
 
         </form>
     </main>

@@ -8,6 +8,18 @@ header {
 
 header .ac-icon {
     width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    justify-content: center;
+    background: var(--dashboard-card);
+}
+
+header .ac-icon img {
+    width: 100%;
 }
 
 header .profile-menu {

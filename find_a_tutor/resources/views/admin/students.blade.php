@@ -20,7 +20,7 @@
 
     <section class="_100-width justify-content-start sm_full-width flex-wrap sm_justify-content-center mt-20 border-02 p-15 mt-30 align-in-center sm_p-30">
         @if(!count($students) > 0)
-            <p class="font-size-15 font-weight-800 opacity-2">Looks like, there is no any record for tutors!</p>
+            <p class="font-size-15 font-weight-800 opacity-2">Looks like, there is no any record for students!</p>
         @else
         <table class="full-width">
             <tbody>
@@ -28,35 +28,37 @@
                 <tr>
                     <td class="table-row">
                         <div>
-                            <span class="initials">{{ Str::substr($student->firstname, 0,1) ?? 'S' }}{{ Str::substr($student->lastname, 0,1) ?? 'T' }}</span>
+                            <span class="initials">{{ Str::substr($student->user->firstname, 0,1) ?? 'S' }}{{ Str::substr($student->user->lastname, 0,1) ?? 'T' }}</span>
                             <div class="st-info">
-                                <label>{{ $student->firstname ?? '' }} {{ $student->lastname ?? '' }}</label>
+                                <label>{{ $student->user->firstname ?? '' }} {{ $student->user->lastname ?? '' }}</label>
                                 <p>Joined {{ date('d-M-Y', strtotime($student->created_at)) ?? '' }}</p>
                             </div>
                         </div>
                         <div class="sm_full-width align-in-center">
                             {{-- VIEW PROFILE BUTTON --}}
-                            <a href="{{ route('profile',$student->id) }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
-                            @if(!empty($student->blocked_at))
-                                <form method="POST" action="{{ route('admin.students.update',$student->id) }}">
+                            @if($student->user->username != '')
+                            <a href="{{ route('profile',$student->user->username) }}" class="btn-dashboard small hover-effect mr-10">View Profile</a>
+                            @endif
+                            @if(!empty($student->user->blocked_at))
+                                <form method="POST" action="{{ route('admin.students.update',$student->user->id) }}">
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="btn-dashboard green small hover-effect mr-10">Unblock</button>
                                 </form>
                             @else
-                                <a class="btn-dashboard red small hover-effect mr-10" onclick="showElem('blockModal{{$student->id}}');">Block</a>
+                                <a class="btn-dashboard red small hover-effect mr-10" onclick="showElem('blockModal{{$student->user->id}}');">Block</a>
                                 <!-- MODAL DIALOG BOX FOR BLOCK-->
-                                <form method="POST" action="{{ route('admin.tutors.update',$student->id) }}" id="blockModal{{$student->id}}" class="main-content popup-container display-none">
+                                <form method="POST" action="{{ route('admin.tutors.update',$student->user->id) }}" id="blockModal{{$student->user->id}}" class="main-content popup-container display-none">
                                     @csrf
                                     @method('PUT')
-                                    <div class="backdrop" onclick="hideElem('blockModal{{$student->id}}');"></div>
+                                    <div class="backdrop" onclick="hideElem('blockModal{{$student->user->id}}');"></div>
                                     <div class="dialog alert align-in-center flex-column">
-                                        <label for="close_checkbox" class="btn-close" onclick="hideElem('blockModal{{$student->id}}');">+</label>
+                                        <label for="close_checkbox" class="btn-close" onclick="hideElem('blockModal{{$student->user->id}}');">+</label>
                                         <h2 class="heading2 mb-20">Are you sure you want to block?</h2>
                                         
                                         <div class="full-width align-in-center">
                                             <input type="submit" class="btn-dashboard red mt-20 sm_mt-10 mr-10 cursor-pointer" value="Block">
-                                            <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('blockModal{{$student->id}}');">Dismiss</a>
+                                            <a class="btn-dashboard green mt-20 sm_mt-10 cursor-pointer" onclick="hideElem('blockModal{{$student->user->id}}');">Dismiss</a>
                                         </div>
                                     </div>      
                                 </form>

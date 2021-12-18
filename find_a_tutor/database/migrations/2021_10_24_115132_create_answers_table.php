@@ -19,8 +19,8 @@ class CreateAnswersTable extends Migration
             $table->string('option2')->nullable();
             $table->string('option3')->nullable();
             $table->string('option4')->nullable();
-            $table->index('question_id');
-            $table->foreignId('question_id')->constrained('questions')->onUpdate('cascade')->onDelete('cascade');
+            $table->index('questions_id');
+            $table->foreignId('questions_id')->constrained('questions')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

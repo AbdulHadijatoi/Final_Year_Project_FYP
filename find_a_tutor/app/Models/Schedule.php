@@ -26,4 +26,12 @@ class Schedule extends Model
         'saturday',
         'sunday',
     ];
+
+    /**
+     * Get the course associated with the schedule.
+     */
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }

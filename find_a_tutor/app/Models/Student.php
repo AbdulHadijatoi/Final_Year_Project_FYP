@@ -11,5 +11,38 @@ class Student extends Model
     
     protected $fillable = [
         'user_id',
+        'student_parent_id',
     ];
+
+    /**
+     * Get the user associated with the student.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the parent associated with the student.
+     */
+    public function parent()
+    {
+        return $this->belongsTo(StudentParent::class);
+    }
+
+    /**
+     * Get the studentCourse for the student.
+     */
+    public function studentCourse()
+    {
+        return $this->hasMany(StudentCourse::class);
+    }
+
+    /**
+     * Get the quizResult for the student.
+     */
+    public function quizResult()
+    {
+        return $this->hasMany(quizResult::class);
+    }
 }

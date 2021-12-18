@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Tutor;
+use App\Models\StudentParent;
 use App\Models\Student;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -62,6 +63,10 @@ class RegisteredUserController extends Controller
             $student = new Student;
             $student->user_id = $user->id;
             $student->save();
+        }else if($user->role == 'Parent'){
+            $parent = new StudentParent;
+            $parent->user_id = $user->id;
+            $parent->save();
         }
 
         return redirect(RouteServiceProvider::HOME);

@@ -20,6 +20,14 @@ class Answers extends Model
         'option2',
         'option3',
         'option4',
-        'question_id',
+        'questions_id',
     ];
+
+    /**
+     * Get the question associated with the answers.
+     */
+    public function question()
+    {
+        return $this->belongsTo(Questions::class);
+    }
 }

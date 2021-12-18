@@ -28,4 +28,42 @@ class Quiz extends Model
         'duration',
         'course_id',
     ];
+
+    /**
+     * Get the course associated with the quiz.
+     */
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    /**
+     * Get the questions for the quiz.
+     */
+    public function questions()
+    {
+        return $this->hasMany(Questions::class);
+    }
+
+    /**
+     * Get the quizResult for the quiz.
+     */
+    public function quizResult()
+    {
+        return $this->hasMany(QuizResult::class);
+    }
+
+    // this is a recommended way to declare event handlers
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($quiz) { // before delete() method call this
+             $quiz->questions()->each(function($questions) {
+                $questions->delete(); // <-- direct deletion
+             });
+             $quiz->quizResult()->each(function($quizResult) {
+                $quizResult->delete(); // <-- direct deletion
+             });
+             // do the rest of the cleanup...
+        });
+    }
 }

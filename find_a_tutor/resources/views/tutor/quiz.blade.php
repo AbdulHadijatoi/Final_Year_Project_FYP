@@ -40,7 +40,7 @@
                         <div class="qa-field align-in-center flex-column">
                             <div class="align-in-center full-width">
                                 @foreach ($answers as $answer)
-                                    @if($answer->question_id == $question->id)
+                                    @if($answer->questions_id == $question->id)
                                         <div class="op-label @if($question->answer == 'a') {{'correct'}} @endif">{{$answer->option1}}</div>
                                         <div class="op-label @if($question->answer == 'b') {{'correct'}} @endif">{{$answer->option2}}</div>
                                         <div class="op-label @if($question->answer == 'c') {{'correct'}} @endif">{{$answer->option3}}</div>
@@ -54,10 +54,10 @@
                     @endif
                     
                     <div class="text-light ml-10 sm_full-width sm_ml-0 sm_mt-10 font-weight-600">
-                        <a class="btn-dashboard w100 mb-10 cursor-pointer" onclick="showElem('editProfileModal');">UPDATE</a>
+                        {{-- <a class="btn-dashboard w100 mb-10 cursor-pointer" onclick="showElem('editProfileModal');">UPDATE</a> --}}
                         <a class="cursor-pointer btn-dashboard w100 red" onclick="showElem('deleteQuestionModal')">DELETE</a>
 
-                        <!-- MODAL DIALOG BOX FOR EDIT USER-->
+                        <!-- MODAL DIALOG BOX FOR DELETE QUESTION-->
                         <div id="deleteQuestionModal" class="main-content popup-container display-none">
                             <div class="backdrop" onclick="hideElem('deleteQuestionModal');"></div>
                             <div class="dialog alert align-in-center flex-column">

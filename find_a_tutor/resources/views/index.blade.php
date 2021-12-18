@@ -18,27 +18,28 @@
                     </div>
 
 
-                    <form action="listing.html" class="input-box w400 h300 bg-white font-size-13 sm_full-width border-radius-10">
+                    <form action="{{url('/listing')}}" method="GET" class="input-box w400 h300 bg-white font-size-13 sm_full-width border-radius-10">
 
                         <div class="form-field">
-                            <label for="subject">Enter a subject</label>
-                            <input type="text" class="input-field border-radius-3" autocomplete="off" placeholder="Javascript" id="subject">
+                            <label for="subject">Search</label>
+                            <input type="text" class="input-field border-radius-3" name="search" autocomplete="off" placeholder="Search..." id="subject">
                         </div>
 
 
-                        <div class="form-field">
+                        {{-- <div class="form-field">
                             <label for="location">Select a location</label>
-                            <select class="input-field border-radius-3" placeholder="Javascript" id="location">
+                            <select class="input-field border-radius-3" placeholder="Javascript" name="location" id="location">
                                 <option selected disabled>Choose location</option>
                                 <option >Karachi</option>
                                 <option >Islamabad</option>
                                 <option >Larkana</option>
                             </select>
-                        </div>
+                        </div> --}}
 
 
                         <div class="form-field">
-                            <input type="button" class="input-field border-radius-3" id="location" value="Find Tutor Now">
+                            <input type="submit" onclick="window.location.assign('/listing');" class=" btn input-field border-radius-3" id="location" value="Find Tutor Now" style="background:#383838; color: white"></a>
+                            {{-- <input type="button" class="input-field border-radius-3" id="location" value="Find Tutor Now"> --}}
                             <img class="btn-right-icon" src="{{asset('assets/svg-icons/svg_search.svg')}}" width="20">
                         </div>
 
@@ -64,15 +65,15 @@
 
             <div class="_85-width sm_full-width justify-content-center">
                 <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect bg-cover-center sm_h200 sm_p-10 mr-30 sm_mr-10" style="background-image: url('assets/images/s2_img_1.jpg');">
-                    <a href="listing.html" class="font-weight-800 light-text font-size-15 text-decoration-none">Find a Tutor ►</a>
+                    <a href="{{url('/listing')}}" class="font-weight-800 light-text font-size-15 text-decoration-none">Find a Tutor ►</a>
                 </div>
                 @if(!Auth::check())
                 <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect bg-cover-center sm_h200 sm_p-10" style="background-image: url('assets/images/s2_img_2.jpg');">
-                    <a href="account/signup.html" class="font-weight-800 light-text font-size-15 text-decoration-none">Become a Tutor ►</a>
+                    <a href="{{{ route('register') }}}" class="font-weight-800 light-text font-size-15 text-decoration-none">Become a Tutor ►</a>
                 </div>
                 @endif
                 <div class="_30-width h350 footer-light-bg border-radius-15 align-items-end p-40 justify-content-center hover-effect sm_h200 sm_p-10 ml-30 sm_ml-10" style="background-image: url('assets/images/s2_img_3.jpg'); ">
-                    <a href="#" class="font-weight-800 light-text font-size-15 text-decoration-none">Learn More ►</a>
+                    <a href="#faq" class="font-weight-800 light-text font-size-15 text-decoration-none">Learn More ►</a>
                 </div>
             </div>
             <hr class="_85-width mt-50 opacity-3 sm_full-width">
@@ -143,7 +144,7 @@
             <br><br>
             <p class="font-size-14 opacity-7 _60-width sm_full-width text-center">To browse through our list of tutors we have registered with us, please click on one of the main subject categories on top, or see more below</p>
             <br>
-            <a href="#" class="w200 h50 font-weight-800 light-text font-size-15 text-decoration-none primary-2-bg border-radius-3 align-in-center"><span>View all Subjects</span></a>
+            {{-- <a href="#" class="w200 h50 font-weight-800 light-text font-size-15 text-decoration-none primary-2-bg border-radius-3 align-in-center"><span>View all Subjects</span></a> --}}
             <br><br><br><br>
         </section>
 
@@ -164,7 +165,7 @@
                     <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Larkana</a>
                     <a class="location-item sm_m-10" href="#"><img src="{{asset('assets/svg-icons/svg_checked.svg')}}">Gilgit Baltistan</a>
                 </div>
-                <a href="#" class="w200 h50 font-weight-600 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center mt-20"><img class="mr-10" src="{{asset('assets/svg-icons/svg_location_2.svg')}}" width="18"><span>See More Location </span></a>
+                {{-- <a href="{{url('/listing')}}" class="w200 h50 font-weight-600 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center mt-20"><img class="mr-10" src="{{asset('assets/svg-icons/svg_location_2.svg')}}" width="18"><span>See More Location </span></a> --}}
             </div>
             <div class="_50-width full-height sm_h150 bg-cover-center sm_full-width" style="background-image: url('assets/images/location_2.jpg');"></div>
         </section>
@@ -185,7 +186,7 @@
         </section>
 
 
-        <section class="faq full-width light-text full-width justify-content-center align-in-center flex-column">
+        <section id="faq" class="faq full-width light-text full-width justify-content-center align-in-center flex-column">
             <p class="full-width h60 footer-dark-bg font-weight-800 font-size-14 text-center text-uppercase align-in-center">Useful tutor information</p>
             <p class="question-para primary-2-bg">How to start teaching at Tution Made Easy?</p>
             <p class="answer-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -207,7 +208,7 @@
         <section class="secondary-bg light-text full-width justify-content-center align-in-center">
             <div class="align-in-center">
                 <h2 class="font-weight-800 font-size-25 sm_text-align-center sm_display-none mr-30" style="line-height: 1.4;">Find the Right Tutor For You</h2>
-                <a href="#" class="w200 h50 font-weight-700 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center"><span>Find Tutor Now </span><img class="ml-10" src="{{asset('assets/svg-icons/svg_search.svg')}}" width="18"></a>
+                <a href="{{url('/listing')}}" class="w200 h50 font-weight-700 light-text font-size-13 text-decoration-none primary-2-bg border-radius-3 align-in-center"><span>Find Tutor Now </span><img class="ml-10" src="{{asset('assets/svg-icons/svg_search.svg')}}" width="18"></a>
             </div>
         </section>
 

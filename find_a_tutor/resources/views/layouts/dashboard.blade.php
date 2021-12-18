@@ -14,7 +14,7 @@
 <body>
     <div class="sidebar open">
         <!-- this should navigate to the dashboard of logged user role -->
-        <a href="{{ url('tutor/dashboard') }}" class="logo-details border-bottom-01-white">
+        <a href="@if(auth()->user()->role == "Teacher") {{ url('tutor/dashboard') }} @elseif(auth()->user()->role == "Student") {{ url('student/dashboard') }} @elseif(auth()->user()->role == "Parent") {{ url('parent/dashboard') }} @elseif(auth()->user()->role == "Admin") {{ url('admin/dashboard') }} @endif" class="logo-details border-bottom-01-white">
             <img class="" src="{{asset('assets/logo_light.svg')}}">
         </a>
         <ul class="nav-list" id="navList">
@@ -110,6 +110,53 @@
                 </a>
                 <span class="tooltip">Profile Settings</span>
             </li>
+        @elseif(auth()->user()->role == "Parent")
+            <li>
+                <a class="{{ (request()->is('parent/dashboard*')) ? 'active' : '' }}" href="{{ url('parent/dashboard')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+
+            <li>
+                <a class="{{ (request()->is('parent/courses*')) ? 'active' : '' }}" href="{{ url('parent/courses')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <span class="links_name">View Courses</span>
+                </a>
+                <span class="tooltip">View Courses</span>
+            </li>
+
+            <li>
+                <a class="{{ (request()->is('parent/enroll-course*')) ? 'active' : '' }}" href="{{ url('parent/enroll-course')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
+                    <span class="links_name">Enroll Course</span>
+                </a>
+                <span class="tooltip">Enroll Course</span>
+            </li>
+            
+            <li>
+                <a class="{{ (request()->is('parent/progress*')) ? 'active' : '' }}" href="{{ url('parent/progress')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <span class="links_name">View Progress</span>
+                </a>
+                <span class="tooltip">View Progress</span>
+            </li>
+            
+            <li>
+                <a class="{{ (request()->is('parent/view-child*')) ? 'active' : '' }}" href="{{ url('parent/view-child')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <span class="links_name">View Child</span>
+                </a>
+                <span class="tooltip">View Child</span>
+            </li>
+            <li>
+                <a class="{{ (request()->is('parent/add-child*')) ? 'active' : '' }}" href="{{ url('parent/add-child')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
+                    <span class="links_name">Add Child</span>
+                </a>
+                <span class="tooltip">Add Child</span>
+            </li>
         @elseif(auth()->user()->role == 'Admin')
             <li>
                 <a class="{{ (request()->is('admin/dashboard*')) ? 'active' : '' }}" href="{{ url('admin/dashboard')}}">
@@ -133,11 +180,11 @@
                 <span class="tooltip">View Tutors</span>
             </li>
             <li>
-                <a class="{{ (request()->is('admin/students*')) ? 'active' : '' }}" href="{{ url('admin/students')}}">
+                <a class="{{ (request()->is('admin/parents*')) ? 'active' : '' }}" href="{{ url('admin/parents')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
-                    <span class="links_name">View Students</span>
+                    <span class="links_name">View Parents</span>
                 </a>
-                <span class="tooltip">View Students</span>
+                <span class="tooltip">View Parents</span>
             </li>
         @endif
             <li>
@@ -186,7 +233,7 @@
                         <ul class="nav-list">
                             <li>
                                 <a>
-                                    <span class="links_name">{{ Auth::user()->firstname ?? Auth::user()->email}}</span>
+                                    <span class="links_name">Hello, {{ Auth::user()->firstname ?? Auth::user()->email}}</span>
                                 </a>
                             </li>
                             <li>
@@ -213,7 +260,6 @@
 
     @include('includes.modals')
     <script src="{{asset('assets/js/app.js')}}"></script>
-    <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('assets/js/ajax-functions.js')}}"></script>
 </body>
 

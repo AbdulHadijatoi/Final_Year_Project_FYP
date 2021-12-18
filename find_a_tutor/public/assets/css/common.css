@@ -31,6 +31,10 @@
     --unchecked: #D7E0E5;
 }
 
+a {
+    text-decoration: none;
+}
+
 input,
 textarea {
     outline: none;
@@ -141,7 +145,8 @@ body {
     border: 1px solid var(--whatsapp);
 }
 
-.session-status {
+.session-status,
+.ajax-message {
     width: 100%;
     text-align: center;
     background: green;
@@ -2303,8 +2308,37 @@ main {
     background-color: #1DB953;
 }
 
+.btn {
+    border-style: none;
+    outline: none;
+    min-width: 120px;
+    cursor: pointer;
+    padding: 8px 20px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.btn.success {
+    color: white;
+    background-color: var(--whatsapp);
+}
+
+.btn.danger {
+    color: white;
+    background-color: var(--subj-8);
+}
+
+.btn.primary {
+    color: white;
+    background-color: var(--primary);
+}
+
 .bg-red {
     background-color: #93141F;
+}
+
+button {
+    border-style: none;
 }
 
 .bg-lightgreen {
@@ -2522,6 +2556,10 @@ a:hover {
 
 .text-justify {
     text-align: justify;
+}
+
+.text-red {
+    color: var(--subj-8);
 }
 
 .text-center {

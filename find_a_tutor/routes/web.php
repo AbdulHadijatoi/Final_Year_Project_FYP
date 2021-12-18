@@ -3,10 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProfileController;
 use \App\Http\Controllers\Admin\StudentsController;
+use \App\Http\Controllers\Admin\ParentsController;
 use \App\Http\Controllers\Admin\TutorsController;
 use \App\Http\Controllers\Tutor\CourseController;
 use \App\Http\Controllers\Tutor\QuizController;
 use \App\Http\Controllers\Tutor\DashboardController;
+use \App\Http\Controllers\ListingController;
+use \App\Http\Controllers\Parent\CoursesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,9 +51,19 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('dashboard', \App\Http\Controllers\Admin\DashboardController::class);
         Route::resource('add-user', \App\Http\Controllers\Admin\AddUserController::class);
         Route::resource('students', StudentsController::class);
+        Route::resource('parents', ParentsController::class);
         Route::resource('tutors', TutorsController::class);
     });
 
+    //Parent routes
+    Route::group(['middleware' => 'role:parent', 'prefix' => 'parent', 'as' => 'parent.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Parent\ParentController::class);
+        Route::resource('courses', CoursesController::class);
+        Route::resource('enroll-course', \App\Http\Controllers\Parent\EnrollCourseController::class);
+        Route::resource('progress', \App\Http\Controllers\Parent\ProgressController::class);
+        Route::resource('view-child', \App\Http\Controllers\Parent\ViewChildController::class);
+        Route::resource('add-child', \App\Http\Controllers\Parent\AddChildController::class);
+    });
     //Student routes
     Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function(){
         Route::resource('dashboard', \App\Http\Controllers\Student\DashboardController::class);
@@ -76,13 +89,21 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::post('/admin/tutors', [TutorsController::class , 'search'])->name('AdminTutorSearch');
     Route::post('/admin/students', [StudentsController::class , 'search'])->name('AdminStudentSearch');
+    Route::get('/admin/parents', [ParentsController::class , 'search'])->name('AdminParentSearch');
     Route::post('/tutor/quiz', [QuizController::class, 'addQuestion'])->name('add_question_route');
-    Route::post('/tutor/dashboard', [DashboardController::class,'getSchedule'])->name('get_schedule');    
+    Route::post('/tutor/dashboard1', [DashboardController::class,'getSchedule'])->name('get_schedule');
+    Route::post('/parent/courses', [CoursesController::class,'filter_student_courses'])->name('get_student_courses');
+    Route::get('/student/quizesfilter', [\App\Http\Controllers\Student\QuizesController::class,'filterQuizes'])->name('filter_quizes');
+    Route::post('/tutor/dashboard', [DashboardController::class,'setSchedule'])->name('set_schedule');
+    
     Route::resource('photo', \App\Http\Controllers\PhotoController::class);
 
 });
 
 
-Route::get('/profile/{id}',[ProfileController::class, 'show'])->name('profile');
+
+Route::get('profile/{username}',[ProfileController::class, 'show'])->name('profile');
+Route::resource('/listing', ListingController::class);
+Route::get('/listing', [ListingController::class,'search'])->name('search_tutors');
 
 // Route::post('____', [____::class,'____'])->name('_____');
