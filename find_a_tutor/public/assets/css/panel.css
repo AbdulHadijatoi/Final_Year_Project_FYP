@@ -411,16 +411,18 @@ header .profile-icon {
     margin-bottom: 40px;
 }
 
-.main-content .availability div:not(:first-child) {
+.main-content .availability label:not(:first-child) {
     margin-left: 10px;
 }
 
-.main-content .availability div.active,
+
+/* .main-content .availability label.active, */
+
 .main-content .duration div.active {
     background: var(--whatsapp);
 }
 
-.main-content .availability div {
+.main-content .availability label {
     position: relative;
     display: flex;
     justify-content: center;
@@ -439,6 +441,15 @@ header .profile-icon {
     user-select: none;
 }
 
+.availability-checkbox:checked+label {
+    background: var(--whatsapp);
+}
+
+.main-content .availability input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+}
+
 .main-content .duration div span {
     position: absolute;
     font-size: 12px;
@@ -447,7 +458,7 @@ header .profile-icon {
     margin-top: 5px;
 }
 
-.main-content .availability div:hover,
+.main-content .availability label:hover,
 .main-content .duration div:hover {
     filter: brightness(150%);
 }
@@ -536,7 +547,7 @@ header .profile-icon {
     font-size: 16px;
     margin: 20px 0px 10px 0px;
     color: var(--light-text);
-    font-weight: 300;
+    font-weight: 800;
 }
 
 .main-content .course-card>span {
@@ -563,8 +574,13 @@ header .profile-icon {
     background: var(--subj-8);
 }
 
+.main-content .course-card .link-div>.link-green {
+    background: var(--whatsapp);
+}
+
 .main-content .course-card .link-div>.link,
-.main-content .course-card .link-div>.link-red {
+.main-content .course-card .link-div>.link-red,
+.main-content .course-card .link-div>.link-green {
     width: 100%;
     min-height: 30px;
     display: flex;
@@ -618,13 +634,15 @@ header .profile-icon {
 }
 
 .main-content .formField input,
-.main-content .formField textarea {
+.main-content .formField textarea,
+.main-content .formField select {
     height: 35px;
     padding: 10px;
     background-color: var(--dark);
     border: none;
     color: white;
     font-size: 12px;
+    outline: none;
 }
 
 .main-content .formField textarea {
@@ -740,14 +758,11 @@ header .profile-icon {
     border: 1px solid var(--whatsapp);
 }
 
-.main-content #qal {
-    margin-bottom: 10px;
-}
-
 .main-content #qal,
 .main-content #qam {
-    font-size: 8px;
+    font-size: 12px;
     display: flex;
+    height: 45px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -772,7 +787,7 @@ header .profile-icon {
 }
 
 .main-content .qar:checked+span {
-    background: black;
+    background: var(--whatsapp);
 }
 
 .main-content .op-label {
@@ -853,4 +868,42 @@ header .profile-icon {
         padding: 10px;
         font-size: 14px;
     }
+}
+
+.sessionduration {
+    width: 100%;
+}
+
+.sessionduration .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: transparent;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 100px;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.sessionduration .slider:hover {
+    opacity: 1;
+}
+
+.sessionduration .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--whatsapp);
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.sessionduration .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--whatsapp);
+    cursor: pointer;
 }

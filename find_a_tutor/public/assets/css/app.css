@@ -15,6 +15,32 @@
     opacity: 0.7;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.highlight {
+    padding: 5px 10px;
+    margin: 5px;
+    font-weight: bolder;
+    border-radius: 100px;
+    background-color: var(--subj-6);
+}
+
+.favorite_icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--profile-icon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#fav_checkbox:checked+.favorite_icon {
+    background-color: var(--subj-7);
+}
+
 .review .user-ratting {
     display: flex;
     flex-direction: column;
@@ -101,6 +127,10 @@
     overflow-y: scroll;
 }
 
+.modal {
+    display: none;
+}
+
 .popup-container .dialog::-webkit-scrollbar {
     display: none;
 }
@@ -112,8 +142,10 @@
     /* Firefox */
 }
 
-.popup-container .dialog.feedback {
+.popup-container .dialog.feedback,
+#addQuestionModal .dialog {
     width: 800px;
+    height: auto;
 }
 
 .popup-container .dialog.alert {
@@ -212,5 +244,57 @@
     .popup-container .dialog {
         width: 100% !important;
         height: fit-content;
+    }
+}
+
+#questionContainer #question {
+    font-weight: 400;
+    font-size: 28px;
+    width: 50%;
+    text-align: center;
+    font-family: monospace;
+}
+
+#questionContainer #answerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 200px;
+    background-color: var(--answer-bg);
+    padding: 30px;
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#questionContainer #answerContainer textarea {
+    width: 100%;
+    font-size: 20px;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: var(--light-text);
+    font-family: monospace;
+}
+
+#questionContainer #answerContainer label {
+    font-size: 14px;
+}
+
+#questionContainer #answerContainer input[type='checkbox'] {
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+    #questionContainer #question {
+        font-size: 20px;
+        width: 80%;
+    }
+    #questionContainer #answerContainer {
+        margin-top: 15px;
+        width: 90%;
+    }
+    #questionContainer #answerContainer textarea {
+        font-size: 15px
     }
 }

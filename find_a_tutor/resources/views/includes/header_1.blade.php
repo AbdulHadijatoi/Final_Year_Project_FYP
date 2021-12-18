@@ -17,36 +17,61 @@
                 <li class="{{ (request()->is('listing*')) ? 'active' : '' }}">
                     <a href="{{url('listing')}}">Find Tutor</a>
                 </li>
+                
+                @auth @else
                 <li>
-                    <a href="{{ url('signup') }}">Become Tutor</a>
+                    <a href="{{ route('register') }}">Become Tutor</a>
                 </li>
                 <li>
-                    <a href="{{ url('login') }}">Sign in</a>
+                    <a href="{{ route('login') }}">Sign in</a>
                 </li>
                 <li class="highlight">
-                    <a href="{{ url('signup') }}">Register</a>
+                    <a href="{{ route('register') }}">Register</a>
                 </li>
+                @endauth
             </ul>
             <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
-            <img class="ac-icon cursor-pointer" id="profileMenuButton" src="{{ asset('assets/svg-icons/svg_empty-ac.svg') }}" onclick="clickTarget('profileMenuCheckbox');">
-
+            @auth
+            <div class="ac-icon cursor-pointer text-white" id="profileMenuButton" onclick="clickTarget('profileMenuCheckbox');">
+                
+                @if(session()->get('images') != '')
+                    <img src="{{asset('images/'.session()->get('images')->photo_path)}}"/>
+                @else
+                    @if(Auth::user()->firstname != '' || Auth::user()->lastname != '')
+                        {{ Str::substr(Auth::user()->firstname, 0,1) }}{{ Str::substr(Auth::user()->lastname, 0,1) }}
+                    @else
+                        {{ Str::substr(Auth::user()->email, 0,2) }}
+                    @endif
+                @endif
+            </div>
             <div id="profileMenu" class="profile-menu position-absolute top-50 right-0 border-01-white">
                 <ul class="nav-list">
                     <li>
-                        <a href="{{ url('tutor/dashboard') }}">
+                        @if(auth()->user()->role == 'Admin')
+                            <a href="{{ url('admin/dashboard') }}">
+                        @elseif(auth()->user()->role == 'Student')
+                            <a href="{{ url('student/dashboard') }}">
+                        @elseif(auth()->user()->role == 'Teacher')
+                            <a href="{{ url('tutor/dashboard') }}">
+                        @elseif(auth()->user()->role == 'Parent')
+                            <a href="{{ url('parent/dashboard') }}">
+                        @endif
                             <img class="" src="{{ asset('assets/svg-icons/svg_profile.svg') }}">
                             <span class="links_name">Dashbord</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg') }}">
-                            <span class="links_name">Logout</span>
-                        </a>
+                        <form method="POST" action="{{ route('logout')}}">
+                            @csrf
+                            <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg') }}">
+                                <span class="links_name">Logout</span>
+                            </a>
+                        </form>
                     </li>
                 </ul>
             </div>
-
+            @endauth
         </div>
     </div>
 </header>

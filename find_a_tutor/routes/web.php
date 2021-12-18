@@ -1,7 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\ProfileController;
+use \App\Http\Controllers\Admin\StudentsController;
+use \App\Http\Controllers\Admin\ParentsController;
+use \App\Http\Controllers\Admin\TutorsController;
+use \App\Http\Controllers\Tutor\CourseController;
+use \App\Http\Controllers\Tutor\QuizController;
+use \App\Http\Controllers\Tutor\DashboardController;
+use \App\Http\Controllers\ListingController;
+use \App\Http\Controllers\Parent\CoursesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,113 +22,88 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index', ['title' => 'Home']);
+    return view('index');
 });
 
-Route::get('/listing', function () {
-    return view('listing', ['title' => 'Listing']);
-});
+Route::get('student/profile', function () {
+    return view('student/profile');
+})->name('profile');
 
-Route::get('/tutor/profile', function () {
-    return view('tutor/profile', ['title' => 'Profile']);
-});
+Route::get('tutor/profile', function () {
+    return view('tutor/profile');
+})->name('profile');
 
-Route::get('/student/profile', function () {
-    return view('student/profile', ['title' => 'Profile']);
-});
 
-Route::get('/signup', function () {
-    return view('account/signup', ['title' => 'Signup']);
-});
 
-Route::get('/login', function () {
-    return view('account/login', ['title' => 'Login']);
-});
+require __DIR__.'/auth.php';
 
-Route::get('/forgot-password', function () {
-    return view('account/forgot-password', ['title' => 'Forgot Password']);
-});
+// Route::group(['middleware' => ['auth', 'active_user']], function() {
+//     Route::get('/', function () {
+//         return view('index');
+//     });
+//     // ... Any other routes that are accessed only by non-blocked user
+// });
 
-Route::get('/reset-password', function () {
-    return view('account/reset-password', ['title' => 'Reset Password']);
-});
+Route::group(['middleware' => 'auth'], function(){
+    
+    //Admin routes
+    Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Admin\DashboardController::class);
+        Route::resource('add-user', \App\Http\Controllers\Admin\AddUserController::class);
+        Route::resource('students', StudentsController::class);
+        Route::resource('parents', ParentsController::class);
+        Route::resource('tutors', TutorsController::class);
+    });
 
-Route::get('/tutor/dashboard', function () {
-    return view('tutor/dashboard', ['title' => 'Tutor Dashboard']);
-});
+    //Parent routes
+    Route::group(['middleware' => 'role:parent', 'prefix' => 'parent', 'as' => 'parent.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Parent\ParentController::class);
+        Route::resource('courses', CoursesController::class);
+        Route::resource('enroll-course', \App\Http\Controllers\Parent\EnrollCourseController::class);
+        Route::resource('progress', \App\Http\Controllers\Parent\ProgressController::class);
+        Route::resource('view-child', \App\Http\Controllers\Parent\ViewChildController::class);
+        Route::resource('add-child', \App\Http\Controllers\Parent\AddChildController::class);
+    });
+    //Student routes
+    Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function(){
+        Route::resource('dashboard', \App\Http\Controllers\Student\DashboardController::class);
+        Route::resource('courses', \App\Http\Controllers\Student\CoursesController::class);
+        Route::resource('enroll-course', \App\Http\Controllers\Student\EnrollCourseController::class);
+        Route::resource('make-profile', \App\Http\Controllers\Student\MakeProfileController::class);
+        Route::resource('quizes', \App\Http\Controllers\Student\QuizesController::class);
+        Route::resource('take-quiz', \App\Http\Controllers\Student\TakeQuizController::class);
+    });
 
-Route::get('/tutor/courses', function () {
-    return view('tutor/courses', ['title' => 'Courses']);
-});
+    //Tutor routes
+    Route::group(['middleware' => 'role:tutor', 'prefix' => 'tutor', 'as' => 'tutor.'], function(){
+        Route::resource('dashboard', DashboardController::class);
+        Route::resource('add-course', \App\Http\Controllers\Tutor\AddCourseController::class);
+        Route::resource('courses', \App\Http\Controllers\Tutor\CoursesController::class);
+        Route::resource('create-quiz', \App\Http\Controllers\Tutor\CreateQuizController::class);
+        Route::resource('make-profile', \App\Http\Controllers\Tutor\MakeProfileController::class);
+        Route::resource('quiz', QuizController::class);
+        Route::resource('quizes', \App\Http\Controllers\Tutor\QuizesController::class);
+        Route::resource('students', \App\Http\Controllers\Tutor\StudentsController::class);
+        Route::resource('course', CourseController::class);
+    });
 
-Route::get('/tutor/add-course', function () {
-    return view('tutor/add-course', ['title' => 'Add Courses']);
-});
+    Route::post('/admin/tutors', [TutorsController::class , 'search'])->name('AdminTutorSearch');
+    Route::post('/admin/students', [StudentsController::class , 'search'])->name('AdminStudentSearch');
+    Route::get('/admin/parents', [ParentsController::class , 'search'])->name('AdminParentSearch');
+    Route::post('/tutor/quiz', [QuizController::class, 'addQuestion'])->name('add_question_route');
+    Route::post('/tutor/dashboard1', [DashboardController::class,'getSchedule'])->name('get_schedule');
+    Route::post('/parent/courses', [CoursesController::class,'filter_student_courses'])->name('get_student_courses');
+    Route::get('/student/quizesfilter', [\App\Http\Controllers\Student\QuizesController::class,'filterQuizes'])->name('filter_quizes');
+    Route::post('/tutor/dashboard', [DashboardController::class,'setSchedule'])->name('set_schedule');
+    
+    Route::resource('photo', \App\Http\Controllers\PhotoController::class);
 
-Route::get('/tutor/create-quiz', function () {
-    return view('tutor/create-quiz', ['title' => 'Create Quiz']);
-});
-
-Route::get('/tutor/make-profile', function () {
-    return view('tutor/make-profile', ['title' => 'Make Profile']);
-});
-
-Route::get('/tutor/students', function () {
-    return view('tutor/students', ['title' => 'Students']);
-});
-
-Route::get('/tutor/quizes', function () {
-    return view('tutor/quizes', ['title' => 'Quizes']);
-});
-
-Route::get('/tutor/quiz', function () {
-    return view('tutor/quiz', ['title' => 'Quiz']);
-});
-Route::get('/tutor/course', function () {
-    return view('tutor/course', ['title' => 'Course']);
-});
-
-Route::get('/student/take-quiz', function () {
-    return view('student/take-quiz', ['title' => 'Take Quiz']);
-});
-
-Route::get('/student/courses', function () {
-    return view('student/courses', ['title' => 'Courses']);
-});
-
-Route::get('/student/dashboard', function () {
-    return view('student/dashboard', ['title' => 'Student Dashboard']);
-});
-
-Route::get('/student/enroll-course', function () {
-    return view('student/enroll-course', ['title' => 'Enroll Course']);
-});
-
-Route::get('/student/make-profile', function () {
-    return view('student/make-profile', ['title' => 'Make Profile']);
-});
-
-Route::get('/student/quizes', function () {
-    return view('student/quizes', ['title' => 'View All Quiz']);
-});
-
-Route::get('/admin/add-tutor', function () {
-    return view('admin/add-tutor', ['title' => 'Add Tutor']);
-});
-
-Route::get('/admin/dashboard', function () {
-    return view('admin/dashboard', ['title' => 'Admin Dashboard']);
-});
-
-Route::get('/admin/students', function () {
-    return view('admin/students', ['title' => 'Students']);
-});
-
-Route::get('/admin/tutors', function () {
-    return view('admin/tutors', ['title' => 'Tutors']);
 });
 
 
-Route::get('/{profileName}',function($profileName){
-    return $profileName;
-});
+
+Route::get('profile/{username}',[ProfileController::class, 'show'])->name('profile');
+Route::resource('/listing', ListingController::class);
+Route::get('/listing', [ListingController::class,'search'])->name('search_tutors');
+
+// Route::post('____', [____::class,'____'])->name('_____');

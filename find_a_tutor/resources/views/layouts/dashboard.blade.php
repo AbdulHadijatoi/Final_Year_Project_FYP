@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ $title ?? 'Tution Made Easy' }}</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>@yield('title') - Tution Made Easy</title>
+        
         <link rel="stylesheet" href="{{ asset('assets/css/panel.css')}}">
         
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
@@ -11,14 +13,15 @@
     <head>
 <body>
     <div class="sidebar open">
-        <div class="logo-details border-bottom-01-white">
+        <!-- this should navigate to the dashboard of logged user role -->
+        <a href="@if(auth()->user()->role == "Teacher") {{ url('tutor/dashboard') }} @elseif(auth()->user()->role == "Student") {{ url('student/dashboard') }} @elseif(auth()->user()->role == "Parent") {{ url('parent/dashboard') }} @elseif(auth()->user()->role == "Admin") {{ url('admin/dashboard') }} @endif" class="logo-details border-bottom-01-white">
             <img class="" src="{{asset('assets/logo_light.svg')}}">
-        </div>
+        </a>
         <ul class="nav-list" id="navList">
         
-        @if(request()->is('tutor/*'))
-
+        @if(auth()->user()->role == "Teacher")
             <li>
+            <!-- :active="request()->routeIs('dashboard')" -->
                 <a class="{{ (request()->is('tutor/dashboard*')) ? 'active' : '' }}" href="{{ url('tutor/dashboard')}}">
                     <img class="" src="{{ asset('assets/svg-icons/svg_dashboard.svg')}}">
                     <span class="links_name">Dashboard</span>
@@ -67,7 +70,7 @@
                 </a>
                 <span class="tooltip">Profile Settings</span>
             </li>
-        @elseif(request()->is('student/*'))
+            @elseif(auth()->user()->role == "Student")
             <li>
                 <a class="{{ (request()->is('student/dashboard*')) ? 'active' : '' }}" href="{{ url('student/dashboard')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">
@@ -107,7 +110,54 @@
                 </a>
                 <span class="tooltip">Profile Settings</span>
             </li>
-        @else
+        @elseif(auth()->user()->role == "Parent")
+            <li>
+                <a class="{{ (request()->is('parent/dashboard*')) ? 'active' : '' }}" href="{{ url('parent/dashboard')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+
+            <li>
+                <a class="{{ (request()->is('parent/courses*')) ? 'active' : '' }}" href="{{ url('parent/courses')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <span class="links_name">View Courses</span>
+                </a>
+                <span class="tooltip">View Courses</span>
+            </li>
+
+            <li>
+                <a class="{{ (request()->is('parent/enroll-course*')) ? 'active' : '' }}" href="{{ url('parent/enroll-course')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
+                    <span class="links_name">Enroll Course</span>
+                </a>
+                <span class="tooltip">Enroll Course</span>
+            </li>
+            
+            <li>
+                <a class="{{ (request()->is('parent/progress*')) ? 'active' : '' }}" href="{{ url('parent/progress')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <span class="links_name">View Progress</span>
+                </a>
+                <span class="tooltip">View Progress</span>
+            </li>
+            
+            <li>
+                <a class="{{ (request()->is('parent/view-child*')) ? 'active' : '' }}" href="{{ url('parent/view-child')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <span class="links_name">View Child</span>
+                </a>
+                <span class="tooltip">View Child</span>
+            </li>
+            <li>
+                <a class="{{ (request()->is('parent/add-child*')) ? 'active' : '' }}" href="{{ url('parent/add-child')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
+                    <span class="links_name">Add Child</span>
+                </a>
+                <span class="tooltip">Add Child</span>
+            </li>
+        @elseif(auth()->user()->role == 'Admin')
             <li>
                 <a class="{{ (request()->is('admin/dashboard*')) ? 'active' : '' }}" href="{{ url('admin/dashboard')}}">
                     <img class="" src="{{asset('assets/svg-icons/svg_dashboard.svg')}}">
@@ -116,11 +166,11 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a class="{{ (request()->is('admin/add-tutor*')) ? 'active' : '' }}" href="{{ url('admin/add-tutor')}}">
-                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
-                    <span class="links_name">Add Tutor</span>
+                <a class="{{ (request()->is('admin/add-user*')) ? 'active' : '' }}" href="{{ url('admin/add-user')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
+                    <span class="links_name">Add User</span>
                 </a>
-                <span class="tooltip">Add Tutor</span>
+                <span class="tooltip">Add User</span>
             </li>
             <li>
                 <a class="{{ (request()->is('admin/tutors*')) ? 'active' : '' }}" href="{{ url('admin/tutors')}}">
@@ -130,19 +180,22 @@
                 <span class="tooltip">View Tutors</span>
             </li>
             <li>
-                <a class="{{ (request()->is('admin/students*')) ? 'active' : '' }}" href="{{ url('admin/students')}}">
-                    <img class="" src="{{asset('assets/svg-icons/svg_create_plus.svg')}}">
-                    <span class="links_name">View Students</span>
+                <a class="{{ (request()->is('admin/parents*')) ? 'active' : '' }}" href="{{ url('admin/parents')}}">
+                    <img class="" src="{{asset('assets/svg-icons/svg_view_records.svg')}}">
+                    <span class="links_name">View Parents</span>
                 </a>
-                <span class="tooltip">View Students</span>
+                <span class="tooltip">View Parents</span>
             </li>
         @endif
             <li>
-                <a href="{{ url('account/logout')}}">
-                    <img class="" src="{{asset('assets/svg-icons/svg_logout.svg')}}">
-                    <span class="links_name">Logout</span>
-                </a>
-                <span class="tooltip">Logout</span>
+                <form method="POST" action="{{ route('logout')}}">
+                    @csrf
+                    <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <img class="" src="{{asset('assets/svg-icons/svg_logout.svg')}}">
+                        <span class="links_name">Logout</span>
+                    </a>
+                    <span class="tooltip">Logout</span>
+                </form>
             </li>
         </ul>
     </div>
@@ -163,15 +216,34 @@
                 </div>
                 <div class="position-relative">
                     <input class="hidden" type="checkbox" id="profileMenuCheckbox" onchange="toggleDisplay(this, 'profileMenu')">
-                    <div id="profileMenuButton" class="ac-icon profile-icon" onclick="clickTarget('profileMenuCheckbox');">MU</div>
+                    <div id="profileMenuButton" class="ac-icon profile-icon overflow-hidden" onclick="clickTarget('profileMenuCheckbox');">
+
+                        @if(session()->get('images') != '')
+                            <img class="full-width full-height" src="{{asset('images/'.session()->get('images')->photo_path)}}"/>
+                        @else
+                            @if(Auth::user()->firstname != '' || Auth::user()->lastname != '')
+                                {{ Str::substr(Auth::user()->firstname, 0,1) }}{{ Str::substr(Auth::user()->lastname, 0,1) }}
+                            @else
+                                {{ Str::substr(Auth::user()->email, 0,2) }}
+                            @endif
+                        @endif
+                    </div>
 
                     <div id="profileMenu" class="profile-menu position-absolute top-60 right-0">
                         <ul class="nav-list">
                             <li>
-                                <a href="{{url('account/logout')}}">
-                                    <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg')}}">
-                                    <span class="links_name">Logout</span>
+                                <a>
+                                    <span class="links_name">Hello, {{ Auth::user()->firstname ?? Auth::user()->email}}</span>
                                 </a>
+                            </li>
+                            <li>
+                                <form method="POST" action="{{ route('logout')}}">
+                                    @csrf
+                                    <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                        <img class="" src="{{ asset('assets/svg-icons/svg_logout.svg')}}">
+                                        <span class="links_name">Logout</span>
+                                    </a>
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -188,6 +260,7 @@
 
     @include('includes.modals')
     <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/ajax-functions.js')}}"></script>
 </body>
 
 </html>

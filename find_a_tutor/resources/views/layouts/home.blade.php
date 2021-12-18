@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ $title ?? 'Tution Made Easy' }}</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>@yield('title') - Tution Made Easy</title>
         <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
         @if(request()->is('listing*'))
@@ -81,6 +82,7 @@
     @include('includes.modals')
 
     <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/ajax-functions.js')}}"></script>
 </body>
 
 </html>

@@ -15,12 +15,12 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->string('option1');
-            $table->string('option2');
-            $table->string('option3');
-            $table->string('option4');
-            $table->index('question_id');
-            $table->foreignId('question_id')->constrained('questions')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('option1')->nullable();
+            $table->string('option2')->nullable();
+            $table->string('option3')->nullable();
+            $table->string('option4')->nullable();
+            $table->index('questions_id');
+            $table->foreignId('questions_id')->constrained('questions')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
